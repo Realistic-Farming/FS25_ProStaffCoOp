@@ -290,9 +290,19 @@ function ProStaffManager:_bindBedrock()
             ns:registerAction(ProStaffConstants.ACTION_BUY, {
                 adminOnly = false,
                 onAction = function(userId, args)
-                    if type(args) == "table" and args.farmId ~= nil then
-                        self:_doPurchase(args.farmId)
+                    if type(args) ~= "table" or args.farmId == nil then return end
+                    -- Ownership: buying a level is not an admin act (adminOnly stays false),
+                    -- but a client may only buy for a farm it belongs to. Without this a
+                    -- client on a server could send ACTION_BUY carrying another farm's id
+                    -- and spend that farm's money. The requester's userId is resolved by
+                    -- NetworkSync; require it to map to the target farm.
+                    local farm = g_farmManager ~= nil and g_farmManager:getFarmByUserId(userId) or nil
+                    if farm == nil or farm.farmId ~= args.farmId then
+                        PSLogger.warning("ACTION_BUY rejected: userId %s is not a member of farm %s",
+                            tostring(userId), tostring(args.farmId))
+                        return
                     end
+                    self:_doPurchase(args.farmId)
                 end,
             })
         end
