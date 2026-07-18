@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!-- [EN] placeholder translations; localize when available -->
+<l10n>
+    <texts>
+        <text name="ps_setting_enabled" text="Pro Staff Co-Op Enabled" />
+        <text name="ps_setting_baseCost" text="Level Base Cost" />
+        <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
+        <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
+        <text name="ps_tab_title" text="Pro Staff" />
+        <text name="ps_level_1" text="Office Access" />
+        <text name="ps_level_2" text="Procurement Access" />
+        <text name="ps_level_3" text="Scheduling Optimization" />
+        <text name="ps_level_4" text="Comms Relay" />
+        <text name="ps_level_5" text="Labor Welfare" />
+        <text name="ps_level_6" text="Loading Automation" />
+        <text name="ps_level_7" text="Bulk Silo Admin" />
+        <text name="ps_level_8" text="Regional Mesh" />
+        <text name="ps_level_9" text="Personnel Records" />
+        <text name="ps_level_10" text="Academic Liaison" />
+        <text name="ps_level_11" text="Labor Recovery" />
+        <text name="ps_level_12" text="Precision Agronomy" />
+        <text name="ps_level_13" text="Global Comms" />
+        <text name="ps_level_14" text="Fleet Logistics" />
+        <text name="ps_level_15" text="Syndicate Board" />
+        <text name="ps_level_16" text="Curriculum Admin" />
+        <text name="ps_level_17" text="Payroll Oversight" />
+        <text name="ps_level_18" text="Predictive Control" />
+        <text name="ps_level_19" text="System Overdrive" />
+        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_label_investment" text="Co-Op Membership Investment" />
+        <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
+        <text name="ps_label_herdsmanRebate" text="Co-Op Herdsman Rebate" />
+        <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+    </texts>
+</l10n>
