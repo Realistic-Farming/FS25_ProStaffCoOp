@@ -182,9 +182,15 @@ function ProStaffManager:_doPurchase(farmId)
     end
 
     -- Debit via base-game addMoney (server-authoritative). Then audit via TaxMod.
+    local debitOk = false
     pcall(function()
         g_currentMission:addMoney(-cost, farmId, MoneyType.OTHER, true, true)
+        debitOk = true
     end)
+    if not debitOk then
+        PSLogger.warning("Purchase failed for farm %d: addMoney threw for cost %d", farmId, cost)
+        return false
+    end
     self:_taxAudit(farmId, -cost, ProStaffConstants.LABELS.INVESTMENT)
 
     rec.level = targetLevel
