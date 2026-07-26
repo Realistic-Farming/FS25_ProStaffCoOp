@@ -55,6 +55,11 @@ function ProStaffManager:update(dt)
 end
 
 function ProStaffManager:onMissionDelete()
+    local tg = self:_getTimeGuard()
+    if tg ~= nil and tg.unregisterAccrual ~= nil then
+        tg:unregisterAccrual("ProStaffCoOp_agronomyFee")
+        tg:unregisterAccrual("ProStaffCoOp_fleetRebate")
+    end
     self.bedrockBound = false
     self.clockBound = false
 end
@@ -104,8 +109,11 @@ function ProStaffManager:_netWorth(farmId)
     pcall(function()
         local farm = g_farmManager ~= nil and g_farmManager:getFarmById(farmId) or nil
         if farm ~= nil then
-            worth = farm.money or 0
-            if farm.getBalance ~= nil then worth = farm:getBalance() end
+            if farm.getBalance ~= nil then
+                worth = farm:getBalance()
+            else
+                worth = farm.money or 0
+            end
             if type(farm.getFinanceStats) == "function" then
                 local ok, assets = pcall(function() return farm:getFinanceStats("assets") end)
                 if ok and type(assets) == "number" then worth = worth + assets end
@@ -174,7 +182,13 @@ function ProStaffManager:_doPurchase(farmId)
     local balance = 0
     pcall(function()
         local farm = g_farmManager ~= nil and g_farmManager:getFarmById(farmId) or nil
-        balance = (farm ~= nil and (farm.money or (farm.getBalance and farm:getBalance()))) or 0
+        if farm ~= nil then
+            if farm.getBalance ~= nil then
+                balance = farm:getBalance()
+            else
+                balance = farm.money or 0
+            end
+        end
     end)
     if balance < cost then
         PSLogger.info("Purchase denied for farm %d: cost %d exceeds balance %d", farmId, cost, balance)
@@ -413,16 +427,24 @@ end
 function ProStaffManager:_loadOwnFile()
     local path = self:_savePath()
     if path == nil then return end
-    local xml = XMLFile.loadIfExists("ps_SaveXML", path, "proStaff")
-    if xml == nil then return end
-    xml:iterate("proStaff.farm", function(_, key)
-        local id = xml:getInt(key .. "#id", nil)
-        if id ~= nil then
-            self.farms[id] = { level = xml:getInt(key .. "#level", 0),
-                               investmentTotal = xml:getInt(key .. "#investment", 0),
-                               membershipActive = true, levelHistory = {} }
-        end
+    local ok, xml = pcall(XMLFile.loadIfExists, "ps_SaveXML", path, "proStaff")
+    if not ok or xml == nil then
+        if not ok then PSLogger.warning("XML load failed for %s: %s", path, tostring(xml)) end
+        return
+    end
+    local iterOk, iterErr = pcall(function()
+        xml:iterate("proStaff.farm", function(_, key)
+            local id = xml:getInt(key .. "#id", nil)
+            if id ~= nil then
+                self.farms[id] = { level = xml:getInt(key .. "#level", 0),
+                                   investmentTotal = xml:getInt(key .. "#investment", 0),
+                                   membershipActive = true, levelHistory = {} }
+            end
+        end)
     end)
+    if not iterOk then
+        PSLogger.warning("XML iterate failed for %s: %s", path, tostring(iterErr))
+    end
     xml:delete()
 end
 
