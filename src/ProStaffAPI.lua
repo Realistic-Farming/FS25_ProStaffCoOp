@@ -92,3 +92,9 @@ function ProStaffManager:hasMarketIntel(farmId)      return self:_flag("hasMarke
 function ProStaffManager:hasForecastAccess(farmId)   return self:_flag("hasForecastAccess", farmId) end
 function ProStaffManager:hasPredictiveControl(farmId) return self:_flag("hasPredictiveControl", farmId) end
 function ProStaffManager:hasEarlyWarning(farmId)     return self:_flag("hasEarlyWarning", farmId) end
+-- [SF-40] Read the Dirt member 4 (K half): a farm at level 10 gets exact
+-- numbers (N/P/K/pH) and the precise disease name at the kneel instead of
+-- bands and pressure labels. Gates DISPLAY PRECISION only, never data
+-- existence; it never bypasses the disease knowledge gate. Neutral-false when
+-- the consuming read is absent.
+function ProStaffManager:hasSoilTestKit(farmId)      return self:_flag("hasSoilTestKit", farmId) end
