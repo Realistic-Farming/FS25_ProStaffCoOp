@@ -45,6 +45,12 @@ setLevel(m, 18); T.ok("predictive L18 true",         m:hasPredictiveControl(1))
 setLevel(m, 19); T.ok("earlyWarning L19 false",  not m:hasEarlyWarning(1))
 setLevel(m, 20); T.ok("earlyWarning L20 true",       m:hasEarlyWarning(1))
 
+-- [SF-40] Soil test kit: exact numbers at the kneel from L10 (Read the Dirt member 4).
+setLevel(m, 9);  T.ok("soilTestKit L9 false",  not m:hasSoilTestKit(1))
+setLevel(m, 10); T.ok("soilTestKit L10 true",       m:hasSoilTestKit(1))
+setLevel(m, 20); T.ok("soilTestKit L20 true",       m:hasSoilTestKit(1))
+setLevel(m, 5);  T.ok("soilTestKit below L10 false", not m:hasSoilTestKit(1))
+
 -- Wealth bracket: inactive below L10, then net-worth tiers, capped at 1.35.
 local worth = 0
 g_farmManager = { getFarmById = function(_, _id) return { money = worth } end }

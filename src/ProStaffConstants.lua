@@ -82,6 +82,7 @@ ProStaffConstants.FLAGS = {
     hasForecastAccess   = 7,
     hasPredictiveControl = 18,
     hasEarlyWarning     = 20,
+    hasSoilTestKit      = 10,   -- [SF-40] Read the Dirt member 4: exact numbers at the kneel
 }
 
 -- Level names for display.
