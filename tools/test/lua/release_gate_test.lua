@@ -62,7 +62,5 @@ T.ok("kit flag granted at L10 with opt-in on",
 g_proStaffCoOp = nil
 local m = newMgr()
 T.ok("kit flag granted at L10 with no manager (fail-open)", m:hasSoilTestKit(1))
-T.ok("kit flag still level-gated below L10", function()
-    m.farms[1].level = 9
-    return not m:hasSoilTestKit(1)
-end)
+m.farms[1].level = 9
+T.ok("kit flag still level-gated below L10", not m:hasSoilTestKit(1))
