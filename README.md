@@ -2,7 +2,7 @@
 
 **Realistic Farming - Pro Staff Co-Op** is a 20-level cooperative progression backbone for the Realistic Farming mod ecosystem. Each farm invests to climb the Co-Op ladder, and every rung unlocks economic modifiers that companion mods read through a shared getter API. It owns its own server-authoritative money write and rides the shared **Time Guard** economic clock for recurring fees and rebates. Every cross-mod edge is handle-gated and pcall-wrapped, so it degrades gracefully when a companion mod is absent.
 
-**Version:** 1.0.0.0
+**Version:** 1.1.0.0
 
 ## What it does
 
@@ -47,3 +47,7 @@ hasForecastAccess / hasMarketIntel / hasPredictiveControl / hasEarlyWarning
 - The L20 early-warning flag and the L9 herdsman-wage rebate are wired but inert pending their companion apply sites (MarketDynamics event feed, WorkerCosts herdsman-wage read). All numbers ride the balance pass.
 - The in-game investment GUI is not built yet; the console commands drive it for now. The getter API that companion mods consume is complete.
 - 26 languages ship from day one. Console commands: `proStaffStatus`, `proStaffBuy`.
+
+## Changelog
+
+- **1.1.0.0** - Release gate. Experimental systems ship locked until deliberately released. Turn them on under the mod's settings, independent of difficulty. The soil test kit (SF-40, Read the Dirt) is locked until the companion system is released on SoilFertilizer.
