@@ -25,6 +25,9 @@ function ProStaffManager.new()
         baseCost = ProStaffConstants.DEFAULT_BASE_COST,
         subscriptionFeeEnabled = false,
         agronomyFee = ProStaffConstants.AGRONOMY_FEE.DEFAULT,
+        -- Release-gate opt-in (default false). Orthogonal to difficulty: the
+        -- experimental lock set is off unless the player turns this on. See ReleaseGate.lua.
+        experimentalSystems = false,
     }
     return self
 end
@@ -96,6 +99,23 @@ function ProStaffManager:_getLedger()      return (g_currentMission and g_curren
 function ProStaffManager:_getNetworkSync()  return (g_currentMission and g_currentMission.networkSync) or g_networkSync end
 function ProStaffManager:_getSettingsHub()  return (g_currentMission and g_currentMission.settingsHub) or g_settingsHub end
 function ProStaffManager:_getTimeGuard()    return (g_currentMission and g_currentMission.timeGuard) or g_timeGuard end
+
+-- =========================================================
+-- Release gate
+-- =========================================================
+
+--- Release-gate opt-in. True when the player has explicitly enabled experimental
+--- (LOCKED) systems. Orthogonal to difficulty: the two locks stack, see ReleaseGate.lua.
+---@return boolean
+function ProStaffManager:allowsExperimentalSystems()
+    return self.settings.experimentalSystems == true
+end
+
+function ProStaffManager:consoleCommandRelease()
+    if not ReleaseGate then return "Release gate not loaded" end
+    local optIn = self:allowsExperimentalSystems()
+    return ReleaseGate.status(optIn)
+end
 
 -- =========================================================
 -- Level cost + wealth bracket
@@ -341,12 +361,15 @@ function ProStaffManager:_bindBedrock()
                   label = "Agronomy Report Sub Fee" },
                 { id = "agronomyFee", type = "int", default = 800, min = 0, max = 10000, adminOnly = true,
                   label = "Agronomy Fee (per month)" },
+                { id = "experimentalSystems", type = "bool", default = false, adminOnly = true,
+                  label = "Experimental Systems" },
             },
             onChange = function(key, value)
                 if key == "enabled" then self.settings.enabled = value ~= false
                 elseif key == "baseCost" then self.settings.baseCost = value
                 elseif key == "subscriptionFeeEnabled" then self.settings.subscriptionFeeEnabled = value ~= false
-                elseif key == "agronomyFee" then self.settings.agronomyFee = value end
+                elseif key == "agronomyFee" then self.settings.agronomyFee = value
+                elseif key == "experimentalSystems" then self.settings.experimentalSystems = value ~= false end
             end,
         })
         bound = true
