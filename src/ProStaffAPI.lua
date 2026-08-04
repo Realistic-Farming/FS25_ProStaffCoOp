@@ -97,4 +97,14 @@ function ProStaffManager:hasEarlyWarning(farmId)     return self:_flag("hasEarly
 -- bands and pressure labels. Gates DISPLAY PRECISION only, never data
 -- existence; it never bypasses the disease knowledge gate. Neutral-false when
 -- the consuming read is absent.
-function ProStaffManager:hasSoilTestKit(farmId)      return self:_flag("hasSoilTestKit", farmId) end
+-- RELEASE GATE: the kit flag itself is LOCKED until the player opts into
+-- experimental systems. Its consumer (SF's Read the Dirt) is locked on the
+-- SoilFertilizer side, so a farm must not earn the L10 kit flag while the
+-- system is locked. Fail-open (see ReleaseGate.isSystemLive): the getter
+-- behaves exactly as before when the opt-in flag cannot be read.
+function ProStaffManager:hasSoilTestKit(farmId)
+    if ReleaseGate ~= nil and not ReleaseGate.isSystemLive("soil_test_kit") then
+        return false
+    end
+    return self:_flag("hasSoilTestKit", farmId)
+end

@@ -16,6 +16,7 @@
 local modDirectory = g_currentModDirectory
 
 source(modDirectory .. "src/Logger.lua")
+source(modDirectory .. "src/ReleaseGate.lua")
 source(modDirectory .. "src/ProStaffConstants.lua")
 source(modDirectory .. "src/ProStaffManager.lua")
 source(modDirectory .. "src/ProStaffAPI.lua")
@@ -70,4 +71,6 @@ if addConsoleCommand ~= nil then
         "consoleCommandStatus", proStaff)
     addConsoleCommand("proStaffBuy", "Buy the next Co-Op level for the local farm",
         "consoleCommandBuy", proStaff)
+    addConsoleCommand("proStaffRelease", "Release gate: show STABLE vs experimental-LOCKED systems",
+        "consoleCommandRelease", proStaff)
 end
