@@ -28,7 +28,7 @@
         <text name="ps_level_20" text="Sovereign Admin" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
-        <text name="ps_label_herdsmanRebate" text="Co-Op Herdsman Rebate" />
+        <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
     </texts>
 </l10n>

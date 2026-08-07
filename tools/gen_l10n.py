@@ -43,7 +43,7 @@ ENTRIES = [
     # Audit line labels (mirror ProStaffConstants.LABELS + AGRONOMY_FEE.LABEL)
     ("ps_label_investment",     "Co-Op Membership Investment"),
     ("ps_label_agronomyFee",    "Co-Op Agronomy Report Sub"),
-    ("ps_label_herdsmanRebate", "Co-Op Herdsman Rebate"),
+    ("ps_label_herdsmanRebate", "Co-Op Personnel Rebate"),
     ("ps_label_fleetRebate",    "Co-Op Fleet Rebate"),
 ]
 
