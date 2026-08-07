@@ -45,7 +45,11 @@ ProStaffConstants.AGRONOMY_FEE = {
 -- Rebate labels (audit lines).
 ProStaffConstants.LABELS = {
     INVESTMENT = "Co-Op Membership Investment",
-    HERDSMAN_REBATE = "Co-Op Herdsman Rebate",
+    -- F143: "Co-Op Herdsman Rebate" renamed 2026-08-07. RealisticLivestock owns
+    -- the word Herdsman (it ships a wage-bearing Herdsman subsystem); no
+    -- player-facing string of ours uses it. L9 is Personnel Records on the
+    -- ladder, hence Personnel. Internal identifier stays HERDSMAN_REBATE.
+    HERDSMAN_REBATE = "Co-Op Personnel Rebate",
     FLEET_REBATE = "Co-Op Fleet Rebate",
 }
 ProStaffConstants.L9_HERDSMAN_REBATE_RATE = 0.03
