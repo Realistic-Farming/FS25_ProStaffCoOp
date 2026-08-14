@@ -29,6 +29,10 @@ function ProStaffManager.new()
         -- experimental lock set is off unless the player turns this on. See ReleaseGate.lua.
         experimentalSystems = false,
     }
+    -- Disease-flush (C2): per-farm concurrent-invocation guard (a transient flag,
+    -- set on entry, cleared on resolution) + the NetworkSync action bind flag.
+    self.flushGuard = {}
+    self.diseaseFlushBound = false
     return self
 end
 
@@ -55,6 +59,7 @@ end
 function ProStaffManager:update(dt)
     if not self.bedrockBound then self:_bindBedrock() end
     if not self.clockBound then self:_subscribeClock() end
+    if not self.diseaseFlushBound then self:bindDiseaseFlush() end
 end
 
 function ProStaffManager:onMissionDelete()
@@ -65,6 +70,8 @@ function ProStaffManager:onMissionDelete()
     end
     self.bedrockBound = false
     self.clockBound = false
+    self.diseaseFlushBound = false
+    self.flushGuard = {}
 end
 
 function ProStaffManager:save()
@@ -348,6 +355,10 @@ function ProStaffManager:_bindBedrock()
         end
         bound = true
     end
+
+    -- The Co-Op disease flush (C2) rides the same action channel (member flush +
+    -- admin-gated clear). Registered once NetworkSync is present; update() retries.
+    self:bindDiseaseFlush()
 
     local hub = self:_getSettingsHub()
     if hub ~= nil then
