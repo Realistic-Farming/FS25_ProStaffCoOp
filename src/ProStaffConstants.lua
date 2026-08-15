@@ -101,3 +101,51 @@ ProStaffConstants.LEDGER_STATE = "ProStaffCoOp_State"
 ProStaffConstants.NETWORK_CHANNEL = "ProStaffCoOp_Level"
 ProStaffConstants.ACTION_BUY = "ProStaffCoOp_buyLevel"
 ProStaffConstants.SETTLE_PRIORITY = 30
+
+-- =========================================================
+-- Disease Flush (C2) - the Co-Op recovery hatch (cross-mod consumer)
+-- =========================================================
+-- Hosts the buildable core of the disease-flush safety net (DISEASE-FLUSH-C2): a
+-- thin SERVER-AUTHORITATIVE ProStaff action that triggers SoilFertilizer's OWN
+-- treat/clear across a farm's diseased fields and books the locked C5 price
+-- server-side. We invoke SF's verified surface (getScoutReport / scoutField /
+-- applyNamedFungicide / debugSetDisease); we never write disease state ourselves.
+-- The player-facing paid surface is gated on FarmTablet; this mechanism is what
+-- it calls. Console commands drive it today.
+ProStaffConstants.ACTION_FLUSH = "ProStaffCoOp_diseaseFlush"
+ProStaffConstants.ACTION_CLEAR = "ProStaffCoOp_adminClear"
+
+ProStaffConstants.DISEASE_FLUSH = {
+    -- C5 locked numbers (escape-hatch pricing pass, Arissani sign-off 2026-07-10).
+    --   cost = (PER_FIELD_BASE + SEVERITY_RATE * severity) * economyMultiplier
+    PER_FIELD_BASE = 250,
+    SEVERITY_RATE  = 8,
+
+    -- A field counts as "diseased" for the flush when it carries a NAMED active
+    -- infection at or above this pressure. 10 = SF's onset (DISEASE_PRESSURE.LOW
+    -- 20 * 0.5, SoilFertilitySystem.lua:2464). Pressure build-up with no named
+    -- disease is the C1 manual-spray floor's territory, not this hatch.
+    MIN_PRESSURE = 10,
+
+    -- Chem-catalog fallback when SF's report cannot name a product for a disease
+    -- (a known disease always gets one; this is the honest belt). A valid catalog
+    -- id from SoilConstants.FUNGICIDE_CATALOG.
+    FALLBACK_CHEM = "PROPICONAZOLE",
+
+    -- The locked C5 recovery-hatch curve on the Economy dial (the vendored
+    -- resolver carries the same shape as ECONOMY_HATCH_CURVE; mirrored here so the
+    -- flush's numbers stay pinned to this mod even if a resolver is re-vendored
+    -- without it). Neutral 1.0 when the spine is absent.
+    ECONOMY_HATCH_CURVE = { at0 = 0.2, at1 = 1.0, at2 = 2.75 },
+
+    -- Difficulty ranks mirroring OptionScalingResolver.PRESET_RANK. The preset
+    -- picks the flush CHARACTER (easy = near-instant clear, hard = grounded
+    -- mass-treatment); the Economy dial picks the COST. The two are independent
+    -- controls: an off-diagonal combination (easy preset + expensive dial, or
+    -- realistic preset + cheap dial) is a legitimate player choice, so the
+    -- character and the price are never cross-checked. The hard-clear is allowed
+    -- strictly below the realistic rank (the spine s3a gate).
+    PRESET_RANK = { relaxed = 0, standard = 1, realistic = 2, punishing = 3, custom = 1 },
+
+    LABEL = "Co-Op Disease Flush",
+}
