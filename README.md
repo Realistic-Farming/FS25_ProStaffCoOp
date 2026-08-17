@@ -2,7 +2,7 @@
 
 **Realistic Farming - Pro Staff Co-Op** is a 20-level cooperative progression backbone for the Realistic Farming mod ecosystem. Each farm invests to climb the Co-Op ladder, and every rung unlocks economic modifiers that companion mods read through a shared getter API. It owns its own server-authoritative money write and rides the shared **Time Guard** economic clock for recurring fees and rebates. Every cross-mod edge is handle-gated and pcall-wrapped, so it degrades gracefully when a companion mod is absent.
 
-**Version:** 1.1.0.0
+**Version:** 1.0.0.2
 
 ## What it does
 
@@ -47,7 +47,4 @@ hasForecastAccess / hasMarketIntel / hasPredictiveControl / hasEarlyWarning
 - The L20 early-warning flag and the L9 herdsman-wage rebate are wired but inert pending their companion apply sites (MarketDynamics event feed, WorkerCosts herdsman-wage read). All numbers ride the balance pass.
 - The in-game investment GUI is not built yet; the console commands drive it for now. The getter API that companion mods consume is complete.
 - 26 languages ship from day one. Console commands: `proStaffStatus`, `proStaffBuy`.
-
-## Changelog
-
-- **1.1.0.0** - Release gate. Experimental systems ship locked until deliberately released. Turn them on under the mod's settings, independent of difficulty. The soil test kit (SF-40, Read the Dirt) is locked until the companion system is released on SoilFertilizer.
+- **Disease flush (C2), the buildable core:** ProStaff hosts a thin server-authoritative action that triggers SoilFertilizer's own treat/clear across a farm's diseased fields and books the locked C5 price server-side (`(250 + 8 * severity) * economyHatchMultiplier`). Hard presets (and the spine-absent fail-safe) do a grounded mass-treatment (`applyNamedFungicide`, `charge=false`); easy presets grant a near-instant hard-clear (the server-gated `debugSetDisease` wrapper, blocked on realistic and up). The Economy dial scales the cost through the vendored Option-Scaling resolver; a per-farm concurrent guard stops double-fires. The player-facing paid flush surface is gated on FarmTablet; console commands `diseaseFlushQuote`, `diseaseFlush`, `diseaseClear` drive the mechanism today.

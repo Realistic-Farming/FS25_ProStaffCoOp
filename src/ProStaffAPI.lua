@@ -24,14 +24,20 @@ end
 function ProStaffManager:_farmLevel(farmId)
     if not self.settings.enabled then return 0 end
     local rec = self.farms[self:_resolveFarm(farmId)]
-    return (rec ~= nil and rec.level) or 0
+    if rec == nil then return 0 end
+    -- Header contract: no membership -> neutral (level 0). membershipActive is
+    -- saved on the farm rec but was never read by getters until now.
+    if rec.membershipActive == false then return 0 end
+    return rec.level or 0
 end
 
 -- Compute an effect value from its table at the farm's current level.
+-- Returns eff.neutral when disabled, no membership, or level below all steps.
 function ProStaffManager:_effect(effectKey, farmId)
     local eff = ProStaffConstants.EFFECTS[effectKey]
     if eff == nil then return 1.0 end
     local level = self:_farmLevel(farmId)
+    if level <= 0 then return eff.neutral end
     if eff.mode == "product" then
         local v = eff.neutral
         for stepLevel, stepVal in pairs(eff.steps) do
@@ -52,6 +58,7 @@ end
 function ProStaffManager:_flag(flagKey, farmId)
     local reqLevel = ProStaffConstants.FLAGS[flagKey]
     if reqLevel == nil then return false end
+    -- _farmLevel is 0 when membershipActive == false, so flags stay off.
     return self:_farmLevel(farmId) >= reqLevel
 end
 

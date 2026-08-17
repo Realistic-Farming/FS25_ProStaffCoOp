@@ -20,6 +20,10 @@ source(modDirectory .. "src/ReleaseGate.lua")
 source(modDirectory .. "src/ProStaffConstants.lua")
 source(modDirectory .. "src/ProStaffManager.lua")
 source(modDirectory .. "src/ProStaffAPI.lua")
+-- The vendored Option-Scaling resolver (C5 economy-dial reads) before the flush.
+source(modDirectory .. "src/OptionScalingResolver.lua")
+-- The Co-Op disease flush (C2): extends ProStaffManager, so it is sourced last.
+source(modDirectory .. "src/ProStaffDiseaseFlush.lua")
 
 local proStaff = ProStaffManager.new()
 getfenv(0)["g_proStaffCoOp"] = proStaff
@@ -73,4 +77,10 @@ if addConsoleCommand ~= nil then
         "consoleCommandBuy", proStaff)
     addConsoleCommand("proStaffRelease", "Release gate: show STABLE vs experimental-LOCKED systems",
         "consoleCommandRelease", proStaff)
+    addConsoleCommand("diseaseFlushQuote", "Show the Co-Op disease flush quote for the local farm",
+        "consoleCommandFlushQuote", proStaff)
+    addConsoleCommand("diseaseFlush", "Run the Co-Op disease flush for the local farm",
+        "consoleCommandFlush", proStaff)
+    addConsoleCommand("diseaseClear", "Admin hard-clear of a farm's disease (easy presets only)",
+        "consoleCommandClear", proStaff)
 end
