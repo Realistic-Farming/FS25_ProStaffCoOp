@@ -5,7 +5,7 @@
 -- Greppable by "[ProStaff]".
 -- =========================================================
 
-PSLogger = {}
+PSLogger = PSLogger or {}
 PSLogger.PREFIX = "[ProStaff] "
 PSLogger.debugEnabled = false
 
