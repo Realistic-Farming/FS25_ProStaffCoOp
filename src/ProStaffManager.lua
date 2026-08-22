@@ -11,7 +11,7 @@
 -- Guard calendar tick. The getters live in ProStaffAPI.lua (extends this class).
 -- =========================================================
 
-ProStaffManager = {}
+ProStaffManager = ProStaffManager or {}
 local ProStaffManager_mt = Class(ProStaffManager)
 
 function ProStaffManager.new()

@@ -8,7 +8,7 @@
 -- brief: L5 x L9 x L17 = 0.833). All numbers ride the balance pass.
 -- =========================================================
 
-ProStaffConstants = {}
+ProStaffConstants = ProStaffConstants or {}
 
 ProStaffConstants.MAX_LEVEL = 20
 ProStaffConstants.COST_EXPONENT = 2.2
