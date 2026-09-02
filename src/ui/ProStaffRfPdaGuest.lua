@@ -25,11 +25,12 @@
 -- ACTION_FLUSH on a pure client). No addMoney, no local debit, and
 -- requestAdminClear is not reachable from this page.
 --
--- Host-copy rule: the Esc page that loads is always the HOST mod's copy, and the
--- two action Buttons (rfPsBuyBtn / rfPsFlushBtn) exist only in this mod's door
--- copy. The card shell itself is byte-same in all ten door copies, so on a door
--- built by another suite mod the ladder still paints in full and the note names
--- the Farm Tablet Pro Staff app and the console commands as the way to act.
+-- Any host (BUILD 14:35, Wizard: build Buy / Run like the other modules): the Esc
+-- page that loads is always the HOST mod's copy, and since BUILD 14:35 every suite
+-- door copy carries the two action Buttons (rfPsBuyBtn / rfPsFlushBtn) plus the
+-- onClickPsBuy / onClickPsFlush host clicks, so Buy and Run paint and act whichever
+-- mod built the door. The only door without them is a stale copy that predates
+-- this build; there the ladder still paints in full and the note says so.
 -- =========================================================
 
 ProStaffRfPdaGuest = ProStaffRfPdaGuest or {}
@@ -570,7 +571,10 @@ local SHEET_STATIC = {
     "rfFwRuleRow5", "rfFwRuleRow6", "rfFwRuleRow7",
     "rfFwRuleCol1", "rfFwRuleCol2", "rfFwRuleCol3",
 }
-local LADDER_STATIC = { "rfPsHeaderLine1", "rfPsHeaderLine2", "rfPsRecurring", "rfPsNote" }
+local LADDER_STATIC = { "rfPsHeaderLine1", "rfPsHeaderLine2", "rfPsRecurring", "rfPsNote",
+    -- BUILD 14:35: the action strip goes dark with the ladder on hand-back, so Buy / Run
+    -- never linger on a host copy whose every-refresh hide predates this build.
+    "rfPsBuyBtn", "rfPsFlushBtn" }
 local _chromeHidden = false
 
 local function hideSheetChrome(container)
@@ -625,9 +629,10 @@ local function hidePager(container)
     end
 end
 
---- The two action Buttons exist only in this mod's door copy. On a foreign host both
---- lookups return nil and this is a no-op; the note then carries the Tablet / console route.
---- Returns true when the buttons exist (this door is Pro Staff's own copy).
+--- The two action Buttons, painted whenever the ids exist, whichever mod built the door
+--- (every suite door copy carries them since BUILD 14:35). Only a stale door copy that
+--- predates that build has neither; then this is a no-op and the note says so.
+--- Returns true when the buttons exist.
 local function paintActions(container, st, diseased)
     local buyEl = findDescendant(container, "rfPsBuyBtn")
     local flushEl = findDescendant(container, "rfPsFlushBtn")
@@ -792,17 +797,17 @@ local function paintRecurring(container, st, level)
     return diseased
 end
 
-local function paintNote(container, ownDoor)
+local function paintNote(container, hasActions)
     local parts = {}
     if _note ~= nil and _note ~= "" then
         parts[#parts + 1] = _note
     end
-    if ownDoor then
+    if hasActions then
         parts[#parts + 1] = tr("ps_rf_pda_hint_own_door",
             "Buy pays the next rung through the Co-Op (buyLevel). Run pays the disease flush quote (requestFarmFlush). Both settle on the server.")
     else
-        parts[#parts + 1] = tr("ps_rf_pda_hint_foreign_door",
-            "This door was built by another module, so Buy and Run live on the Farm Tablet Pro Staff app or the console (proStaffBuy, diseaseFlush).")
+        parts[#parts + 1] = tr("ps_rf_pda_hint_stale_door",
+            "This door copy predates the Buy and Run buttons; update the mod that built it. Until then the console commands proStaffBuy and diseaseFlush do the same job.")
     end
     local el = findOnPage(container, "rfPsNote")
     setText(el, table.concat(parts, "  "))
@@ -817,7 +822,7 @@ function ProStaffRfPdaGuest.onShow(container, lightOnly)
     hideSheetChrome(container)
     hidePager(container)
     paintSide(container, "ps_rf_pda_side_info",
-        "Pro Staff Co-Op\n\nThis screen is the Pro Staff level ladder for your farm: all twenty rungs on one page, four across and five down, in the order they are bought.\n\nThe green bar and the lit card mark the rung you are at. Lit cards below it are reached; dim cards are still ahead. Each card names the rung and says what buying it adds. Name only means the rung exists but changes nothing live; not applied means the rung is unlocked but nothing pays out yet.\n\nThe top line shows your rung, what the farm has invested and the price of the next rung; from L10 that price follows net worth, not cash on hand. The line under it carries any honesty note: net-worth pricing, Precision Farming standing soil chemistry down, or the soil test kit gate.\n\nThe bottom line shows the agronomy report subscription, the L14 fleet rebate and the disease flush quote for every diseased field you own. Buy and Run act only when this door belongs to Pro Staff; otherwise use the Farm Tablet Pro Staff app or the console.")
+        "Pro Staff Co-Op\n\nThis screen is the Pro Staff level ladder for your farm: all twenty rungs on one page, four across and five down, in the order they are bought.\n\nThe green bar and the lit card mark the rung you are at. Lit cards below it are reached; dim cards are still ahead. Each card names the rung and says what buying it adds. Name only means the rung exists but changes nothing live; not applied means the rung is unlocked but nothing pays out yet.\n\nThe top line shows your rung, what the farm has invested and the price of the next rung; from L10 that price follows net worth, not cash on hand. The line under it carries any honesty note: net-worth pricing, Precision Farming standing soil chemistry down, or the soil test kit gate.\n\nThe bottom line shows the agronomy report subscription, the L14 fleet rebate and the disease flush quote for every diseased field you own. Buy and Run sit under the ladder on every Realistic Farming door, whichever mod built it: Buy pays the next rung through the Co-Op and Run pays the disease flush quote, both settled on the server.")
 
     local st = readState()
     local emptyEl = findDescendant(container, "rfFwEmptyHint")
@@ -844,8 +849,8 @@ function ProStaffRfPdaGuest.onShow(container, lightOnly)
     paintHeader(container, st, level, invested)
     paintLadder(container, level, markLevel)
     local diseased = paintRecurring(container, st, level)
-    local ownDoor = paintActions(container, st, diseased)
-    paintNote(container, ownDoor)
+    local hasActions = paintActions(container, st, diseased)
+    paintNote(container, hasActions)
 end
 
 function ProStaffRfPdaGuest.onHide()

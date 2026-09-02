@@ -50,7 +50,7 @@
         <text name="ps_rf_pda_grp_dairy" text="Dairy" />
         <text name="ps_rf_pda_grp_soil" text="Soil" />
         <text name="ps_rf_pda_grp_wc" text="Worker Costs" />
-        <text name="ps_rf_pda_hint_foreign_door" text="This door was built by another module, so Buy and Run live on the Farm Tablet Pro Staff app or the console (proStaffBuy, diseaseFlush)." />
+        <text name="ps_rf_pda_hint_stale_door" text="This door copy predates the Buy and Run buttons; update the mod that built it. Until then the console commands proStaffBuy and diseaseFlush do the same job." />
         <text name="ps_rf_pda_hint_own_door" text="Buy pays the next rung through the Co-Op (buyLevel). Run pays the disease flush quote (requestFarmFlush). Both settle on the server." />
         <text name="ps_rf_pda_inactive" text="Inactive" />
         <text name="ps_rf_pda_max" text="MAX (L20)" />
@@ -114,7 +114,7 @@
         <text name="ps_rf_pda_row_vet" text="Vet supplies" />
         <text name="ps_rf_pda_row_wages" text="Wages" />
         <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
-        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;This screen is the Pro Staff level ladder for your farm: all twenty rungs on one page, four across and five down, in the order they are bought.&#10;&#10;The green bar and the lit card mark the rung you are at. Lit cards below it are reached; dim cards are still ahead. Each card names the rung and says what buying it adds. Name only means the rung exists but changes nothing live; not applied means the rung is unlocked but nothing pays out yet.&#10;&#10;The top line shows your rung, what the farm has invested and the price of the next rung; from L10 that price follows net worth, not cash on hand. The line under it carries any honesty note: net-worth pricing, Precision Farming standing soil chemistry down, or the soil test kit gate.&#10;&#10;The bottom line shows the agronomy report subscription, the L14 fleet rebate and the disease flush quote for every diseased field you own. Buy and Run act only when this door belongs to Pro Staff; otherwise use the Farm Tablet Pro Staff app or the console." />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;This screen is the Pro Staff level ladder for your farm: all twenty rungs on one page, four across and five down, in the order they are bought.&#10;&#10;The green bar and the lit card mark the rung you are at. Lit cards below it are reached; dim cards are still ahead. Each card names the rung and says what buying it adds. Name only means the rung exists but changes nothing live; not applied means the rung is unlocked but nothing pays out yet.&#10;&#10;The top line shows your rung, what the farm has invested and the price of the next rung; from L10 that price follows net worth, not cash on hand. The line under it carries any honesty note: net-worth pricing, Precision Farming standing soil chemistry down, or the soil test kit gate.&#10;&#10;The bottom line shows the agronomy report subscription, the L14 fleet rebate and the disease flush quote for every diseased field you own. Buy and Run sit under the ladder on every Realistic Farming door, whichever mod built it: Buy pays the next rung through the Co-Op and Run pays the disease flush quote, both settled on the server." />
         <text name="ps_rf_pda_st_active" text="Active" />
         <text name="ps_rf_pda_st_from_level" text="From L%d" />
         <text name="ps_rf_pda_st_gate_off" text="Experimental gate off" />
