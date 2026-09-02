@@ -114,7 +114,7 @@
         <text name="ps_rf_pda_row_vet" text="Vet supplies" />
         <text name="ps_rf_pda_row_wages" text="Wages" />
         <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
-        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;This screen is the Pro Staff membership glance for your farm. Each line is one item: membership, then every live modifier the ladder currently applies, then recurring money and the disease flush quote.&#10;&#10;Level is your rung on the twenty-step ladder. Invested is what the farm has paid in. Next level shows the price of the next rung; from L10 the price follows net worth, not cash on hand. Next unlock says what that rung adds.&#10;&#10;Live means the number is applied right now by Worker Costs, Soil Fertilizer or Dairy. Not applied means the rung is unlocked but nothing pays out yet. Stood down means Precision Farming has taken over soil chemistry; the ladder itself keeps running.&#10;&#10;Disease flush quotes the Co-Op treatment of every diseased field you own. Run it here when this door belongs to Pro Staff, otherwise from the Farm Tablet Pro Staff app or the console.&#10;&#10;Page with the More and Back buttons or the , and . keys." />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;This screen is the Pro Staff level ladder for your farm: all twenty rungs on one page, four across and five down, in the order they are bought.&#10;&#10;The green bar and the lit card mark the rung you are at. Lit cards below it are reached; dim cards are still ahead. Each card names the rung and says what buying it adds. Name only means the rung exists but changes nothing live; not applied means the rung is unlocked but nothing pays out yet.&#10;&#10;The top line shows your rung, what the farm has invested and the price of the next rung; from L10 that price follows net worth, not cash on hand. The line under it carries any honesty note: net-worth pricing, Precision Farming standing soil chemistry down, or the soil test kit gate.&#10;&#10;The bottom line shows the agronomy report subscription, the L14 fleet rebate and the disease flush quote for every diseased field you own. Buy and Run act only when this door belongs to Pro Staff; otherwise use the Farm Tablet Pro Staff app or the console." />
         <text name="ps_rf_pda_st_active" text="Active" />
         <text name="ps_rf_pda_st_from_level" text="From L%d" />
         <text name="ps_rf_pda_st_gate_off" text="Experimental gate off" />
@@ -148,5 +148,15 @@
         <text name="ps_rf_pda_unlock_7" text="Fertilizer x0.96, weather forecast, agronomy report sub starts" />
         <text name="ps_rf_pda_unlock_8" text="Worker fatigue x0.80" />
         <text name="ps_rf_pda_unlock_9" text="Wages x0.95 step (personnel rebate not settled)" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="Membership inactive: benefits suspended, nothing on this page is live" />
+        <text name="ps_rf_pda_hdr_invested" text="Invested %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="Soil test kit: experimental gate off" />
+        <text name="ps_rf_pda_hdr_line2_default" text="Twenty rungs: the green bar marks your rung, lit cards are reached, dim cards are ahead" />
+        <text name="ps_rf_pda_hdr_max" text="MAX (L20): ladder complete" />
+        <text name="ps_rf_pda_hdr_next" text="Next L%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="On record: L%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming active: soil chemistry stood down, ladder stays live" />
+        <text name="ps_rf_pda_hdr_rung" text="Your rung: L%d %s" />
     </texts>
 </l10n>

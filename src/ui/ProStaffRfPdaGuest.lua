@@ -1,16 +1,22 @@
 -- =========================================================
 -- FS25_ProStaffCoOp - ProStaffRfPdaGuest (Esc RF PDA Pro Staff module)
 -- =========================================================
--- BUILD 00:46 (Ash -> Bob; George CLOSED DESIGN 00:16). Source of truth:
+-- BUILD 00:46 (Ash -> Bob; George CLOSED DESIGN 00:16) built the module.
+-- BUILD 09:37 (Ash -> Bob; George CLOSED DESIGN 09:08) replaced the paged
+-- text sheet with the one-page level ladder. Source of truth:
 -- ecosystem-dev-tracking/Office Tyson/mods/FS25_ProStaffCoOp/
 -- PROSTAFF-COOP-ESC-RF-PDA-WIZARD-UI-BRIEF.md
 --
 -- Registers the "prostaff" module (title Pro Staff, order 35) on the shared Esc
--- RF registry and paints the generic framework Table sheet (rfFwColA..D,
--- rfFwRow1..8, rfFwMore, rfFwHintTable) as a paged glance: membership, live
--- modifiers grouped Worker Costs / Soil / Dairy, unlock flags, recurring money
--- and the disease flush quote. Every value on the sheet comes from the existing
--- manager getters; nothing here invents a number or a getter.
+-- RF registry and paints the twenty-card level ladder that every door XML
+-- carries (rfPsHeaderLine1/2, rfPsCard1..20, rfPsRecurring, rfPsNote): rung,
+-- name and benefit per card, the marker bar on the rung the farm is at, the
+-- membership line (rung, invested, next price or MAX), the honesty line
+-- (net-worth pricing from L10, Precision Farming stand-down, soil kit gate),
+-- and the recurring line (agronomy sub, L14 fleet rebate, disease flush quote).
+-- Every value comes from the existing manager getters; nothing here invents a
+-- number or a getter. No paging: the shared More / Back pager is hidden and
+-- onPageStep always answers false.
 --
 -- Money law on this page:
 --   Buy -> ProStaffManager:buyLevel(farmId) and nothing else.
@@ -21,9 +27,9 @@
 --
 -- Host-copy rule: the Esc page that loads is always the HOST mod's copy, and the
 -- two action Buttons (rfPsBuyBtn / rfPsFlushBtn) exist only in this mod's door
--- copy. On a door built by another suite mod the glance still paints (text sheet
--- plus the shared pager) and the hint names the Farm Tablet Pro Staff app and
--- the console commands as the way to act.
+-- copy. The card shell itself is byte-same in all ten door copies, so on a door
+-- built by another suite mod the ladder still paints in full and the note names
+-- the Farm Tablet Pro Staff app and the console commands as the way to act.
 -- =========================================================
 
 ProStaffRfPdaGuest = ProStaffRfPdaGuest or {}
@@ -32,14 +38,12 @@ local MOD_DIR = (ProStaffCoOpModDirectory or g_currentModDirectory)
 local MOD_NAME = (ProStaffCoOpModName or g_currentModName)
 local PANEL_ID = "prostaff"
 local PANEL_ORDER = 35
-local MAX_ROWS = 8
+local MAX_ROWS = 8 -- shared Table rows this module hides on show
 local SPECTATOR_FARM_ID = 0
 
 local _registered = false
 local _listenerHost = nil
-local _pageIndex = 1
-local _lastRowCount = 0
--- Result of the last Buy / Run click, painted into the hint until the next page enter.
+-- Result of the last Buy / Run click, painted into the note until the next page enter.
 local _note = nil
 
 -- ============================================================
@@ -171,55 +175,6 @@ local function stripButtonGlyph(btn)
     btn.keyGlyphSize = { 0, 0 }
     btn.iconSize = { 0, 0 }
     btn.icon = {}
-end
-
--- The column grid, applied every show. All Table guests paint into the SAME shared
--- elements, so whoever ran last leaves its geometry behind; each guest states its own
--- grid on entry. Y is held; only X and width are written. Normalised via GuiUtils.
-local FW_GRID_COLS = {
-    { "A", "10px", "280px" },
-    { "B", "310px", "280px" },
-    { "C", "610px", "220px" },
-    { "D", "850px", "280px" },
-}
-local FW_GRID_RULES = { "300px", "600px", "840px" }
-local _fwGridWarned = false
-
-local function applyFwGrid(container)
-    if GuiUtils == nil or type(GuiUtils.getNormalizedXValue) ~= "function"
-        or type(GuiUtils.getNormalizedScreenValues) ~= "function" then
-        if not _fwGridWarned then
-            _fwGridWarned = true
-            print("[ProStaff] applyFwGrid: GuiUtils normalizer absent - leaving the XML grid")
-        end
-        return
-    end
-    local function place(el, xPx, wPx)
-        if el == nil then return end
-        if type(el.setPosition) == "function" and el.position ~= nil then
-            el:setPosition(GuiUtils.getNormalizedXValue(xPx, 0), el.position[2])
-        end
-        if wPx ~= nil and type(el.setSize) == "function" and el.size ~= nil then
-            local norms = GuiUtils.getNormalizedScreenValues(wPx .. " 1px")
-            if type(norms) == "table" and norms[1] ~= nil then
-                el:setSize(norms[1], el.size[2])
-            end
-        end
-        if type(el.updateAbsolutePosition) == "function" then el:updateAbsolutePosition() end
-    end
-    for i = 1, 4 do
-        local c = FW_GRID_COLS[i]
-        if c ~= nil then
-            local letter, xPx, wPx = c[1], c[2], c[3]
-            place(findDescendant(container, "rfFwCol" .. letter), xPx, wPx)
-            for row = 1, MAX_ROWS do
-                place(findDescendant(container, "rfFwRow" .. row .. letter), xPx, wPx)
-            end
-        end
-    end
-    for i, xPx in ipairs(FW_GRID_RULES) do
-        place(findDescendant(container, "rfFwRuleCol" .. i), xPx, nil)
-    end
 end
 
 -- rfFwEmptyHint is one element behind every door; Income / Depot shrink it to bay A.
@@ -562,37 +517,116 @@ local function emptyText(st)
 end
 
 -- ============================================================
--- Painting
+-- Painting: the one-page level ladder (BUILD 09:37)
 -- ============================================================
+-- The sheet is twenty fixed cards in the door XML (rfPsCard1..20, byte-same in all ten
+-- door copies) plus two header lines, a recurring-money line and a note line. Nothing
+-- pages: every rung is on screen at once, the rung the farm is at carries the marker bar
+-- and the lit background, reached rungs sit a shade quieter and future rungs quieter
+-- still. The generic Table chrome (column headers, hairlines, rows, More, pager) is
+-- hidden on the way in and handed back the moment another module is active.
 
-local function pageCount(n)
-    if n <= 0 then return 1 end
-    return math.ceil(n / MAX_ROWS)
+local CARD_COUNT = 20
+
+-- Card palette. Bg is the card's blank-slice Bitmap, Mark the 6px bar on the left edge,
+-- Title the rung number and name, Body the two-line benefit.
+local CARD_STYLE = {
+    current = { bg = { 0.196, 0.290, 0.141, 0.95 }, mark = true,
+                title = { 1.0, 1.0, 1.0, 1.0 }, body = { 0.90, 0.92, 0.90, 1.0 } },
+    reached = { bg = { 0.145, 0.157, 0.173, 0.85 }, mark = false,
+                title = { 0.85, 0.85, 0.85, 1.0 }, body = { 0.659, 0.678, 0.702, 1.0 } },
+    future  = { bg = { 0.118, 0.129, 0.141, 0.85 }, mark = false,
+                title = { 0.55, 0.57, 0.60, 1.0 }, body = { 0.45, 0.47, 0.50, 1.0 } },
+}
+
+local function setTextColor(el, c)
+    if el ~= nil and c ~= nil and type(el.setTextColor) == "function" then
+        el:setTextColor(c[1], c[2], c[3], c[4])
+    end
 end
 
-local function paintPager(container, n, pages)
-    local prevEl = findDescendant(container, "rfFwPagePrev")
-    local nextEl = findDescendant(container, "rfFwPageNext")
-    local multi = n > MAX_ROWS and pages > 1
-    stripButtonGlyph(prevEl)
-    stripButtonGlyph(nextEl)
-    for _, el in ipairs({ prevEl, nextEl }) do
-        setVis(el, multi)
-        setDisabled(el, not multi)
+local function setImageColor(el, c)
+    if el ~= nil and c ~= nil and type(el.setImageColor) == "function" then
+        el:setImageColor(nil, c[1], c[2], c[3], c[4])
     end
-    if not multi then return end
-    if prevEl ~= nil and type(prevEl.setText) == "function" then
-        prevEl:setText(tr("ps_rf_pda_page_prev", "< Back"))
-        stripButtonGlyph(prevEl)
+end
+
+--- Element lookup that also works with no container (registry callbacks carry none).
+local function findOnPage(root, id)
+    if root ~= nil then return findDescendant(root, id) end
+    local page = getHostPage()
+    if page ~= nil and page.getDescendantById then
+        return page:getDescendantById(id)
     end
-    if nextEl ~= nil and type(nextEl.setText) == "function" then
-        nextEl:setText(string.format(tr("ps_rf_pda_page_next", "More (%d/%d) >"), _pageIndex, pages))
-        stripButtonGlyph(nextEl)
+    return nil
+end
+
+-- The shared Table chrome this module hides while it is on screen. Rows and the two
+-- pager Buttons are restated by whichever Table guest paints next; the column headers
+-- and hairlines are not, so exactly those go back on hand-back (same list as Dairy).
+local SHEET_STATIC = {
+    "rfFwColA", "rfFwColB", "rfFwColC", "rfFwColD",
+    "rfFwRuleHead", "rfFwRuleRow1", "rfFwRuleRow2", "rfFwRuleRow3", "rfFwRuleRow4",
+    "rfFwRuleRow5", "rfFwRuleRow6", "rfFwRuleRow7",
+    "rfFwRuleCol1", "rfFwRuleCol2", "rfFwRuleCol3",
+}
+local LADDER_STATIC = { "rfPsHeaderLine1", "rfPsHeaderLine2", "rfPsRecurring", "rfPsNote" }
+local _chromeHidden = false
+
+local function hideSheetChrome(container)
+    for _, id in ipairs(SHEET_STATIC) do
+        setVis(findOnPage(container, id), false)
+    end
+    for i = 1, MAX_ROWS do
+        for _, c in ipairs({ "A", "B", "C", "D" }) do
+            setVis(findOnPage(container, "rfFwRow" .. i .. c), false)
+        end
+    end
+    setText(findOnPage(container, "rfFwMore"), "")
+    setText(findOnPage(container, "rfFwTableTitle"), "")
+    setVis(findOnPage(container, "rfFwTableTitle"), false)
+    setText(findOnPage(container, "rfFwHintTable"), "")
+    setVis(findOnPage(container, "rfFwHintTable"), false)
+    _chromeHidden = true
+end
+
+local function hideLadder(container)
+    for k = 1, CARD_COUNT do
+        setVis(findOnPage(container, "rfPsCard" .. k), false)
+    end
+    for _, id in ipairs(LADDER_STATIC) do
+        setVis(findOnPage(container, id), false)
+    end
+end
+
+local function restoreSheetChrome(container)
+    for _, id in ipairs(SHEET_STATIC) do
+        setVis(findOnPage(container, id), true)
+    end
+    setVis(findOnPage(container, "rfFwHintTable"), true)
+    hideLadder(container)
+    _chromeHidden = false
+end
+
+local function handBackChromeIfLeft()
+    if not _chromeHidden then return end
+    local host = getHost()
+    if host ~= nil and host.activeModuleId == PANEL_ID then return end
+    restoreSheetChrome(nil)
+end
+
+--- The shared pager never applies here: one page, both Buttons dark and inert.
+local function hidePager(container)
+    for _, id in ipairs({ "rfFwPagePrev", "rfFwPageNext" }) do
+        local el = findOnPage(container, id)
+        stripButtonGlyph(el)
+        setVis(el, false)
+        setDisabled(el, true)
     end
 end
 
 --- The two action Buttons exist only in this mod's door copy. On a foreign host both
---- lookups return nil and this is a no-op; the hint then carries the Tablet / console route.
+--- lookups return nil and this is a no-op; the note then carries the Tablet / console route.
 --- Returns true when the buttons exist (this door is Pro Staff's own copy).
 local function paintActions(container, st, diseased)
     local buyEl = findDescendant(container, "rfPsBuyBtn")
@@ -632,95 +666,195 @@ local function paintActions(container, st, diseased)
     return true
 end
 
+--- One card. state is current / reached / future.
+local function paintCard(container, k, state)
+    local style = CARD_STYLE[state] or CARD_STYLE.future
+    local id = "rfPsCard" .. k
+    local numEl = findOnPage(container, id .. "Num")
+    local nameEl = findOnPage(container, id .. "Name")
+    local bodyEl = findOnPage(container, id .. "Benefit")
+    setText(numEl, "L" .. tostring(k))
+    setText(nameEl, rungName(k))
+    setText(bodyEl, unlockLine(k))
+    setTextColor(numEl, style.title)
+    setTextColor(nameEl, style.title)
+    setTextColor(bodyEl, style.body)
+    setImageColor(findOnPage(container, id .. "Bg"), style.bg)
+    setVis(findOnPage(container, id .. "Mark"), style.mark)
+    setVis(findOnPage(container, id), true)
+end
+
+--- All twenty cards for a level. markLevel nil paints the whole ladder quiet (inactive
+--- membership: nothing is live, so no rung is lit and no marker shows).
+local function paintLadder(container, level, markLevel)
+    for k = 1, CARD_COUNT do
+        local state = "future"
+        if markLevel ~= nil then
+            if k == markLevel then
+                state = "current"
+            elseif k < level then
+                state = "reached"
+            end
+        end
+        paintCard(container, k, state)
+    end
+end
+
+--- Header line 1: rung | invested | next (or MAX). Line 2: the honesty strip.
+local function paintHeader(container, st, level, invested)
+    local mgr, farmId = st.mgr, st.farmId
+    local maxL = maxLevel()
+    local parts = {}
+    if st.kind == "inactive" then
+        parts[#parts + 1] = string.format(tr("ps_rf_pda_hdr_on_record", "On record: L%d %s"), level, rungName(level))
+    elseif level <= 0 then
+        parts[#parts + 1] = tr("ps_rf_pda_not_member", "Not a member")
+    else
+        parts[#parts + 1] = string.format(tr("ps_rf_pda_hdr_rung", "Your rung: L%d %s"), level, rungName(level))
+    end
+    parts[#parts + 1] = string.format(tr("ps_rf_pda_hdr_invested", "Invested %s"), formatMoney(invested))
+    local honesty = {}
+    if st.kind == "inactive" then
+        parts[#parts + 1] = tr("ps_rf_pda_inactive", "Inactive")
+        honesty[#honesty + 1] = tr("ps_rf_pda_hdr_inactive", "Membership inactive: benefits suspended, nothing on this page is live")
+    elseif level >= maxL then
+        parts[#parts + 1] = tr("ps_rf_pda_hdr_max", "MAX (L20): ladder complete")
+    else
+        -- Packet item 3: getNextLevelCost is the price getter. nil here means MAX.
+        local cost = nil
+        if type(mgr.getNextLevelCost) == "function" then
+            local ok, c = pcall(mgr.getNextLevelCost, mgr, farmId)
+            if ok then cost = c end
+        end
+        local nextL = level + 1
+        parts[#parts + 1] = string.format(tr("ps_rf_pda_hdr_next", "Next L%d %s %s"), nextL, rungName(nextL),
+            cost ~= nil and formatMoney(cost) or tr("ps_rf_pda_max", "MAX (L20)"))
+        local wealthAt = (ProStaffConstants ~= nil and ProStaffConstants.WEALTH_BRACKET
+            and ProStaffConstants.WEALTH_BRACKET.ACTIVATES_AT_LEVEL) or 10
+        if nextL >= wealthAt then
+            honesty[#honesty + 1] = tr("ps_rf_pda_note_wealth", "L10+: priced on net worth, not cash on hand")
+        end
+    end
+    if st.kind == "member" then
+        -- Under Precision Farming the soil-chem getters return 1.0 by design: say so once.
+        if mgr.pfActive == true and level >= 2 then
+            honesty[#honesty + 1] = tr("ps_rf_pda_hdr_pf", "Precision Farming active: soil chemistry stood down, ladder stays live")
+        end
+        local kitLevel = (ProStaffConstants ~= nil and ProStaffConstants.FLAGS and ProStaffConstants.FLAGS.hasSoilTestKit) or 10
+        if level >= kitLevel and not callBool(mgr, "hasSoilTestKit", farmId) and not soilTestKitLive() then
+            honesty[#honesty + 1] = tr("ps_rf_pda_hdr_kit_gate", "Soil test kit: experimental gate off")
+        end
+    end
+    if #honesty == 0 then
+        honesty[#honesty + 1] = tr("ps_rf_pda_hdr_line2_default",
+            "Twenty rungs: the green bar marks your rung, lit cards are reached, dim cards are ahead")
+    end
+    local l1 = findOnPage(container, "rfPsHeaderLine1")
+    local l2 = findOnPage(container, "rfPsHeaderLine2")
+    setText(l1, table.concat(parts, "  |  "))
+    setText(l2, table.concat(honesty, "  |  "))
+    setVis(l1, true)
+    setVis(l2, true)
+end
+
+--- Footer line: agronomy sub, fleet rebate (both read only) and the flush quote.
+local function paintRecurring(container, st, level)
+    local mgr, farmId = st.mgr, st.farmId
+    local parts = {}
+    if st.kind == "member" then
+        local settings = mgr.settings or {}
+        local feeLevel = (ProStaffConstants ~= nil and ProStaffConstants.FLAGS and ProStaffConstants.FLAGS.hasForecastAccess) or 7
+        local fee = tonumber(settings.agronomyFee) or ((ProStaffConstants ~= nil and ProStaffConstants.AGRONOMY_FEE
+            and ProStaffConstants.AGRONOMY_FEE.DEFAULT) or 0)
+        local feeStatus
+        if settings.subscriptionFeeEnabled ~= true then
+            feeStatus = tr("ps_rf_pda_st_off", "Off in settings")
+        elseif level >= feeLevel then
+            feeStatus = tr("ps_rf_pda_st_active", "Active")
+        else
+            feeStatus = string.format(tr("ps_rf_pda_st_from_level", "From L%d"), feeLevel)
+        end
+        parts[#parts + 1] = string.format("%s %s (%s)", tr("ps_rf_pda_row_agronomy_fee", "Agronomy report sub"),
+            string.format(tr("ps_rf_pda_per_month_minus", "-%s / month"), formatMoney(fee)), feeStatus)
+        local fleet = (ProStaffConstants ~= nil and ProStaffConstants.L14_FLEET_REBATE) or 0
+        parts[#parts + 1] = string.format("%s %s (%s)", tr("ps_rf_pda_row_fleet_rebate", "Fleet rebate"),
+            string.format(tr("ps_rf_pda_per_month_plus", "+%s / month"), formatMoney(fleet)),
+            level >= 14 and tr("ps_rf_pda_st_active", "Active") or string.format(tr("ps_rf_pda_st_from_level", "From L%d"), 14))
+    end
+    local fr, diseased = flushRow(mgr, farmId)
+    local flushBits = { fr[1] .. ": " .. fr[2] }
+    if fr[3] ~= "" and fr[3] ~= "--" then flushBits[#flushBits + 1] = fr[3] end
+    if fr[4] ~= "" then flushBits[#flushBits + 1] = fr[4] end
+    parts[#parts + 1] = table.concat(flushBits, ", ")
+    local el = findOnPage(container, "rfPsRecurring")
+    setText(el, table.concat(parts, "  |  "))
+    setVis(el, true)
+    return diseased
+end
+
+local function paintNote(container, ownDoor)
+    local parts = {}
+    if _note ~= nil and _note ~= "" then
+        parts[#parts + 1] = _note
+    end
+    if ownDoor then
+        parts[#parts + 1] = tr("ps_rf_pda_hint_own_door",
+            "Buy pays the next rung through the Co-Op (buyLevel). Run pays the disease flush quote (requestFarmFlush). Both settle on the server.")
+    else
+        parts[#parts + 1] = tr("ps_rf_pda_hint_foreign_door",
+            "This door was built by another module, so Buy and Run live on the Farm Tablet Pro Staff app or the console (proStaffBuy, diseaseFlush).")
+    end
+    local el = findOnPage(container, "rfPsNote")
+    setText(el, table.concat(parts, "  "))
+    setVis(el, true)
+end
+
 function ProStaffRfPdaGuest.onShow(container, lightOnly)
-    applyFwGrid(container)
     restoreFwEmptyHintBox(container)
     resetFwTableTitlePos(container)
     clearHostDupes(container)
     showTableMode(container)
+    hideSheetChrome(container)
+    hidePager(container)
     paintSide(container, "ps_rf_pda_side_info",
-        "Pro Staff Co-Op\n\nThis screen is the Pro Staff membership glance for your farm. Each line is one item: membership, then every live modifier the ladder currently applies, then recurring money and the disease flush quote.\n\nLevel is your rung on the twenty-step ladder. Invested is what the farm has paid in. Next level shows the price of the next rung; from L10 the price follows net worth, not cash on hand. Next unlock says what that rung adds.\n\nLive means the number is applied right now by Worker Costs, Soil Fertilizer or Dairy. Not applied means the rung is unlocked but nothing pays out yet. Stood down means Precision Farming has taken over soil chemistry; the ladder itself keeps running.\n\nDisease flush quotes the Co-Op treatment of every diseased field you own. Run it here when this door belongs to Pro Staff, otherwise from the Farm Tablet Pro Staff app or the console.\n\nPage with the More and Back buttons or the , and . keys.")
+        "Pro Staff Co-Op\n\nThis screen is the Pro Staff level ladder for your farm: all twenty rungs on one page, four across and five down, in the order they are bought.\n\nThe green bar and the lit card mark the rung you are at. Lit cards below it are reached; dim cards are still ahead. Each card names the rung and says what buying it adds. Name only means the rung exists but changes nothing live; not applied means the rung is unlocked but nothing pays out yet.\n\nThe top line shows your rung, what the farm has invested and the price of the next rung; from L10 that price follows net worth, not cash on hand. The line under it carries any honesty note: net-worth pricing, Precision Farming standing soil chemistry down, or the soil test kit gate.\n\nThe bottom line shows the agronomy report subscription, the L14 fleet rebate and the disease flush quote for every diseased field you own. Buy and Run act only when this door belongs to Pro Staff; otherwise use the Farm Tablet Pro Staff app or the console.")
 
     local st = readState()
-    local rows = buildRows(st)
-    local n = #rows
-    _lastRowCount = n
-    local pages = pageCount(n)
-    if _pageIndex > pages then _pageIndex = pages end
-    if _pageIndex < 1 then _pageIndex = 1 end
-
-    setText(findDescendant(container, "rfFwColA"), tr("ps_rf_pda_col_item", "Item"))
-    setText(findDescendant(container, "rfFwColB"), tr("ps_rf_pda_col_value", "Value"))
-    setText(findDescendant(container, "rfFwColC"), tr("ps_rf_pda_col_status", "Status"))
-    setText(findDescendant(container, "rfFwColD"), tr("ps_rf_pda_col_note", "Note"))
-
-    local first = (_pageIndex - 1) * MAX_ROWS
-    for i = 1, MAX_ROWS do
-        local row = rows[first + i]
-        for c, letter in ipairs({ "A", "B", "C", "D" }) do
-            local el = findDescendant(container, "rfFwRow" .. i .. letter)
-            setText(el, row ~= nil and row[c] or "")
-            setVis(el, row ~= nil)
-        end
-    end
-
     local emptyEl = findDescendant(container, "rfFwEmptyHint")
-    if n == 0 then
+    if st.kind ~= "member" and st.kind ~= "inactive" then
+        hideLadder(container)
         setText(emptyEl, emptyText(st))
         setVis(emptyEl, true)
-    else
-        setText(emptyEl, "")
-        setVis(emptyEl, false)
+        paintActions(container, st, 0)
+        return
     end
+    setText(emptyEl, "")
+    setVis(emptyEl, false)
 
-    local moreEl = findDescendant(container, "rfFwMore")
-    if n > MAX_ROWS then
-        local lastRow = math.min(first + MAX_ROWS, n)
-        setText(moreEl, string.format(tr("ps_rf_pda_showing_range", "Page %d/%d - showing %d-%d of %d"),
-            _pageIndex, pages, first + 1, lastRow, n))
+    local level, invested, markLevel
+    if st.kind == "inactive" then
+        level = tonumber(st.rec.level) or 0
+        invested = st.rec.investmentTotal or 0
+        markLevel = nil
     else
-        setText(moreEl, "")
+        level = callNum(st.mgr, "getLevel", st.farmId, 0)
+        invested = (st.rec ~= nil and st.rec.investmentTotal) or 0
+        markLevel = level
     end
-    paintPager(container, n, pages)
-
-    local diseased = 0
-    if st.kind == "member" then
-        local q = flushQuote(st.mgr, st.farmId)
-        diseased = (q ~= nil and tonumber(q.diseasedCount)) or 0
-    end
+    paintHeader(container, st, level, invested)
+    paintLadder(container, level, markLevel)
+    local diseased = paintRecurring(container, st, level)
     local ownDoor = paintActions(container, st, diseased)
-
-    local hintEl = findDescendant(container, "rfFwHintTable")
-    local hintParts = {}
-    if _note ~= nil and _note ~= "" then
-        hintParts[#hintParts + 1] = _note
-    end
-    if ownDoor then
-        hintParts[#hintParts + 1] = tr("ps_rf_pda_hint_own_door",
-            "Buy pays the next rung through the Co-Op (buyLevel). Run pays the disease flush quote (requestFarmFlush). Both settle on the server.")
-    else
-        hintParts[#hintParts + 1] = tr("ps_rf_pda_hint_foreign_door",
-            "This door was built by another module, so Buy and Run live on the Farm Tablet Pro Staff app or the console (proStaffBuy, diseaseFlush).")
-    end
-    setText(hintEl, table.concat(hintParts, "  "))
-    setVis(hintEl, true)
+    paintNote(container, ownDoor)
 end
 
 function ProStaffRfPdaGuest.onHide()
-    _pageIndex = 1
     _note = nil
 end
 
---- Shared pager step. Returns true when the window moved (host then repaints).
+--- One page: the shared pager step never moves anything and never asks for a repaint.
 function ProStaffRfPdaGuest.onPageStep(delta)
-    local pages = pageCount(_lastRowCount)
-    if pages <= 1 then return false end
-    local target = _pageIndex + (tonumber(delta) or 0)
-    if target > pages then target = 1 end
-    if target < 1 then target = pages end
-    if target == _pageIndex then return false end
-    _pageIndex = target
-    return true
+    return false
 end
 
 -- ============================================================
@@ -829,13 +963,19 @@ end
 -- Registration
 -- ============================================================
 
+--- Availability poll. Every host refresh asks through getModules(), and
+--- applyHomeModuleQuiet does not notify, so this is also the belt for handing the
+--- sheet chrome back once another module is active.
 local function isAvailable()
+    if _chromeHidden then pcall(handBackChromeIfLeft) end
     return getManager() ~= nil
 end
 
+--- Registry change: selectModule / registerModule / unregisterModule all notify. If this
+--- module was the last painter and is no longer active, the sheet chrome goes back now
+--- and every ladder element goes dark so the next module's sheet is clean.
 local function onRegistryChanged()
-    -- Nothing to hand back: this guest only paints shared framework elements that the
-    -- next Table guest restates on its own show.
+    handBackChromeIfLeft()
 end
 
 local function publishHandles()
@@ -890,7 +1030,6 @@ function ProStaffRfPdaGuest.isRegistered() return _registered end
 function ProStaffRfPdaGuest.reset()
     _registered = false
     _listenerHost = nil
-    _pageIndex = 1
-    _lastRowCount = 0
+    _chromeHidden = false
     _note = nil
 end
