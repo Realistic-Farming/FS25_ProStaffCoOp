@@ -649,9 +649,9 @@
                             <Button profile="RF_FwPagerBtn" id="rfFwPageNext" position="1010px -396px" size="120px 24px"
                                     visible="false" text="" onClick="onClickRfFwPageNext"/>
                             <!-- BUILD 00:46 (Pro Staff Esc door): Pro Staff action strip, bottom-left of the
-                                 same band the pager parks on (the pager is bottom-right). Present ONLY in
-                                 the FS25_ProStaffCoOp door copy: the page that loads is always the host
-                                 mod's copy, so these can only paint while Pro Staff built the door. Hidden
+                                 same band the pager parks on (the pager is bottom-right). BUILD 14:35: the
+                                 same two Buttons sit in every suite door copy now (onClickPsBuy / onClickPsFlush
+                                 vendored into every host Lua), so they paint whichever mod built the door. Hidden
                                  by default and hidden again on every refresh by _syncHostGuestChrome;
                                  ProStaffRfPdaGuest.onShow alone shows them, for the member farm only.
                                  Buy routes to ProStaffManager:buyLevel and Run to
