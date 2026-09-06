@@ -13,8 +13,8 @@
 -- SoilPDAScreen coexists untouched.
 -- =========================================================
 
-local MOD_DIR = (ProStaffCoOpModDirectory or g_currentModDirectory)
-local MOD_NAME = (ProStaffCoOpModName or g_currentModName)
+local MOD_DIR = (SeasonalCropStressModDirectory or g_currentModDirectory)
+local MOD_NAME = (SeasonalCropStressModName or g_currentModName)
 
 -- Soft log when sourced from a non-Soil joiner (SoilLogger may be absent).
 -- BUILD 17:08: the stub's signature must match Soil's real logger, which is DOT-called
@@ -213,6 +213,7 @@ local function mdResolve(bare, name)
             MDMPriceFormat = "FS25_MarketDynamics",
             CsRfPdaGuest = "FS25_SeasonalCropStress",
             NpcRfPdaGuest = "FS25_NPCFavor",
+            ProStaffRfPdaGuest = "FS25_ProStaffCoOp",
         }
         local env = g_modEnvironments[OWNER[name] or "FS25_MarketDynamics"]
         if env ~= nil and env[name] ~= nil then
@@ -1246,11 +1247,11 @@ function RfPdaMenuPage:_refreshDotLegend(panels, activeIndex)
         end
         table.insert(shorts, title)
     end
-    local joined = table.concat(shorts, " - ")
+    local joined = table.concat(shorts, " Â· ")
     if joined == "" then
         joined = tr("rf_pda_module_soil_short", "Soil")
     end
-    self.rfDotLegend:setText(string.format("%d/%d - %s", activeIndex or 1, n, joined))
+    self.rfDotLegend:setText(string.format("%d/%d Â· %s", activeIndex or 1, n, joined))
 end
 
 --- Match SoilMapHooks / Map: grow/shrink from first seed RoundCorner in the BoxLayout.
@@ -1648,9 +1649,10 @@ function RfPdaMenuPage:_syncHostGuestChrome(activeId)
     -- onShow, which runs after this. That ordering is what stops the pager following the
     -- player from NPC Favor onto Income or Dairy - those guests do not know the buttons
     -- exist and would never have hidden them.
-    -- BUILD 00:46 (Pro Staff Esc door): the two Pro Staff action Buttons exist only in this
-    -- door copy and ride the same every-refresh hide; ProStaffRfPdaGuest.onShow is the only
-    -- thing that turns them back on, so they never follow the player onto another module.
+    -- BUILD 14:35 (Pro Staff Buy / Run on any Esc host): the two Pro Staff action Buttons
+    -- sit in every door copy now and ride the same every-refresh hide; ProStaffRfPdaGuest.onShow
+    -- is the only thing that turns them back on, so they never follow the player onto
+    -- another module (the rule the Pro Staff host copy has had since BUILD 00:46).
     -- BUILD 00:06 (George CLOSED DESIGN 23:12): rfFwPagePrev / rfFwPageNext are gone from the door
     -- XML (the NPC tables scroll), so only the Pro Staff strip rides this loop now. The ids are
     -- looked up nil-safe, so a door copy that still carries the pager just hides it as before.
@@ -2596,21 +2598,25 @@ function RfPdaMenuPage:onClickRfFwPageNext()
 end
 
 -- ---------------------------------------------------------------------------
--- BUILD 00:46 (Pro Staff Esc door): the two Pro Staff action Buttons.
--- Both live only in this mod's door copy (xml/gui/RfPdaMenuPage.xml, rfPsBuyBtn and
--- rfPsFlushBtn), so they can only paint while FS25_ProStaffCoOp is the mod that built
--- menuRealisticFarming. The host owns nothing but the click: the guest decides farm,
--- membership and count, and it calls ProStaffManager:buyLevel or
--- ProStaffDiseaseFlush:requestFarmFlush and nothing else. No money is moved here.
+-- BUILD 14:35 (Pro Staff Buy / Run on any Esc host): the two Pro Staff action Buttons
+-- (rfPsBuyBtn / rfPsFlushBtn) sit in every door copy, and the Esc page that loads is
+-- always the HOST mod's copy, so the click names must exist here too or the buttons
+-- never fire (rain-key lesson). Vendored from the Pro Staff host copy (BUILD 00:46);
+-- the guest is reached through the mission handle first, then resolved across mod
+-- environments, because bare ProStaffRfPdaGuest is nil in every env but Pro Staff's.
+-- The host owns nothing but the click: the guest decides farm, membership and count,
+-- and it calls ProStaffManager:buyLevel or ProStaffManager:requestFarmFlush and
+-- nothing else. No money is moved here.
 -- ---------------------------------------------------------------------------
 
---- The Pro Staff guest, reached through the mission handle first so a registry built by
---- another mod's older RfEscModules copy cannot strand the click.
+--- The Pro Staff guest: mission handle first (a registry built by another mod's older
+--- RfEscModules copy cannot strand the click), then the cross-env resolver.
 local function _psGuest()
     if g_currentMission ~= nil and g_currentMission.proStaffRfPdaGuest ~= nil then
         return g_currentMission.proStaffRfPdaGuest
     end
-    return ProStaffRfPdaGuest
+    return (type(mdResolve) == "function")
+            and mdResolve(ProStaffRfPdaGuest, "ProStaffRfPdaGuest") or ProStaffRfPdaGuest
 end
 
 function RfPdaMenuPage:onClickPsBuy()
@@ -2892,9 +2898,11 @@ local function _csPivotRemote(self, action)
     end
 end
 
--- [SCS-046] Rain-key clicks take the same host-then-resolved-guest route as the
--- pivot remotes above, but a DIFFERENT handler: these become
--- CropStressRainKeyCommandEvent, never a pivot remote action.
+-- [SCS-046] Rain-key clicks. Same host-then-resolved-guest route as the pivot
+-- remotes below, but a DIFFERENT handler: these become
+-- CropStressRainKeyCommandEvent, never a pivot remote action. Vendored into
+-- every host copy of this page, because the Esc page that actually loads is the
+-- HOST mod's copy and a button whose onClick name is missing there never paints.
 local function _csRainKey(self, token)
     -- [BUILD 15:58] The pcall stays, because a UI click must never take the
     -- menu down, but the error is PRINTED now. A bare pcall here is what made
