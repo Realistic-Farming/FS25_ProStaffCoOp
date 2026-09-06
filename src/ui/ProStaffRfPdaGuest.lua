@@ -127,13 +127,19 @@ local function fmtMult(v)
     return "x" .. s
 end
 
-local function paintSide(container, key, fallback)
+--- BUILD 17:58: extra (optional) is appended after the teach; the honesty notes that used to
+--- sit on rfPsHeaderLine2 land here, so they stay readable while the cards fill the bay.
+local function paintSide(container, key, fallback, extra)
     setVis(findDescendant(container, "wcSideInfoShell"), false)
     setVis(findDescendant(container, "mdSideInfoShell"), false)
     local shell = findDescendant(container, "rfSideInfoShell")
     local body = findDescendant(container, "rfSideInfoBody")
     setVis(shell, true)
-    setText(body, tr(key, fallback))
+    local text = tr(key, fallback)
+    if type(extra) == "string" and extra ~= "" then
+        text = text .. "\n\n" .. extra
+    end
+    setText(body, text)
 end
 
 local function refreshFwAbs(container)
@@ -162,6 +168,91 @@ local function showTableMode(container)
     setVis(findDescendant(container, "rfFwStatusBlock"), false)
     setVis(findDescendant(container, "rfFwTableBlock"), true)
     refreshFwAbs(container)
+end
+
+-- ============================================================
+-- BUILD 00:06 (LAW Wizard Esc overlay-chip buttons 2026-09-05, George CLOSED DESIGN 23:12): every
+-- created button on this page paints as a vanilla key chip, the CsRfPdaGuest setPivotBtn /
+-- renderPivotChip / wirePivotChipPaint chain vendored. Idle = dark plate, lime text; latched =
+-- lime plate, dark text; gated = grey, no lime. The Button keeps its own hit box and onClick
+-- (RF_CsPivotBtn: buttonActivate chrome, hideKeyboardGlyph, no global-action trigger, so SPACE
+-- never confirms); its TextElement text stays "" so the chip is the only paint.
+-- ============================================================
+-- The engine text colour setter, captured here (no file-local helper shadows the name in this
+-- file, but the 20:36 Market crash is the reason this is never called by its bare name).
+local engineSetTextColor = setTextColor
+local CHIP_TEXT = { 0.22323, 0.40724, 0.00368 }
+local CHIP_BG = { 0.00913, 0.01033, 0.00651 }
+local CHIP_GATED_TEXT = { 0.62, 0.64, 0.66 }
+local CHIP_GATED_BG = { 0.06, 0.06, 0.065 }
+
+--- Store the chip state on the Button and blank its text. enabled=false paints the grey chip
+--- and disables the Button; latched inverts the live chip.
+local function setChipBtn(el, label, enabled, latched)
+    if el == nil then return end
+    if type(el.setText) == "function" then el:setText("") end
+    el.rfChipLabel = label
+    el.rfChipEnabled = enabled and true or false
+    el.rfChipLatched = latched and true or false
+    if type(el.setDisabled) == "function" then el:setDisabled(not enabled) end
+end
+
+local function renderChip(el, overlay)
+    local label = el.rfChipLabel
+    if label == nil or label == "" then return end
+    if el.absPosition == nil or el.absSize == nil or el.visible == false then return end
+    local height = el.absSize[2] * 0.72
+    if height <= 0 then return end
+    local t, b, ta, ba
+    if el.rfChipEnabled and el.rfChipLatched then
+        t, b, ta, ba = CHIP_BG, CHIP_TEXT, 1.0, 1.0
+    elseif el.rfChipEnabled then
+        t, b, ta, ba = CHIP_TEXT, CHIP_BG, 1.0, 1.0
+    else
+        t, b, ta, ba = CHIP_GATED_TEXT, CHIP_GATED_BG, 0.45, 0.55
+    end
+    overlay:setColor(t[1], t[2], t[3], ta, b[1], b[2], b[3], ba)
+    local width = overlay:getButtonWidth(label, height)
+    local x = el.absPosition[1] + (el.absSize[1] - width) * 0.5
+    local y = el.absPosition[2] + (el.absSize[2] - height) * 0.5
+    overlay:renderButton(label, x, y, height, true)
+end
+
+--- Wrap one already-visible parent's draw once (guard flag on the element) so the listed chips
+--- repaint every frame the parent draws. lookup(root, id) resolves each Button. The colour reset
+--- at the end is the ENGINE global captured above, never an element helper.
+local function wireChipPaint(parent, ids, flag, lookup)
+    if parent == nil or parent[flag] then return end
+    parent[flag] = true
+    local prevDraw = parent.draw
+    function parent:draw(...)
+        if prevDraw ~= nil then prevDraw(self, ...) end
+        local idm = g_inputDisplayManager
+        if idm == nil or type(idm.getKeyboardKeyOverlay) ~= "function" then return end
+        local overlay = idm:getKeyboardKeyOverlay()
+        if overlay == nil or type(overlay.renderButton) ~= "function" then return end
+        for _, id in ipairs(ids) do
+            local el = lookup(self, id)
+            if el ~= nil then
+                pcall(renderChip, el, overlay)
+            end
+        end
+        setTextBold(false)
+        setTextAlignment(RenderText.ALIGN_LEFT)
+        setTextVerticalAlignment(RenderText.VERTICAL_ALIGN_BASELINE)
+        if type(engineSetTextColor) == "function" then
+            engineSetTextColor(1, 1, 1, 1)
+        end
+    end
+end
+
+local PS_CHIP_IDS = { "rfPsBuyBtn", "rfPsFlushBtn" }
+
+--- The wrap goes on rfFwTableBlock, the bay the ladder and the action strip sit in.
+local function wirePsChipPaint(container)
+    wireChipPaint(findDescendant(container, "rfFwTableBlock"), PS_CHIP_IDS, "_rfPsChipWired", function(root, id)
+        return findDescendant(root, id) or findDescendant(container, id)
+    end)
 end
 
 local function stripButtonGlyph(btn)
@@ -649,30 +740,30 @@ local function paintActions(container, st, diseased)
     end
     local level = callNum(st.mgr, "getLevel", st.farmId, 0)
     local atMax = level >= maxLevel()
+    -- BUILD 00:06 (overlay-chip law): the labels ride the chip; gated grey when there is
+    -- nothing to buy / flush. Same strings as before.
     if buyEl ~= nil then
         if atMax then
-            setText(buyEl, tr("ps_rf_pda_btn_buy_max", "At MAX"))
+            setChipBtn(buyEl, tr("ps_rf_pda_btn_buy_max", "At MAX"), false, false)
         else
-            setText(buyEl, string.format(tr("ps_rf_pda_btn_buy", "Buy L%d"), level + 1))
+            setChipBtn(buyEl, string.format(tr("ps_rf_pda_btn_buy", "Buy L%d"), level + 1), true, false)
         end
-        setDisabled(buyEl, atMax)
         stripButtonGlyph(buyEl)
     end
     if flushEl ~= nil then
         local canFlush = (diseased or 0) > 0
         if canFlush then
-            setText(flushEl, tr("ps_rf_pda_btn_flush", "Run disease flush"))
+            setChipBtn(flushEl, tr("ps_rf_pda_btn_flush", "Run disease flush"), true, false)
         else
-            setText(flushEl, tr("ps_rf_pda_btn_flush_none", "No flush needed"))
+            setChipBtn(flushEl, tr("ps_rf_pda_btn_flush_none", "No flush needed"), false, false)
         end
-        setDisabled(flushEl, not canFlush)
         stripButtonGlyph(flushEl)
     end
     return true
 end
 
 --- One card. state is current / reached / future.
-local function paintCard(container, k, state)
+local function paintCard(container, k, state, mgr, farmId)
     local style = CARD_STYLE[state] or CARD_STYLE.future
     local id = "rfPsCard" .. k
     local numEl = findOnPage(container, id .. "Num")
@@ -684,6 +775,20 @@ local function paintCard(container, k, state)
     setTextColor(numEl, style.title)
     setTextColor(nameEl, style.title)
     setTextColor(bodyEl, style.body)
+    -- BUILD 17:58 (George CLOSED DESIGN 17:25): the rung's price at the farm's current net worth,
+    -- from the existing ProStaffManager:levelCost(farmId, targetLevel) (nil past MAX -> "--").
+    -- The same getter feeds the header's Next price, so the two always agree. Stale doors
+    -- without rfPsCardNExtra get a nil element and the helpers no-op.
+    local extraEl = findOnPage(container, id .. "Extra")
+    local costText = "--"
+    if mgr ~= nil and farmId ~= nil and type(mgr.levelCost) == "function" then
+        local ok, c = pcall(mgr.levelCost, mgr, farmId, k)
+        if ok and type(c) == "number" then
+            costText = formatMoney(c)
+        end
+    end
+    setText(extraEl, string.format(tr("ps_rf_pda_card_cost", "Cost: %s"), costText))
+    setTextColor(extraEl, style.body)
     setImageColor(findOnPage(container, id .. "Bg"), style.bg)
     setVis(findOnPage(container, id .. "Mark"), style.mark)
     setVis(findOnPage(container, id), true)
@@ -691,7 +796,7 @@ end
 
 --- All twenty cards for a level. markLevel nil paints the whole ladder quiet (inactive
 --- membership: nothing is live, so no rung is lit and no marker shows).
-local function paintLadder(container, level, markLevel)
+local function paintLadder(container, level, markLevel, mgr, farmId)
     for k = 1, CARD_COUNT do
         local state = "future"
         if markLevel ~= nil then
@@ -701,7 +806,7 @@ local function paintLadder(container, level, markLevel)
                 state = "reached"
             end
         end
-        paintCard(container, k, state)
+        paintCard(container, k, state, mgr, farmId)
     end
 end
 
@@ -757,9 +862,12 @@ local function paintHeader(container, st, level, invested)
     local l1 = findOnPage(container, "rfPsHeaderLine1")
     local l2 = findOnPage(container, "rfPsHeaderLine2")
     setText(l1, table.concat(parts, "  |  "))
-    setText(l2, table.concat(honesty, "  |  "))
+    -- BUILD 17:58: line 2 stays declared but hidden; the cards took its band. The honesty
+    -- strip is returned and lands at the end of the side info (onShow).
+    setText(l2, "")
     setVis(l1, true)
-    setVis(l2, true)
+    setVis(l2, false)
+    return honesty
 end
 
 --- Footer line: agronomy sub, fleet rebate (both read only) and the flush quote.
@@ -791,6 +899,11 @@ local function paintRecurring(container, st, level)
     if fr[3] ~= "" and fr[3] ~= "--" then flushBits[#flushBits + 1] = fr[3] end
     if fr[4] ~= "" then flushBits[#flushBits + 1] = fr[4] end
     parts[#parts + 1] = table.concat(flushBits, ", ")
+    -- BUILD 17:58: rfPsNote is gone from the door XML (the cards took its band), so the Buy /
+    -- Run result rides this line. A stale door that still has rfPsNote keeps it there (paintNote).
+    if findOnPage(container, "rfPsNote") == nil and _note ~= nil and _note ~= "" then
+        parts[#parts + 1] = _note
+    end
     local el = findOnPage(container, "rfPsRecurring")
     setText(el, table.concat(parts, "  |  "))
     setVis(el, true)
@@ -814,6 +927,9 @@ local function paintNote(container, hasActions)
     setVis(el, true)
 end
 
+-- BUILD 17:58: the side teach, painted once on show and again with the honesty notes appended.
+local SIDE_FALLBACK = "Pro Staff Co-Op\n\nThis screen is the Pro Staff level ladder for your farm: all twenty rungs on one page, four across and five down, in the order they are bought.\n\nThe green bar and the lit card mark the rung you are at. Lit cards below it are reached; dim cards are still ahead. Each card names the rung and says what buying it adds. Name only means the rung exists but changes nothing live; not applied means the rung is unlocked but nothing pays out yet.\n\nThe top line shows your rung, what the farm has invested and the price of the next rung; from L10 that price follows net worth, not cash on hand. Each card also shows the rung's price at your current net worth (Invested is what you actually paid). Honesty notes - net-worth pricing, Precision Farming standing soil chemistry down, the soil test kit gate - are listed at the end of this box.\n\nThe bottom line shows the agronomy report subscription, the L14 fleet rebate and the disease flush quote for every diseased field you own. Buy and Run sit under the ladder on every Realistic Farming door, whichever mod built it: Buy pays the next rung through the Co-Op and Run pays the disease flush quote, both settled on the server."
+
 function ProStaffRfPdaGuest.onShow(container, lightOnly)
     restoreFwEmptyHintBox(container)
     resetFwTableTitlePos(container)
@@ -821,8 +937,8 @@ function ProStaffRfPdaGuest.onShow(container, lightOnly)
     showTableMode(container)
     hideSheetChrome(container)
     hidePager(container)
-    paintSide(container, "ps_rf_pda_side_info",
-        "Pro Staff Co-Op\n\nThis screen is the Pro Staff level ladder for your farm: all twenty rungs on one page, four across and five down, in the order they are bought.\n\nThe green bar and the lit card mark the rung you are at. Lit cards below it are reached; dim cards are still ahead. Each card names the rung and says what buying it adds. Name only means the rung exists but changes nothing live; not applied means the rung is unlocked but nothing pays out yet.\n\nThe top line shows your rung, what the farm has invested and the price of the next rung; from L10 that price follows net worth, not cash on hand. The line under it carries any honesty note: net-worth pricing, Precision Farming standing soil chemistry down, or the soil test kit gate.\n\nThe bottom line shows the agronomy report subscription, the L14 fleet rebate and the disease flush quote for every diseased field you own. Buy and Run sit under the ladder on every Realistic Farming door, whichever mod built it: Buy pays the next rung through the Co-Op and Run pays the disease flush quote, both settled on the server.")
+    wirePsChipPaint(container)
+    paintSide(container, "ps_rf_pda_side_info", SIDE_FALLBACK)
 
     local st = readState()
     local emptyEl = findDescendant(container, "rfFwEmptyHint")
@@ -846,8 +962,11 @@ function ProStaffRfPdaGuest.onShow(container, lightOnly)
         invested = (st.rec ~= nil and st.rec.investmentTotal) or 0
         markLevel = level
     end
-    paintHeader(container, st, level, invested)
-    paintLadder(container, level, markLevel)
+    local honesty = paintHeader(container, st, level, invested)
+    paintLadder(container, level, markLevel, st.mgr, st.farmId)
+    if type(honesty) == "table" and #honesty > 0 then
+        paintSide(container, "ps_rf_pda_side_info", SIDE_FALLBACK, table.concat(honesty, "\n"))
+    end
     local diseased = paintRecurring(container, st, level)
     local hasActions = paintActions(container, st, diseased)
     paintNote(container, hasActions)
