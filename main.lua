@@ -39,6 +39,7 @@ source(modDirectory .. "src/ProStaffDiseaseFlush.lua")
 source(modDirectory .. "src/ui/RfEscModules.lua")
 source(modDirectory .. "src/ui/RfPdaMenuPage.lua")
 source(modDirectory .. "src/ui/RfEscBootstrap.lua")
+source(modDirectory .. "src/ui/PsGuideDialog.lua")
 source(modDirectory .. "src/ui/ProStaffRfPdaGuest.lua")
 
 local proStaff = ProStaffManager.new()
