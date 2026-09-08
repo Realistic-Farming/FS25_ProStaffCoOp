@@ -672,6 +672,9 @@ local function hideSheetChrome(container)
     for _, id in ipairs(SHEET_STATIC) do
         setVis(findOnPage(container, id), false)
     end
+    -- BUILD 17:21: the shared table's rows now live in this list, so the list goes dark with the
+    -- rest of the sheet. Nil-safe: an older door copy has no such id.
+    setVis(findOnPage(container, "rfFwSheetBox"), false)
     for i = 1, MAX_ROWS do
         for _, c in ipairs({ "A", "B", "C", "D" }) do
             setVis(findOnPage(container, "rfFwRow" .. i .. c), false)
@@ -1108,6 +1111,15 @@ local function publishHandles()
     if g_currentMission ~= nil then g_currentMission.proStaffRfPdaGuest = ProStaffRfPdaGuest end
 end
 
+--- BUILD 19:15: the Esc Help footer asks whichever module is showing to open its own guide, so
+--- every companion ships and owns its own help instead of borrowing Soil's.
+---@param container table|nil
+function ProStaffRfPdaGuest.onOpenHelp(container)
+    if PsGuideDialog ~= nil and type(PsGuideDialog.show) == "function" then
+        PsGuideDialog.show()
+    end
+end
+
 function ProStaffRfPdaGuest.tryRegister()
     if RfEscBootstrap ~= nil and type(RfEscBootstrap.ensureDoor) == "function" then
         if MOD_DIR == nil then
@@ -1117,6 +1129,12 @@ function ProStaffRfPdaGuest.tryRegister()
                 profilesXml = MOD_DIR .. "xml/gui/rfEscProfiles.xml",
                 iconPath = "textures/ui/menuIcon.dds",
             })
+            -- BUILD 19:15 (George CLOSED DESIGN 18:55 item 5): load this mod's Field Guide at the
+            -- same moment the door itself loads. A GUI loaded from a mod directory later, once the
+            -- mod's own file system context has closed, fails to open.
+            if PsGuideDialog ~= nil and type(PsGuideDialog.register) == "function" then
+                pcall(PsGuideDialog.register, MOD_DIR)
+            end
             if not doorOk then print("[ProStaff] ProStaffRfPdaGuest: WARNING ensureDoor failed (will retry)") end
         end
     end
@@ -1133,6 +1151,7 @@ function ProStaffRfPdaGuest.tryRegister()
             onShow = ProStaffRfPdaGuest.onShow,
             onHide = ProStaffRfPdaGuest.onHide,
             onPageStep = ProStaffRfPdaGuest.onPageStep,
+            onOpenHelp = ProStaffRfPdaGuest.onOpenHelp,
         })
         if ok then
             _registered = true
