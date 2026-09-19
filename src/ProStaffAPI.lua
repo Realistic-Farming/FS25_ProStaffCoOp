@@ -99,6 +99,12 @@ function ProStaffManager:hasMarketIntel(farmId)      return self:_flag("hasMarke
 function ProStaffManager:hasForecastAccess(farmId)   return self:_flag("hasForecastAccess", farmId) end
 function ProStaffManager:hasPredictiveControl(farmId) return self:_flag("hasPredictiveControl", farmId) end
 function ProStaffManager:hasEarlyWarning(farmId)     return self:_flag("hasEarlyWarning", farmId) end
+-- [RSF-F166] DC-19 herd advisory rung. An ORDINARY flag, deliberately: it
+-- copies hasMarketIntel exactly and does NOT copy hasSoilTestKit, whose
+-- extra ReleaseGate lock belongs to SF-40 alone. ProStaff owns the
+-- entitlement and nothing else; DairyCore does the barn admission and owns
+-- every fact. This grants no data, no wire and no economic effect.
+function ProStaffManager:hasHerdAdvisory(farmId)    return self:_flag("hasHerdAdvisory", farmId) end
 -- [SF-40] Read the Dirt member 4 (K half): a farm at level 10 gets exact
 -- numbers (N/P/K/pH) and the precise disease name at the kneel instead of
 -- bands and pressure labels. Gates DISPLAY PRECISION only, never data
