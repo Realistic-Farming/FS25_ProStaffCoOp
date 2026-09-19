@@ -105,7 +105,13 @@ T.eq("zero farm resolves the same way (deliberate)",      advisory(m, 0),   true
 -- _farmLevel returns 0. Nil is the only one that fails OPEN.
 T.eq("unknown numeric id fails closed",  advisory(m, 99),      false)
 T.eq("string id fails closed",           advisory(m, "1"),     false)
-T.eq("nan id fails closed",              advisory(m, 0/0),     false)
+-- The NaN row asserts the VALUE is a NaN before relying on it. Bob's MINOR on
+-- this file: nothing here proved 0/0 produced one, and a row that assumes its
+-- own fixture is the shape it needs is the same move as a guard that works by
+-- coincidence. Cheap to prove, so prove it.
+local nan = 0 / 0
+T.ok("the NaN fixture really is NaN", nan ~= nan)
+T.eq("nan id fails closed",              advisory(m, nan),     false)
 T.eq("inf id fails closed",              advisory(m, math.huge), false)
 T.eq("non-integer id fails closed",      advisory(m, 1.5),     false)
 
