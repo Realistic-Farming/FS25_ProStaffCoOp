@@ -182,7 +182,15 @@ T.eq("the scout names the acting farm on each field (#998's standing test)", sco
 T.eq("both diseased fields end up discovered", tostring(fieldData[101].discovered) .. "/" .. tostring(fieldData[103].discovered), "true/true")
 T.ok("the fallback chemical is a different one, so the row above cannot pass on no reveal", ProStaffConstants.DISEASE_FLUSH.FALLBACK_CHEM ~= "TEBUCONAZOLE")
 
+T.eq("fee booked once", #debits, 1)
+T.eq("fee amount 1368+918", debits[1].amount, -2286)
+T.eq("fee farmId", debits[1].farmId, 1)
+T.eq("fee MoneyType.OTHER", debits[1].moneyType, MoneyType.OTHER)
+T.eq("guard cleared after run", m.flushGuard[1], nil)
+
 -- ── An older SoilFertilizer: scoutField(fieldId) drops the extra argument ────
+-- (below the fee rows on purpose: this block's resetLogs() clears the debits, and the
+-- fee rows above pin the MAIN flush's fee; Bob's review of #22)
 resetLogs()
 local newScout = soilSystem.scoutField
 soilSystem.scoutField = function(self, fieldId)
@@ -195,11 +203,6 @@ T.eq("old-signature SF: flush treat ok", m:_doFarmFlush(1), true)
 T.eq("old-signature SF: the report's chemical still applied", applied[1].chemId, "TEBUCONAZOLE")
 T.eq("old-signature SF: two scouts, the extra argument dropped", #scoutLog .. "/" .. tostring(scoutLog[1].farmId), "2/nil")
 soilSystem.scoutField = newScout
-T.eq("fee booked once", #debits, 1)
-T.eq("fee amount 1368+918", debits[1].amount, -2286)
-T.eq("fee farmId", debits[1].farmId, 1)
-T.eq("fee MoneyType.OTHER", debits[1].moneyType, MoneyType.OTHER)
-T.eq("guard cleared after run", m.flushGuard[1], nil)
 
 -- ── Per-farm concurrent guard blocks a double-fire ───────────────────────────
 resetLogs()
