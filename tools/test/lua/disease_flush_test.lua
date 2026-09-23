@@ -5,6 +5,13 @@
 -- surface is source-verified against the current SF clone:
 -- getScoutReport / scoutField / applyNamedFungicide / debugSetDisease).
 --
+-- The SF stub models RSF-F231 (SoilFertilizer #998): scoutField(fieldId, actingFarmId)
+-- refuses a farm that does not own the field, using the same farmland table the
+-- stubbed g_farmlandManager returns, and reveals the field only on success;
+-- getScoutReport carries no recommendation until the field is discovered. The
+-- recommendation (TEBUCONAZOLE) differs from FALLBACK_CHEM on purpose, so a flush
+-- that scouts nothing cannot pass as one that did.
+--
 -- Covers: the C5 fee formula, the preset character + the off-diagonal policy
 -- (preset picks character, Economy dial picks cost, never cross-checked), the
 -- spine-absent fail-safe, the economy-dial multiplier through the real resolver,
@@ -23,20 +30,39 @@ local fieldData = {
   [102] = { activeDisease = nil,                 diseasePressure = 5,  fungicideDaysLeft = 0 },
   [103] = { activeDisease = "late_blight",        diseasePressure = 30, fungicideDaysLeft = 0 },
 }
+--- #998's standing test, on the same farmland table the stubbed g_farmlandManager returns.
+local function farmOwns(farmId, fieldId)
+  if type(farmId) ~= "number" then return false end
+  for _, id in ipairs(g_farmlandManager:getOwnedFarmlandIdsByFarmId(farmId)) do
+    if id == fieldId then return true end
+  end
+  return false
+end
 local soilSystem = {
   fieldData = fieldData,
+  -- The report as SF gates it: no recommendation until the field is discovered.
   getScoutReport = function(_, fieldId)
     local f = fieldData[fieldId]
     if not f or not f.activeDisease then
-      return { fieldId = fieldId, enabled = true, discovered = true,
+      return { fieldId = fieldId, enabled = true, discovered = f ~= nil and f.discovered == true,
                pressure = (f and f.diseasePressure) or 0, tier = "none" }
+    end
+    if not f.discovered then
+      return { fieldId = fieldId, enabled = true, discovered = false, pressure = f.diseasePressure, tier = "unknown" }
     end
     return { fieldId = fieldId, enabled = true, discovered = true,
              pressure = f.diseasePressure, tier = "mild", diseaseId = f.activeDisease,
-             recommend = { best = "PROPICONAZOLE", second = "TEBUCONAZOLE", budget = "MANCOZEB" } }
+             recommend = { best = "TEBUCONAZOLE", second = "PROPICONAZOLE", budget = "MANCOZEB" } }
   end,
-  scoutField = function(self, fieldId)
-    scoutLog[#scoutLog + 1] = fieldId
+  -- scoutField(fieldId, actingFarmId) as of #998: refused without standing, the
+  -- gated report returned; discovered only on success.
+  scoutField = function(self, fieldId, farmId)
+    scoutLog[#scoutLog + 1] = { fieldId = fieldId, farmId = farmId }
+    if not farmOwns(farmId, fieldId) then
+      return self:getScoutReport(fieldId)
+    end
+    local f = fieldData[fieldId]
+    if f then f.discovered = true end
     return self:getScoutReport(fieldId)
   end,
   applyNamedFungicide = function(_, fieldId, chemId, opts)
@@ -76,11 +102,12 @@ local mission = {
 }
 local prevMission, prevFarmland, prevFarm = g_currentMission, g_farmlandManager, g_farmManager
 g_currentMission = mission
-g_farmlandManager = { getOwnedFarmlandIdsByFarmId = function() return { 101, 102, 103 } end }
+g_farmlandManager = { getOwnedFarmlandIdsByFarmId = function(_, farmId) if farmId == 1 then return { 101, 102, 103 } end return {} end }
 g_farmManager = { getFarmById = function() return { money = 50000, getBalance = function() return 50000 end } end }
 
 local function resetLogs()
   applied, cleared, scoutLog, debits = {}, {}, {}, {}
+  -- a fresh, undiscovered world each time
   fieldData[101] = { activeDisease = "septoria_tritici", diseasePressure = 60, fungicideDaysLeft = 0 }
   fieldData[102] = { activeDisease = nil,                 diseasePressure = 5,  fungicideDaysLeft = 0 }
   fieldData[103] = { activeDisease = "late_blight",       diseasePressure = 30, fungicideDaysLeft = 0 }
@@ -146,16 +173,36 @@ T.eq("flush treat ok", m:_doFarmFlush(1), true)
 T.eq("treated 2 fields", #applied, 2)
 T.eq("field 101 treated first (asc)", applied[1].fieldId, 101)
 T.eq("field 103 treated second", applied[2].fieldId, 103)
-T.eq("treat chem from report", applied[1].chemId, "PROPICONAZOLE")
+T.eq("treat chem from report, not the fallback (the flush scouted with standing)", applied[1].chemId .. "/" .. applied[2].chemId, "TEBUCONAZOLE/TEBUCONAZOLE")
 T.eq("treat charge false", applied[1].opts.charge, false)
 T.eq("treat passes farmId", applied[1].opts.farmId, 1)
 T.eq("no clear calls on treat", #cleared, 0)
 T.eq("scouted before treating", #scoutLog, 2)
+T.eq("the scout names the acting farm on each field (#998's standing test)", scoutLog[1].fieldId .. ":" .. tostring(scoutLog[1].farmId) .. "," .. scoutLog[2].fieldId .. ":" .. tostring(scoutLog[2].farmId), "101:1,103:1")
+T.eq("both diseased fields end up discovered", tostring(fieldData[101].discovered) .. "/" .. tostring(fieldData[103].discovered), "true/true")
+T.ok("the fallback chemical is a different one, so the row above cannot pass on no reveal", ProStaffConstants.DISEASE_FLUSH.FALLBACK_CHEM ~= "TEBUCONAZOLE")
+
 T.eq("fee booked once", #debits, 1)
 T.eq("fee amount 1368+918", debits[1].amount, -2286)
 T.eq("fee farmId", debits[1].farmId, 1)
 T.eq("fee MoneyType.OTHER", debits[1].moneyType, MoneyType.OTHER)
 T.eq("guard cleared after run", m.flushGuard[1], nil)
+
+-- ── An older SoilFertilizer: scoutField(fieldId) drops the extra argument ────
+-- (below the fee rows on purpose: this block's resetLogs() clears the debits, and the
+-- fee rows above pin the MAIN flush's fee; Bob's review of #22)
+resetLogs()
+local newScout = soilSystem.scoutField
+soilSystem.scoutField = function(self, fieldId)
+  scoutLog[#scoutLog + 1] = { fieldId = fieldId }
+  local f = fieldData[fieldId]
+  if f then f.discovered = true end
+  return self:getScoutReport(fieldId)
+end
+T.eq("old-signature SF: flush treat ok", m:_doFarmFlush(1), true)
+T.eq("old-signature SF: the report's chemical still applied", applied[1].chemId, "TEBUCONAZOLE")
+T.eq("old-signature SF: two scouts, the extra argument dropped", #scoutLog .. "/" .. tostring(scoutLog[1].farmId), "2/nil")
+soilSystem.scoutField = newScout
 
 -- ── Per-farm concurrent guard blocks a double-fire ───────────────────────────
 resetLogs()
