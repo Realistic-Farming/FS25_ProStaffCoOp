@@ -340,7 +340,7 @@ function ProStaffManager:_farmDiseaseReport(farmId)
     return out
 end
 
---- The farmland ids a farm owns (base-game, verified at FarmlandManager.lua:494).
+--- The farmland ids a farm owns (base-game, verified at FarmlandManager.lua:332-340).
 ---@param farmId number
 ---@return table list of farmland ids
 function ProStaffManager:_farmFieldIds(farmId)
@@ -373,6 +373,12 @@ end
 --- The grounded TREAT: scout (the Co-Op report reveals the infection, a designed
 --- ProStaff reveal path) then applyNamedFungicide with charge=false so SF never
 --- bills its own per-hectare chem price. Server-only wrapper.
+--- The scout names the acting farm: SoilFertilizer's scoutField(fieldId, actingFarmId)
+--- (RSF-F231, SoilFertilitySystem.lua:2564 at #998) refuses a caller with no standing
+--- and returns the gated report, so without it the paid flush revealed nothing and
+--- fell back to the broad-spectrum chemical. Every flushed field is one the farm owns
+--- (getOwnedFarmlandIdsByFarmId above), so the farm has standing; an older
+--- SoilFertilizer's scoutField(fieldId) drops the extra argument.
 ---@param fieldId number
 ---@param farmId number
 ---@return boolean ok
@@ -380,7 +386,7 @@ function ProStaffManager:_sfTreat(fieldId, farmId)
     local soil = self:_sfSystem()
     if soil == nil or type(soil.applyNamedFungicide) ~= "function" then return false end
     if type(soil.scoutField) == "function" then
-        pcall(soil.scoutField, soil, fieldId)
+        pcall(soil.scoutField, soil, fieldId, farmId)
     end
     local chemId = self:_chemFor(fieldId, soil)
     local ok, applyOk = pcall(soil.applyNamedFungicide, soil, fieldId, chemId, {
