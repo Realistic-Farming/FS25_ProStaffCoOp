@@ -32,133 +32,133 @@
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
         <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
-        <text name="ps_rf_pda_blurb" text="Co-Op membership, live modifiers, recurring money and the disease flush quote." />
-        <text name="ps_rf_pda_btn_buy" text="Buy L%d" />
-        <text name="ps_rf_pda_btn_buy_max" text="At MAX" />
-        <text name="ps_rf_pda_btn_flush" text="Run disease flush" />
-        <text name="ps_rf_pda_btn_flush_none" text="No flush needed" />
+        <text name="ps_rf_pda_blurb" text="合作社會員資格、生效中的修正值、定期收支與病害處理報價。" />
+        <text name="ps_rf_pda_btn_buy" text="購買 L%d" />
+        <text name="ps_rf_pda_btn_buy_max" text="已達最高" />
+        <text name="ps_rf_pda_btn_flush" text="執行病害處理" />
+        <text name="ps_rf_pda_btn_flush_none" text="無需處理" />
         <text name="ps_rf_pda_col_item" text="Item" />
         <text name="ps_rf_pda_col_note" text="Note" />
         <text name="ps_rf_pda_col_status" text="Status" />
         <text name="ps_rf_pda_col_value" text="Value" />
-        <text name="ps_rf_pda_empty_absent" text="Pro Staff Co-Op manager not found. Install and enable FS25_ProStaffCoOp." />
-        <text name="ps_rf_pda_empty_disabled" text="Pro Staff is disabled in settings. Nothing on this page is live." />
-        <text name="ps_rf_pda_empty_spectator" text="Spectator view: join a farm to see membership. No purchase or flush from here." />
-        <text name="ps_rf_pda_flush_clear" text="Clear" />
-        <text name="ps_rf_pda_flush_fields" text="%d field(s)" />
-        <text name="ps_rf_pda_flush_none" text="No diseased fields" />
-        <text name="ps_rf_pda_flush_treat" text="Treat" />
-        <text name="ps_rf_pda_grp_dairy" text="Dairy" />
-        <text name="ps_rf_pda_grp_soil" text="Soil" />
+        <text name="ps_rf_pda_empty_absent" text="找不到 Pro Staff Co-Op 管理器。請安裝並啟用 FS25_ProStaffCoOp。" />
+        <text name="ps_rf_pda_empty_disabled" text="Pro Staff 已在設定中停用。此頁面上的內容都未生效。" />
+        <text name="ps_rf_pda_empty_spectator" text="旁觀模式：加入農場才能查看會員資格。無法從這裡購買或處理。" />
+        <text name="ps_rf_pda_flush_clear" text="健康" />
+        <text name="ps_rf_pda_flush_fields" text="%d 塊田地" />
+        <text name="ps_rf_pda_flush_none" text="沒有染病的田地" />
+        <text name="ps_rf_pda_flush_treat" text="處理" />
+        <text name="ps_rf_pda_grp_dairy" text="乳業" />
+        <text name="ps_rf_pda_grp_soil" text="土壤" />
         <text name="ps_rf_pda_grp_wc" text="Worker Costs" />
-        <text name="ps_rf_pda_hint_stale_door" text="This door copy predates the Buy and Run buttons; update the mod that built it. Until then the console commands proStaffBuy and diseaseFlush do the same job." />
-        <text name="ps_rf_pda_hint_own_door" text="Buy pays the next rung through the Co-Op (buyLevel). Run pays the disease flush quote (requestFarmFlush). Both settle on the server." />
-        <text name="ps_rf_pda_inactive" text="Inactive" />
-        <text name="ps_rf_pda_max" text="MAX (L20)" />
-        <text name="ps_rf_pda_msg_bought" text="Bought L%d for %s." />
-        <text name="ps_rf_pda_msg_disabled" text="Denied: Pro Staff is disabled in settings." />
-        <text name="ps_rf_pda_msg_error" text="Purchase failed: %s" />
-        <text name="ps_rf_pda_msg_flush_busy" text="A flush is already running for this farm." />
-        <text name="ps_rf_pda_msg_flush_denied" text="Flush denied (%s)." />
-        <text name="ps_rf_pda_msg_flush_done" text="Flush done on %d field(s) for %s." />
-        <text name="ps_rf_pda_msg_flush_error" text="Flush failed: %s" />
-        <text name="ps_rf_pda_msg_flush_funds" text="Denied: insufficient funds for the flush quote." />
-        <text name="ps_rf_pda_msg_flush_none" text="No diseased fields; nothing to flush." />
-        <text name="ps_rf_pda_msg_flush_requested" text="Flush requested; the server settles it." />
-        <text name="ps_rf_pda_msg_funds" text="Denied: insufficient funds for %s." />
-        <text name="ps_rf_pda_msg_inactive" text="Membership inactive; nothing to buy." />
-        <text name="ps_rf_pda_msg_inactive_flush" text="Membership inactive; no flush." />
-        <text name="ps_rf_pda_msg_max" text="Already at MAX (L20)." />
-        <text name="ps_rf_pda_msg_no_api" text="buyLevel is not available on this manager." />
-        <text name="ps_rf_pda_msg_no_flush_api" text="requestFarmFlush is not available on this manager." />
-        <text name="ps_rf_pda_msg_no_network" text="Denied: no NetworkSync on this client, so the request cannot reach the server." />
-        <text name="ps_rf_pda_msg_requested" text="Requested L%d; the server settles it." />
-        <text name="ps_rf_pda_not_member" text="Not a member" />
-        <text name="ps_rf_pda_note_constant_only" text="Constant only; no payout" />
-        <text name="ps_rf_pda_note_inactive" text="Nothing on this page is live" />
-        <text name="ps_rf_pda_note_max" text="Ladder complete" />
-        <text name="ps_rf_pda_note_no_payout" text="L20; no payout behind it yet" />
-        <text name="ps_rf_pda_note_no_quote" text="Soil Fertilizer disease layer not found" />
-        <text name="ps_rf_pda_note_not_built" text="L14; designed, not built" />
-        <text name="ps_rf_pda_note_pf" text="Precision Farming active; ladder stays live" />
-        <text name="ps_rf_pda_note_wealth" text="L10+: priced on net worth, not cash on hand" />
+        <text name="ps_rf_pda_hint_stale_door" text="這個門的副本比「購買」和「執行」按鈕更舊；請更新建立它的模組。在那之前，主控台指令 proStaffBuy 和 diseaseFlush 可以做同樣的事。" />
+        <text name="ps_rf_pda_hint_own_door" text="「購買」透過合作社支付下一階的費用（buyLevel）。「執行」支付病害處理報價（requestFarmFlush）。兩者都在伺服器上結算。" />
+        <text name="ps_rf_pda_inactive" text="未啟用" />
+        <text name="ps_rf_pda_max" text="最高 (L20)" />
+        <text name="ps_rf_pda_msg_bought" text="已購買 L%d，費用 %s。" />
+        <text name="ps_rf_pda_msg_disabled" text="已拒絕：Pro Staff 已在設定中停用。" />
+        <text name="ps_rf_pda_msg_error" text="購買失敗：%s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="這個農場已有處理正在進行。" />
+        <text name="ps_rf_pda_msg_flush_denied" text="處理遭拒（%s）。" />
+        <text name="ps_rf_pda_msg_flush_done" text="已處理 %d 塊田地，費用 %s。" />
+        <text name="ps_rf_pda_msg_flush_error" text="處理失敗：%s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="已拒絕：資金不足以支付處理報價。" />
+        <text name="ps_rf_pda_msg_flush_none" text="沒有染病的田地；無需處理。" />
+        <text name="ps_rf_pda_msg_flush_requested" text="已申請處理；由伺服器結算。" />
+        <text name="ps_rf_pda_msg_funds" text="已拒絕：資金不足以支付 %s。" />
+        <text name="ps_rf_pda_msg_inactive" text="會員資格未啟用；沒有可購買的項目。" />
+        <text name="ps_rf_pda_msg_inactive_flush" text="會員資格未啟用；不進行處理。" />
+        <text name="ps_rf_pda_msg_max" text="已達最高（L20）。" />
+        <text name="ps_rf_pda_msg_no_api" text="此管理器沒有提供 buyLevel。" />
+        <text name="ps_rf_pda_msg_no_flush_api" text="此管理器沒有提供 requestFarmFlush。" />
+        <text name="ps_rf_pda_msg_no_network" text="已拒絕：此用戶端沒有 NetworkSync，因此請求無法送達伺服器。" />
+        <text name="ps_rf_pda_msg_requested" text="已申請 L%d；由伺服器結算。" />
+        <text name="ps_rf_pda_not_member" text="非會員" />
+        <text name="ps_rf_pda_note_constant_only" text="僅為常數；無支付" />
+        <text name="ps_rf_pda_note_inactive" text="此頁面上的內容都未生效" />
+        <text name="ps_rf_pda_note_max" text="階梯已完成" />
+        <text name="ps_rf_pda_note_no_payout" text="L20；目前尚無支付" />
+        <text name="ps_rf_pda_note_no_quote" text="找不到 Soil Fertilizer 的病害圖層" />
+        <text name="ps_rf_pda_note_not_built" text="L14；已設計，尚未實作" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming 啟用中；階梯仍然生效" />
+        <text name="ps_rf_pda_note_wealth" text="L10 以上：價格依淨資產計算，而非現金" />
         <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
         <text name="ps_rf_pda_page_prev" text="&lt; Back" />
-        <text name="ps_rf_pda_per_month_minus" text="-%s / month" />
-        <text name="ps_rf_pda_per_month_plus" text="+%s / month" />
-        <text name="ps_rf_pda_row_agronomy_fee" text="Agronomy report sub" />
-        <text name="ps_rf_pda_row_bulk_procurement" text="Bulk procurement" />
-        <text name="ps_rf_pda_row_bulk_transport" text="Bulk transport" />
-        <text name="ps_rf_pda_row_dairy_logistics" text="Dairy logistics" />
-        <text name="ps_rf_pda_row_early_warning" text="Early warning" />
-        <text name="ps_rf_pda_row_effectiveness" text="Effectiveness" />
-        <text name="ps_rf_pda_row_fatigue" text="Worker fatigue" />
-        <text name="ps_rf_pda_row_fert" text="Fertilizer cost" />
-        <text name="ps_rf_pda_row_fleet_rebate" text="Fleet rebate" />
-        <text name="ps_rf_pda_row_flush" text="Disease flush" />
-        <text name="ps_rf_pda_row_forecast" text="Weather forecast" />
-        <text name="ps_rf_pda_row_fung_cost" text="Fungicide cost" />
-        <text name="ps_rf_pda_row_fung_effect" text="Fungicide effect" />
-        <text name="ps_rf_pda_row_invested" text="Invested" />
-        <text name="ps_rf_pda_row_level" text="Level" />
-        <text name="ps_rf_pda_row_level_on_record" text="Level on record" />
-        <text name="ps_rf_pda_row_market_intel" text="Market intel" />
-        <text name="ps_rf_pda_row_membership" text="Membership" />
-        <text name="ps_rf_pda_row_next_level" text="Next level" />
-        <text name="ps_rf_pda_row_next_unlock" text="Next unlock" />
-        <text name="ps_rf_pda_row_personnel_rebate" text="Personnel rebate" />
-        <text name="ps_rf_pda_row_predictive" text="Predictive control" />
-        <text name="ps_rf_pda_row_recovery" text="Fatigue recovery" />
-        <text name="ps_rf_pda_row_soil_chem" text="Soil chemistry" />
-        <text name="ps_rf_pda_row_soil_kit" text="Soil test kit" />
-        <text name="ps_rf_pda_row_spray" text="Spray cost" />
-        <text name="ps_rf_pda_row_vet" text="Vet supplies" />
-        <text name="ps_rf_pda_row_wages" text="Wages" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / 月" />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / 月" />
+        <text name="ps_rf_pda_row_agronomy_fee" text="農藝報告訂閱" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="大宗採購" />
+        <text name="ps_rf_pda_row_bulk_transport" text="散裝運輸" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="乳業物流" />
+        <text name="ps_rf_pda_row_early_warning" text="早期預警" />
+        <text name="ps_rf_pda_row_effectiveness" text="效率" />
+        <text name="ps_rf_pda_row_fatigue" text="工人疲勞" />
+        <text name="ps_rf_pda_row_fert" text="肥料成本" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="車隊回饋" />
+        <text name="ps_rf_pda_row_flush" text="病害處理" />
+        <text name="ps_rf_pda_row_forecast" text="天氣預報" />
+        <text name="ps_rf_pda_row_fung_cost" text="殺菌劑成本" />
+        <text name="ps_rf_pda_row_fung_effect" text="殺菌劑效果" />
+        <text name="ps_rf_pda_row_invested" text="已投資" />
+        <text name="ps_rf_pda_row_level" text="等級" />
+        <text name="ps_rf_pda_row_level_on_record" text="登記等級" />
+        <text name="ps_rf_pda_row_market_intel" text="市場情報" />
+        <text name="ps_rf_pda_row_membership" text="會員資格" />
+        <text name="ps_rf_pda_row_next_level" text="下一等級" />
+        <text name="ps_rf_pda_row_next_unlock" text="下一個解鎖" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="人事回饋" />
+        <text name="ps_rf_pda_row_predictive" text="預測控制" />
+        <text name="ps_rf_pda_row_recovery" text="疲勞恢復" />
+        <text name="ps_rf_pda_row_soil_chem" text="土壤化學" />
+        <text name="ps_rf_pda_row_soil_kit" text="土壤檢測套件" />
+        <text name="ps_rf_pda_row_spray" text="噴灑成本" />
+        <text name="ps_rf_pda_row_vet" text="獸醫用品" />
+        <text name="ps_rf_pda_row_wages" text="工資" />
         <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
-        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;This screen is the Pro Staff level ladder for your farm: all twenty rungs on one page, four across and five down, in the order they are bought.&#10;&#10;The green bar and the lit card mark the rung you are at. Lit cards below it are reached; dim cards are still ahead. Each card names the rung and says what buying it adds. Name only means the rung exists but changes nothing live; not applied means the rung is unlocked but nothing pays out yet.&#10;&#10;The top line shows your rung, what the farm has invested and the price of the next rung; from L10 that price follows net worth, not cash on hand. Each card also shows the rung's price at your current net worth (Invested is what you actually paid). Honesty notes - net-worth pricing, Precision Farming standing soil chemistry down, the soil test kit gate - are listed at the end of this box.&#10;&#10;The bottom line shows the agronomy report subscription, the L14 fleet rebate and the disease flush quote for every diseased field you own. Buy and Run sit under the ladder on every Realistic Farming door, whichever mod built it: Buy pays the next rung through the Co-Op and Run pays the disease flush quote, both settled on the server." />
-        <text name="ps_rf_pda_st_active" text="Active" />
-        <text name="ps_rf_pda_st_from_level" text="From L%d" />
-        <text name="ps_rf_pda_st_gate_off" text="Experimental gate off" />
-        <text name="ps_rf_pda_st_live" text="Live" />
-        <text name="ps_rf_pda_st_locked" text="Locked" />
-        <text name="ps_rf_pda_st_member" text="Member" />
-        <text name="ps_rf_pda_st_no_quote" text="No quote" />
-        <text name="ps_rf_pda_st_not_applied" text="Not applied" />
-        <text name="ps_rf_pda_st_not_live" text="Not live" />
-        <text name="ps_rf_pda_st_off" text="Off in settings" />
-        <text name="ps_rf_pda_st_stood_down" text="Stood down" />
-        <text name="ps_rf_pda_st_suspended" text="Benefits suspended" />
-        <text name="ps_rf_pda_st_unlocked" text="Unlocked" />
-        <text name="ps_rf_pda_unlock_1" text="Office Access (name only, no live effect)" />
-        <text name="ps_rf_pda_unlock_10" text="Soil test kit (experimental gate), pricing moves to net worth" />
-        <text name="ps_rf_pda_unlock_11" text="Fatigue recovery x1.75" />
-        <text name="ps_rf_pda_unlock_12" text="Fertilizer x0.94, fungicide effect x1.10, vet supplies x0.90" />
-        <text name="ps_rf_pda_unlock_13" text="Spray cost x0.92, worker fatigue x0.65" />
-        <text name="ps_rf_pda_unlock_14" text="Fleet rebate 2500 per month (bulk transport not applied)" />
-        <text name="ps_rf_pda_unlock_15" text="Fertilizer x0.925, bulk procurement x1.05, market intel" />
-        <text name="ps_rf_pda_unlock_16" text="Curriculum Admin (name only, no live effect)" />
-        <text name="ps_rf_pda_unlock_17" text="Wages x0.90 step" />
-        <text name="ps_rf_pda_unlock_18" text="Fatigue recovery x1.85, predictive control" />
-        <text name="ps_rf_pda_unlock_19" text="Effectiveness x1.05" />
-        <text name="ps_rf_pda_unlock_2" text="Fertilizer x0.985, fungicide x0.95, vet supplies x0.95" />
-        <text name="ps_rf_pda_unlock_20" text="Effectiveness x1.15 (early warning not applied)" />
-        <text name="ps_rf_pda_unlock_3" text="Dairy logistics x1.05" />
-        <text name="ps_rf_pda_unlock_4" text="Worker fatigue x0.90" />
-        <text name="ps_rf_pda_unlock_5" text="Wages x0.975 step" />
-        <text name="ps_rf_pda_unlock_6" text="Loading Automation (name only, no live effect)" />
-        <text name="ps_rf_pda_unlock_7" text="Fertilizer x0.96, weather forecast, agronomy report sub starts" />
-        <text name="ps_rf_pda_unlock_8" text="Worker fatigue x0.80" />
-        <text name="ps_rf_pda_unlock_9" text="Wages x0.95 step (personnel rebate not settled)" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;這個畫面是你農場的 Pro Staff 等級階梯：二十階全部在同一頁，橫向四個、縱向五排，依購買順序排列。&#10;&#10;綠色橫條和亮起的卡片標示你所在的階。下方亮起的卡片已達成；暗淡的卡片還在前方。每張卡片都寫出該階的名稱，以及購買後會增加什麼。「僅名稱」表示該階存在，但不改變任何生效中的內容；「未套用」表示該階已解鎖，但目前尚未支付任何東西。&#10;&#10;上方一行顯示你所在的階、農場已投資的金額，以及下一階的價格；從 L10 起，這個價格依淨資產而非現金計算。每張卡片也會顯示該階在你目前淨資產下的價格（已投資是你實際支付的金額）。誠實說明 - 依淨資產定價、Precision Farming 停用土壤化學、土壤檢測套件的鎖定 - 列在此框的最後。&#10;&#10;下方一行顯示農藝報告訂閱、L14 的車隊回饋，以及你擁有的每塊染病田地的病害處理報價。「購買」和「執行」位於每一扇 Realistic Farming 門的階梯下方，無論是哪個模組建立的：「購買」透過合作社支付下一階，「執行」支付病害處理報價，兩者都在伺服器上結算。" />
+        <text name="ps_rf_pda_st_active" text="啟用" />
+        <text name="ps_rf_pda_st_from_level" text="自 L%d 起" />
+        <text name="ps_rf_pda_st_gate_off" text="實驗鎖定已關閉" />
+        <text name="ps_rf_pda_st_live" text="生效中" />
+        <text name="ps_rf_pda_st_locked" text="已鎖定" />
+        <text name="ps_rf_pda_st_member" text="會員" />
+        <text name="ps_rf_pda_st_no_quote" text="無報價" />
+        <text name="ps_rf_pda_st_not_applied" text="未套用" />
+        <text name="ps_rf_pda_st_not_live" text="未生效" />
+        <text name="ps_rf_pda_st_off" text="已在設定中關閉" />
+        <text name="ps_rf_pda_st_stood_down" text="已停用" />
+        <text name="ps_rf_pda_st_suspended" text="權益已暫停" />
+        <text name="ps_rf_pda_st_unlocked" text="已解鎖" />
+        <text name="ps_rf_pda_unlock_1" text="辦公室存取（僅名稱，無效果）" />
+        <text name="ps_rf_pda_unlock_10" text="土壤檢測套件（實驗鎖定），價格改依淨資產計算" />
+        <text name="ps_rf_pda_unlock_11" text="疲勞恢復 x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="肥料 x0.94、殺菌劑效果 x1.10、獸醫用品 x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="噴灑成本 x0.92、工人疲勞 x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="車隊回饋每月 2500（散裝運輸未套用）" />
+        <text name="ps_rf_pda_unlock_15" text="肥料 x0.925、大宗採購 x1.05、市場情報" />
+        <text name="ps_rf_pda_unlock_16" text="課程管理（僅名稱，無效果）" />
+        <text name="ps_rf_pda_unlock_17" text="工資 x0.90（階段）" />
+        <text name="ps_rf_pda_unlock_18" text="疲勞恢復 x1.85、預測控制" />
+        <text name="ps_rf_pda_unlock_19" text="效率 x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="肥料 x0.985、殺菌劑 x0.95、獸醫用品 x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="效率 x1.15（早期預警未套用）" />
+        <text name="ps_rf_pda_unlock_3" text="乳業物流 x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="工人疲勞 x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="工資 x0.975（階段）" />
+        <text name="ps_rf_pda_unlock_6" text="裝載自動化（僅名稱，無效果）" />
+        <text name="ps_rf_pda_unlock_7" text="肥料 x0.96、天氣預報、開始農藝報告訂閱" />
+        <text name="ps_rf_pda_unlock_8" text="工人疲勞 x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="工資 x0.95（階段；人事回饋未結算）" />
         <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
-        <text name="ps_rf_pda_hdr_inactive" text="Membership inactive: benefits suspended, nothing on this page is live" />
-        <text name="ps_rf_pda_hdr_invested" text="Invested %s" />
-        <text name="ps_rf_pda_hdr_kit_gate" text="Soil test kit: experimental gate off" />
-        <text name="ps_rf_pda_hdr_line2_default" text="Twenty rungs: the green bar marks your rung, lit cards are reached, dim cards are ahead" />
-        <text name="ps_rf_pda_hdr_max" text="MAX (L20): ladder complete" />
-        <text name="ps_rf_pda_hdr_next" text="Next L%d %s %s" />
-        <text name="ps_rf_pda_hdr_on_record" text="On record: L%d %s" />
-        <text name="ps_rf_pda_hdr_pf" text="Precision Farming active: soil chemistry stood down, ladder stays live" />
-        <text name="ps_rf_pda_hdr_rung" text="Your rung: L%d %s" />
-        <text name="ps_rf_pda_card_cost" text="[EN] Cost: %s" />
+        <text name="ps_rf_pda_hdr_inactive" text="會員資格未啟用：權益已暫停，此頁面上的內容都未生效" />
+        <text name="ps_rf_pda_hdr_invested" text="已投資 %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="土壤檢測套件：實驗鎖定已關閉" />
+        <text name="ps_rf_pda_hdr_line2_default" text="二十階：綠色橫條標示你所在的階，亮起的卡片已達成，暗淡的在前方" />
+        <text name="ps_rf_pda_hdr_max" text="最高 (L20)：階梯已完成" />
+        <text name="ps_rf_pda_hdr_next" text="下一階 L%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="登記：L%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming 啟用中：土壤化學已停用，階梯仍然生效" />
+        <text name="ps_rf_pda_hdr_rung" text="你所在的階：L%d %s" />
+        <text name="ps_rf_pda_card_cost" text="費用：%s" />
     </texts>
 </l10n>
