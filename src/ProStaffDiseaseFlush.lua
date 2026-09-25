@@ -55,7 +55,8 @@ function ProStaffManager:requestFarmFlush(farmId)
     end
     local ns = self:_getNetworkSync()
     if ns ~= nil and ns.requestAction ~= nil then
-        ns:requestAction(ProStaffConstants.ACTION_FLUSH, { farmId = farmId })
+        -- A positional array, as the transport carries it (see buyLevel).
+        ns:requestAction(ProStaffConstants.ACTION_FLUSH, { farmId })
         return true, "requested"
     end
     PSLogger.warning("requestFarmFlush: no server authority and NetworkSync absent - cannot flush on a pure client")
@@ -74,7 +75,7 @@ function ProStaffManager:requestAdminClear(farmId)
     end
     local ns = self:_getNetworkSync()
     if ns ~= nil and ns.requestAction ~= nil then
-        ns:requestAction(ProStaffConstants.ACTION_CLEAR, { farmId = farmId })
+        ns:requestAction(ProStaffConstants.ACTION_CLEAR, { farmId })
         return true, "requested"
     end
     PSLogger.warning("requestAdminClear: no server authority and NetworkSync absent")
@@ -459,25 +460,29 @@ function ProStaffManager:bindDiseaseFlush()
     ns:registerAction(ProStaffConstants.ACTION_FLUSH, {
         adminOnly = false,
         onAction = function(userId, args)
-            if type(args) ~= "table" or args.farmId == nil then return end
+            -- args[1] is the farm, a positive number (see ACTION_BUY: farm 0 is a
+            -- spectator's, which getFarmByUserId answers with).
+            local farmId = type(args) == "table" and args[1] or nil
+            if type(farmId) ~= "number" or farmId <= 0 then return end
             -- Ownership: a client may only flush a farm it belongs to (same rule
             -- as ACTION_BUY). Without it a client could send another farm's id
             -- and spend that farm's money.
             local farm = g_farmManager ~= nil and g_farmManager:getFarmByUserId(userId) or nil
-            if farm == nil or farm.farmId ~= args.farmId then
+            if farm == nil or farm.farmId ~= farmId then
                 PSLogger.warning("ACTION_FLUSH rejected: userId %s is not a member of farm %s",
-                    tostring(userId), tostring(args.farmId))
+                    tostring(userId), tostring(farmId))
                 return
             end
-            self:_doFarmFlush(args.farmId)
+            self:_doFarmFlush(farmId)
         end,
     })
 
     ns:registerAction(ProStaffConstants.ACTION_CLEAR, {
         adminOnly = true,
         onAction = function(_userId, args)
-            if type(args) ~= "table" or args.farmId == nil then return end
-            self:_doAdminClear(args.farmId)
+            local farmId = type(args) == "table" and args[1] or nil
+            if type(farmId) ~= "number" or farmId <= 0 then return end
+            self:_doAdminClear(farmId)
         end,
     })
 

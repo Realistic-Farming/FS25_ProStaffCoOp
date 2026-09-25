@@ -188,7 +188,11 @@ function ProStaffManager:buyLevel(farmId)
     end
     local ns = self:_getNetworkSync()
     if ns ~= nil and ns.requestAction ~= nil then
-        ns:requestAction(ProStaffConstants.ACTION_BUY, { farmId = farmId })
+        -- A POSITIONAL ARRAY: NetworkSync's action event writes args[1..#args]
+        -- (RealisticFarmingSyncEvent.lua:209-216), so a keyed table has length zero and
+        -- arrives empty; that is how a pure client's purchase silently did nothing
+        -- (PLAYER-REPORTS row 199). A host never sees it: requestAction applies in memory.
+        ns:requestAction(ProStaffConstants.ACTION_BUY, { farmId })
         return true
     end
     PSLogger.warning("buyLevel: no server authority and NetworkSync absent - cannot purchase on a pure client")
@@ -337,19 +341,23 @@ function ProStaffManager:_bindBedrock()
             ns:registerAction(ProStaffConstants.ACTION_BUY, {
                 adminOnly = false,
                 onAction = function(userId, args)
-                    if type(args) ~= "table" or args.farmId == nil then return end
+                    -- The farm is args[1] (the sender's positional array), a positive number:
+                    -- getFarmByUserId answers farm 0 for a user in no farm (FarmManager.lua:201),
+                    -- so a spectator's 0 would otherwise pass the ownership equality below.
+                    local farmId = type(args) == "table" and args[1] or nil
+                    if type(farmId) ~= "number" or farmId <= 0 then return end
                     -- Ownership: buying a level is not an admin act (adminOnly stays false),
                     -- but a client may only buy for a farm it belongs to. Without this a
                     -- client on a server could send ACTION_BUY carrying another farm's id
                     -- and spend that farm's money. The requester's userId is resolved by
                     -- NetworkSync; require it to map to the target farm.
                     local farm = g_farmManager ~= nil and g_farmManager:getFarmByUserId(userId) or nil
-                    if farm == nil or farm.farmId ~= args.farmId then
+                    if farm == nil or farm.farmId ~= farmId then
                         PSLogger.warning("ACTION_BUY rejected: userId %s is not a member of farm %s",
-                            tostring(userId), tostring(args.farmId))
+                            tostring(userId), tostring(farmId))
                         return
                     end
-                    self:_doPurchase(args.farmId)
+                    self:_doPurchase(farmId)
                 end,
             })
         end
