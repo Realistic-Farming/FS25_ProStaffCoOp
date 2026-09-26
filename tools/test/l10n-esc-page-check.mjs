@@ -1,4 +1,5 @@
-// l10n-esc-page-check.mjs: the Pro Staff Esc page's text in all 25 locales (MAINTENANCE row 142, part 1).
+// l10n-esc-page-check.mjs: the Pro Staff Esc page's text and the 20 level names in all 25 locales
+// (MAINTENANCE row 142, parts 1 and 2).
 //
 // The page (src/ui/ProStaffRfPdaGuest.lua) draws every text through its own tr(key, fallback)
 // (:54), which asks this mod's i18n. Until row 142 the 25 non-English files carried English
@@ -40,7 +41,9 @@ const NO_READER = {
   ps_rf_pda_page_prev: "no reader anywhere in src/ (Bob's intake, row 142): not translated",
   ps_rf_pda_showing_range: "no reader anywhere in src/ (Bob's intake, row 142): not translated",
 };
-const OWN = new Set(["ps_tab_title", "ps_rf_pda_grp_wc"]); // the product's name; the WorkerCosts mod's name
+// ps_rf_pda_grp_wc left OWN in part 2: it now carries FarmTablet's own translated name for the
+// WorkerCosts app (ft_ui_app_worker_costs), Bob's MINOR on part 1.
+const OWN = new Set(["ps_tab_title"]); // the product's name
 const ALLOW_SAME = { "ps_rf_pda_max": "MAX (L20)" };       // the level mark where a language keeps L and MAX
 
 function xmlTexts(file) {
@@ -64,20 +67,24 @@ function luaFiles(dir) {
 
 const tdir = join(root, "translations");
 const en = xmlTexts(join(tdir, "translation_en.xml"));
-const KEYS = [...en.keys()].filter((k) => (k.startsWith("ps_rf_pda_") || k === "ps_tab_title") && !(k in NO_READER));
+const KEYS = [...en.keys()].filter((k) => (k.startsWith("ps_rf_pda_") || k.startsWith("ps_level_") || k === "ps_tab_title") && !(k in NO_READER));
 const locales = readdirSync(tdir).map((n) => n.match(/^translation_([a-z]{2})\.xml$/)).filter(Boolean).map((m) => m[1]).filter((l) => l !== "en").sort();
 const failures = [];
 
 // R: the reader set.
 const read = new Set();
-let dynamicUnlock = false;
+let dynamicUnlock = false, dynamicLevel = false;
 for (const f of luaFiles(join(root, "src"))) {
   const src = readFileSync(f, "utf8");
   for (const m of src.matchAll(/"(ps_rf_pda_[a-z0-9_]+|ps_tab_title)"/g)) {
     if (m[1] === "ps_rf_pda_unlock_") dynamicUnlock = true; else read.add(m[1]);
   }
+  // The level names: the page's rungName builds "ps_level_" .. level (ProStaffRfPdaGuest.lua),
+  // the getter string.format("ps_level_%d", level) (ProStaffAPI.lua getLevelDisplayName).
+  if (/"ps_level_"|"ps_level_%d"/.test(src)) dynamicLevel = true;
 }
 if (dynamicUnlock) for (let i = 1; i <= 20; i++) read.add("ps_rf_pda_unlock_" + i);
+if (dynamicLevel) for (let i = 1; i <= 20; i++) read.add("ps_level_" + i);
 for (const k of KEYS) if (!read.has(k)) failures.push(`R ${k}: checked but nothing in src/ reads it (move it to NO_READER with a reason)`);
 for (const k of read) if (!KEYS.includes(k) && !(k in NO_READER)) failures.push(`R ${k}: read in src/ but not checked (not in the en file?)`);
 for (const k of Object.keys(NO_READER)) if (read.has(k)) failures.push(`R ${k}: in NO_READER but src/ reads it`);

@@ -64,6 +64,31 @@ end
 
 function ProStaffManager:getLevel(farmId) return self:_farmLevel(farmId) end
 
+-- The display name of a level, in the calling machine's language (MAINTENANCE row 142).
+-- Defined in this chunk, so the g_i18n it reads is ProStaff's own (mods.lua:453, the mod
+-- environment's g_i18n:addModI18N), whoever calls it: a companion such as FarmTablet's
+-- Pro-Staff app cannot reach ProStaff's keys through its own i18n. Gated on hasText
+-- (I18N.lua:194), never on the returned string, because getText answers "Missing ..."
+-- for an absent key (I18N.lua:175-191). nil when level is not a whole number from 1 to
+-- the ladder's length, so the caller keeps its own "None" or "Level %d"; the English name
+-- when the key is absent or unreadable. Display only: no state, nothing on the wire.
+function ProStaffManager:getLevelDisplayName(level)
+    local names = ProStaffConstants.LEVEL_NAMES
+    if type(level) ~= "number" or level ~= math.floor(level) or level < 1 or level > #names then
+        return nil
+    end
+    local key = string.format("ps_level_%d", level)
+    local i18n = g_i18n
+    if i18n ~= nil and type(i18n.hasText) == "function" and type(i18n.getText) == "function" then
+        local okHas, has = pcall(i18n.hasText, i18n, key)
+        if okHas and has == true then
+            local ok, text = pcall(i18n.getText, i18n, key)
+            if ok and type(text) == "string" and text ~= "" then return text end
+        end
+    end
+    return names[level]
+end
+
 -- WorkerCosts
 function ProStaffManager:getWageModifier(farmId)      return self:_effect("WAGE", farmId) end
 function ProStaffManager:getFatigueMitigation(farmId) return self:_effect("FATIGUE_MITIGATION", farmId) end

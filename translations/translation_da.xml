@@ -7,26 +7,26 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Kontoradgang" />
+        <text name="ps_level_2" text="Indkøbsadgang" />
+        <text name="ps_level_3" text="Vagtplanoptimering" />
+        <text name="ps_level_4" text="Kommunikationsrelæ" />
+        <text name="ps_level_5" text="Arbejdstrivsel" />
+        <text name="ps_level_6" text="Læsseautomatisering" />
+        <text name="ps_level_7" text="Bulksiloadministration" />
+        <text name="ps_level_8" text="Regionalt net" />
+        <text name="ps_level_9" text="Personalejournaler" />
+        <text name="ps_level_10" text="Akademisk kontakt" />
+        <text name="ps_level_11" text="Arbejdsrestitution" />
+        <text name="ps_level_12" text="Præcisionsagronomi" />
+        <text name="ps_level_13" text="Global kommunikation" />
+        <text name="ps_level_14" text="Flådelogistik" />
+        <text name="ps_level_15" text="Syndikatsbestyrelse" />
+        <text name="ps_level_16" text="Kursusadministration" />
+        <text name="ps_level_17" text="Lønkontrol" />
+        <text name="ps_level_18" text="Forudsigende styring" />
+        <text name="ps_level_19" text="Systemoverdrive" />
+        <text name="ps_level_20" text="Suveræn administration" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
@@ -50,7 +50,7 @@
         <text name="ps_rf_pda_flush_treat" text="Behandl" />
         <text name="ps_rf_pda_grp_dairy" text="Mejeri" />
         <text name="ps_rf_pda_grp_soil" text="Jord" />
-        <text name="ps_rf_pda_grp_wc" text="Worker Costs" />
+        <text name="ps_rf_pda_grp_wc" text="Arbejderomkostninger" />
         <text name="ps_rf_pda_hint_stale_door" text="Denne dørkopi er ældre end knapperne Køb og Start; opdater det mod, der byggede den. Indtil da gør konsolkommandoerne proStaffBuy og diseaseFlush det samme." />
         <text name="ps_rf_pda_hint_own_door" text="Køb betaler næste trin gennem andelsselskabet (buyLevel). Start betaler tilbuddet på behandlingen (requestFarmFlush). Begge afregnes på serveren." />
         <text name="ps_rf_pda_inactive" text="Inaktiv" />

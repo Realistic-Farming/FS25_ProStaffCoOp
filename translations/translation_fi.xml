@@ -7,26 +7,26 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Toimistopääsy" />
+        <text name="ps_level_2" text="Hankintapääsy" />
+        <text name="ps_level_3" text="Vuorolistan optimointi" />
+        <text name="ps_level_4" text="Viestintävälitin" />
+        <text name="ps_level_5" text="Työhyvinvointi" />
+        <text name="ps_level_6" text="Lastausautomaatio" />
+        <text name="ps_level_7" text="Irtotavarasiilojen hallinta" />
+        <text name="ps_level_8" text="Alueellinen verkko" />
+        <text name="ps_level_9" text="Henkilöstörekisteri" />
+        <text name="ps_level_10" text="Akateeminen yhteys" />
+        <text name="ps_level_11" text="Työpalautuminen" />
+        <text name="ps_level_12" text="Täsmäviljely" />
+        <text name="ps_level_13" text="Maailmanlaajuinen viestintä" />
+        <text name="ps_level_14" text="Kalustologistiikka" />
+        <text name="ps_level_15" text="Syndikaatin hallitus" />
+        <text name="ps_level_16" text="Opetussuunnitelman hallinta" />
+        <text name="ps_level_17" text="Palkkavalvonta" />
+        <text name="ps_level_18" text="Ennakoiva ohjaus" />
+        <text name="ps_level_19" text="Järjestelmän ylikierrokset" />
+        <text name="ps_level_20" text="Ylin hallinto" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
@@ -50,7 +50,7 @@
         <text name="ps_rf_pda_flush_treat" text="Käsittele" />
         <text name="ps_rf_pda_grp_dairy" text="Maito" />
         <text name="ps_rf_pda_grp_soil" text="Maaperä" />
-        <text name="ps_rf_pda_grp_wc" text="Worker Costs" />
+        <text name="ps_rf_pda_grp_wc" text="Työntekijäkulut" />
         <text name="ps_rf_pda_hint_stale_door" text="Tämä ovikopio on vanhempi kuin Osta- ja Aloita-painikkeet; päivitä sen tehnyt modi. Siihen asti konsolikomennot proStaffBuy ja diseaseFlush tekevät saman." />
         <text name="ps_rf_pda_hint_own_door" text="Osta maksaa seuraavan portaan osuuskunnan kautta (buyLevel). Aloita maksaa käsittelyn tarjouksen (requestFarmFlush). Molemmat selvitetään palvelimella." />
         <text name="ps_rf_pda_inactive" text="Ei aktiivinen" />

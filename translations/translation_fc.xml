@@ -7,26 +7,26 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Accès bureau" />
+        <text name="ps_level_2" text="Accès aux achats" />
+        <text name="ps_level_3" text="Optimisation des plannings" />
+        <text name="ps_level_4" text="Relais de communication" />
+        <text name="ps_level_5" text="Bien-être au travail" />
+        <text name="ps_level_6" text="Automatisation du chargement" />
+        <text name="ps_level_7" text="Gestion des silos de vrac" />
+        <text name="ps_level_8" text="Réseau régional" />
+        <text name="ps_level_9" text="Dossiers du personnel" />
+        <text name="ps_level_10" text="Liaison universitaire" />
+        <text name="ps_level_11" text="Récupération du personnel" />
+        <text name="ps_level_12" text="Agronomie de précision" />
+        <text name="ps_level_13" text="Communications mondiales" />
+        <text name="ps_level_14" text="Logistique de flotte" />
+        <text name="ps_level_15" text="Conseil du syndicat" />
+        <text name="ps_level_16" text="Administration des programmes" />
+        <text name="ps_level_17" text="Contrôle de la paie" />
+        <text name="ps_level_18" text="Pilotage prédictif" />
+        <text name="ps_level_19" text="Surrégime système" />
+        <text name="ps_level_20" text="Administration souveraine" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
@@ -50,7 +50,7 @@
         <text name="ps_rf_pda_flush_treat" text="Traiter" />
         <text name="ps_rf_pda_grp_dairy" text="Laitier" />
         <text name="ps_rf_pda_grp_soil" text="Sol" />
-        <text name="ps_rf_pda_grp_wc" text="Worker Costs" />
+        <text name="ps_rf_pda_grp_wc" text="Coûts des ouvriers" />
         <text name="ps_rf_pda_hint_stale_door" text="Cette copie de la porte est antérieure aux boutons Acheter et Lancer ; mettez à jour le mod qui l'a créée. D'ici là, les commandes console proStaffBuy et diseaseFlush font la même chose." />
         <text name="ps_rf_pda_hint_own_door" text="Acheter paie le palier suivant via la coopérative (buyLevel). Lancer paie le devis du traitement (requestFarmFlush). Les deux sont réglés sur le serveur." />
         <text name="ps_rf_pda_inactive" text="Inactif" />

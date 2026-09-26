@@ -26,6 +26,25 @@ function parseDeps(src) {
   return m[1].split(",").map((s) => s.trim()).filter(Boolean);
 }
 
+// --!text: path, path  makes each file's SOURCE available to the test as
+// _SOURCE_TEXT["path"], without executing it: for a bar that reads a locale file, or
+// loads a src file into an environment of its own, in a Lua with no io library.
+// (FertilizerDepot's runner, with its MAINTENANCE row 87 boundary fix.)
+function parseTexts(src) {
+  const m = src.match(/--!text:\s*(.+)/);
+  if (!m) return [];
+  return m[1].split(",").map((s) => s.trim()).filter(Boolean);
+}
+
+// A long-bracket level the content does not contain, chosen from the content WITH the
+// closer's "]" appended, so a file whose last characters meet the closing bracket cannot
+// close the string early.
+function luaLongString(content) {
+  let eq = "";
+  while ((content + "]").includes("]" + eq + "]")) eq += "=";
+  return "[" + eq + "[\n" + content + "]" + eq + "]";
+}
+
 // Run one Lua program string, return { rc, out } with stdout captured.
 function runLua(program) {
   let out = "";
@@ -57,8 +76,18 @@ for (const tf of testFiles) {
   const testPath = join(LUA_DIR, tf);
   const testSrc = readFileSync(testPath, "utf8");
   const deps = parseDeps(testSrc);
+  const texts = parseTexts(testSrc);
 
   const parts = [prelude];
+  for (const d of texts) {
+    try {
+      parts.push(`_SOURCE_TEXT = _SOURCE_TEXT or {}\n_SOURCE_TEXT[${JSON.stringify(d)}] = ` +
+        luaLongString(readFileSync(join(REPO_ROOT, d), "utf8")));
+    } catch {
+      console.log(c.red(`✗ ${tf}: cannot read declared text '${d}'`));
+      hadError = true;
+    }
+  }
   for (const d of deps) {
     try {
       parts.push(`-- <<< ${d} >>>\n` + readFileSync(join(REPO_ROOT, d), "utf8"));

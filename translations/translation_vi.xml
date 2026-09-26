@@ -7,26 +7,26 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Quyền vào văn phòng" />
+        <text name="ps_level_2" text="Quyền mua sắm" />
+        <text name="ps_level_3" text="Tối ưu lịch làm việc" />
+        <text name="ps_level_4" text="Trạm chuyển tiếp liên lạc" />
+        <text name="ps_level_5" text="Phúc lợi lao động" />
+        <text name="ps_level_6" text="Tự động hóa bốc xếp" />
+        <text name="ps_level_7" text="Quản trị silo hàng rời" />
+        <text name="ps_level_8" text="Mạng lưới khu vực" />
+        <text name="ps_level_9" text="Hồ sơ nhân sự" />
+        <text name="ps_level_10" text="Liên kết học thuật" />
+        <text name="ps_level_11" text="Phục hồi lao động" />
+        <text name="ps_level_12" text="Nông học chính xác" />
+        <text name="ps_level_13" text="Liên lạc toàn cầu" />
+        <text name="ps_level_14" text="Hậu cần đội xe" />
+        <text name="ps_level_15" text="Hội đồng liên minh" />
+        <text name="ps_level_16" text="Quản trị chương trình học" />
+        <text name="ps_level_17" text="Giám sát bảng lương" />
+        <text name="ps_level_18" text="Điều khiển dự báo" />
+        <text name="ps_level_19" text="Hệ thống tăng tốc tối đa" />
+        <text name="ps_level_20" text="Quản trị tối cao" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
@@ -50,7 +50,7 @@
         <text name="ps_rf_pda_flush_treat" text="Xử lý" />
         <text name="ps_rf_pda_grp_dairy" text="Sữa" />
         <text name="ps_rf_pda_grp_soil" text="Đất" />
-        <text name="ps_rf_pda_grp_wc" text="Worker Costs" />
+        <text name="ps_rf_pda_grp_wc" text="Chi phí nhân công" />
         <text name="ps_rf_pda_hint_stale_door" text="Bản sao cửa này cũ hơn các nút Mua và Bắt đầu; hãy cập nhật mod đã tạo ra nó. Trong lúc chờ, các lệnh console proStaffBuy và diseaseFlush làm được việc tương tự." />
         <text name="ps_rf_pda_hint_own_door" text="Mua trả tiền bậc tiếp theo qua hợp tác xã (buyLevel). Bắt đầu trả báo giá xử lý (requestFarmFlush). Cả hai được quyết toán trên máy chủ." />
         <text name="ps_rf_pda_inactive" text="Không hoạt động" />
