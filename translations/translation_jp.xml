@@ -7,26 +7,26 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="事務所アクセス" />
+        <text name="ps_level_2" text="調達アクセス" />
+        <text name="ps_level_3" text="シフト最適化" />
+        <text name="ps_level_4" text="通信中継" />
+        <text name="ps_level_5" text="労働福祉" />
+        <text name="ps_level_6" text="積み込み自動化" />
+        <text name="ps_level_7" text="バルクサイロ管理" />
+        <text name="ps_level_8" text="地域ネットワーク" />
+        <text name="ps_level_9" text="人事記録" />
+        <text name="ps_level_10" text="学術連携" />
+        <text name="ps_level_11" text="労働回復" />
+        <text name="ps_level_12" text="精密農学" />
+        <text name="ps_level_13" text="グローバル通信" />
+        <text name="ps_level_14" text="車両ロジスティクス" />
+        <text name="ps_level_15" text="組合理事会" />
+        <text name="ps_level_16" text="研修課程管理" />
+        <text name="ps_level_17" text="給与監督" />
+        <text name="ps_level_18" text="予測制御" />
+        <text name="ps_level_19" text="システムオーバードライブ" />
+        <text name="ps_level_20" text="最高管理" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
@@ -50,7 +50,7 @@
         <text name="ps_rf_pda_flush_treat" text="処理" />
         <text name="ps_rf_pda_grp_dairy" text="酪農" />
         <text name="ps_rf_pda_grp_soil" text="土壌" />
-        <text name="ps_rf_pda_grp_wc" text="Worker Costs" />
+        <text name="ps_rf_pda_grp_wc" text="作業員コスト" />
         <text name="ps_rf_pda_hint_stale_door" text="このドアのコピーは「購入」と「実行」ボタンより古いものです。作成したMODを更新してください。それまではコンソールコマンド proStaffBuy と diseaseFlush で同じことができます。" />
         <text name="ps_rf_pda_hint_own_door" text="「購入」は協同組合を通じて次の段の代金を払います（buyLevel）。「実行」は病害処理の見積もり額を払います（requestFarmFlush）。どちらもサーバーで精算されます。" />
         <text name="ps_rf_pda_inactive" text="無効" />

@@ -7,26 +7,26 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Доступ в офис" />
+        <text name="ps_level_2" text="Доступ к закупкам" />
+        <text name="ps_level_3" text="Оптимизация графиков" />
+        <text name="ps_level_4" text="Ретранслятор связи" />
+        <text name="ps_level_5" text="Благополучие работников" />
+        <text name="ps_level_6" text="Автоматизация погрузки" />
+        <text name="ps_level_7" text="Управление силосами" />
+        <text name="ps_level_8" text="Региональная сеть" />
+        <text name="ps_level_9" text="Кадровый учёт" />
+        <text name="ps_level_10" text="Связь с академией" />
+        <text name="ps_level_11" text="Восстановление работников" />
+        <text name="ps_level_12" text="Точная агрономия" />
+        <text name="ps_level_13" text="Глобальная связь" />
+        <text name="ps_level_14" text="Логистика автопарка" />
+        <text name="ps_level_15" text="Совет синдиката" />
+        <text name="ps_level_16" text="Управление учебными программами" />
+        <text name="ps_level_17" text="Контроль зарплат" />
+        <text name="ps_level_18" text="Прогнозное управление" />
+        <text name="ps_level_19" text="Форсаж системы" />
+        <text name="ps_level_20" text="Верховное управление" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
@@ -50,7 +50,7 @@
         <text name="ps_rf_pda_flush_treat" text="Лечить" />
         <text name="ps_rf_pda_grp_dairy" text="Молочное" />
         <text name="ps_rf_pda_grp_soil" text="Почва" />
-        <text name="ps_rf_pda_grp_wc" text="Worker Costs" />
+        <text name="ps_rf_pda_grp_wc" text="Расходы рабочих" />
         <text name="ps_rf_pda_hint_stale_door" text="Эта копия двери старше кнопок Купить и Начать; обновите мод, который её создал. До тех пор то же самое делают консольные команды proStaffBuy и diseaseFlush." />
         <text name="ps_rf_pda_hint_own_door" text="Купить оплачивает следующую ступень через кооператив (buyLevel). Начать оплачивает смету на лечение (requestFarmFlush). Оба расчёта проходят на сервере." />
         <text name="ps_rf_pda_inactive" text="Неактивно" />

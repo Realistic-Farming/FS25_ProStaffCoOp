@@ -7,26 +7,26 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Ofis erişimi" />
+        <text name="ps_level_2" text="Satın alma erişimi" />
+        <text name="ps_level_3" text="Vardiya optimizasyonu" />
+        <text name="ps_level_4" text="İletişim rölesi" />
+        <text name="ps_level_5" text="Çalışan refahı" />
+        <text name="ps_level_6" text="Yükleme otomasyonu" />
+        <text name="ps_level_7" text="Dökme silo yönetimi" />
+        <text name="ps_level_8" text="Bölgesel ağ" />
+        <text name="ps_level_9" text="Personel kayıtları" />
+        <text name="ps_level_10" text="Akademik irtibat" />
+        <text name="ps_level_11" text="İşgücü toparlanması" />
+        <text name="ps_level_12" text="Hassas agronomi" />
+        <text name="ps_level_13" text="Küresel iletişim" />
+        <text name="ps_level_14" text="Filo lojistiği" />
+        <text name="ps_level_15" text="Sendika kurulu" />
+        <text name="ps_level_16" text="Müfredat yönetimi" />
+        <text name="ps_level_17" text="Bordro denetimi" />
+        <text name="ps_level_18" text="Öngörülü kontrol" />
+        <text name="ps_level_19" text="Sistem aşırı sürüşü" />
+        <text name="ps_level_20" text="Egemen yönetim" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
@@ -50,7 +50,7 @@
         <text name="ps_rf_pda_flush_treat" text="Tedavi et" />
         <text name="ps_rf_pda_grp_dairy" text="Süt" />
         <text name="ps_rf_pda_grp_soil" text="Toprak" />
-        <text name="ps_rf_pda_grp_wc" text="Worker Costs" />
+        <text name="ps_rf_pda_grp_wc" text="İşçi Maliyetleri" />
         <text name="ps_rf_pda_hint_stale_door" text="Bu kapı kopyası Satın al ve Başlat düğmelerinden eski; onu oluşturan modu güncelleyin. O zamana kadar proStaffBuy ve diseaseFlush konsol komutları aynı işi yapar." />
         <text name="ps_rf_pda_hint_own_door" text="Satın al, sonraki basamağı kooperatif üzerinden öder (buyLevel). Başlat, tedavi teklifini öder (requestFarmFlush). İkisi de sunucuda hesaplanır." />
         <text name="ps_rf_pda_inactive" text="Etkin değil" />
