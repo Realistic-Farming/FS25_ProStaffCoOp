@@ -270,6 +270,15 @@ function RfEscModules:registerModule(def)
         -- MORE (1/2) button forwarded a step to nil and the roster never turned the page.
         -- The register-time warning below did name it, in a log nobody read back.
         onPageStep = def.onPageStep,
+        -- REPAIR-217: the six the Esc STOCK page needs forwarded. onSelectionIndex is the live path from
+        -- onClickRfFwSelSelector; onActionActivate carries the rfFwAct chips; the quote pair and onModeStep
+        -- carry the command chrome. Additive: no existing field changes.
+        onSelectionStep = def.onSelectionStep,
+        onSelectionIndex = def.onSelectionIndex,
+        onActionActivate = def.onActionActivate,
+        onQuoteConfirm = def.onQuoteConfirm,
+        onQuoteCancel = def.onQuoteCancel,
+        onModeStep = def.onModeStep,
         -- BUILD 22:42 (George CLOSED DESIGN 21:26): the Worker Costs guest registers onHire /
         -- onFire for the Esc page Hire / Fire buttons; carried so the host forwarders reach them
         -- through the registry (the warning below would otherwise name them as dropped).
