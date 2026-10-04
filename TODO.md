@@ -30,3 +30,8 @@
 ## Docs / localization
 - [ ] 26-language pass on the flush prompt strings when the FarmTablet surface ships (the mechanism itself is console-driven and carries no player strings today).
 - [ ] Keep README version in step on every release.
+
+## 2026-10-04 (Fred): the shared RF Esc door (Wizard, #30)
+
+- [x] The four shared door files at the suite's STOCK page set, byte-same in all ten door mods; StockGuard's STOCK page chrome inert without StockGuard; the herd-advisory panel hidden. `build.sh` packs `textures/` too.
+- [~] In game (owed): TESTING row 417.
