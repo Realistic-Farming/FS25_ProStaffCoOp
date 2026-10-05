@@ -35,3 +35,8 @@
 
 - [x] The four shared door files at the suite's STOCK page set, byte-same in all ten door mods; StockGuard's STOCK page chrome inert without StockGuard; the herd-advisory panel hidden. `build.sh` packs `textures/` too.
 - [~] In game (owed): TESTING row 417.
+
+## 2026-10-05 (Fred): the Esc side panel's info box (Wizard, #32)
+
+- [x] The side info boxes start clear of the selected tab; text bodies 352 and 348 px wide, so line length and the right edge are unchanged; byte-same in all ten door mods.
+- [~] In game (owed): TESTING row 449.
