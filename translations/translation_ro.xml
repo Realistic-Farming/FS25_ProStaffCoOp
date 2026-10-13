@@ -7,29 +7,158 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Acces la birou" />
+        <text name="ps_level_2" text="Acces la achiziții" />
+        <text name="ps_level_3" text="Optimizarea programului" />
+        <text name="ps_level_4" text="Releu de comunicații" />
+        <text name="ps_level_5" text="Bunăstarea muncii" />
+        <text name="ps_level_6" text="Automatizarea încărcării" />
+        <text name="ps_level_7" text="Administrarea silozurilor vrac" />
+        <text name="ps_level_8" text="Rețea regională" />
+        <text name="ps_level_9" text="Evidența personalului" />
+        <text name="ps_level_10" text="Legătură academică" />
+        <text name="ps_level_11" text="Refacerea forței de muncă" />
+        <text name="ps_level_12" text="Agronomie de precizie" />
+        <text name="ps_level_13" text="Comunicații globale" />
+        <text name="ps_level_14" text="Logistica flotei" />
+        <text name="ps_level_15" text="Consiliul sindicatului" />
+        <text name="ps_level_16" text="Administrarea programelor" />
+        <text name="ps_level_17" text="Supravegherea salariilor" />
+        <text name="ps_level_18" text="Control predictiv" />
+        <text name="ps_level_19" text="Suprasolicitarea sistemului" />
+        <text name="ps_level_20" text="Administrare suverană" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+        <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
+        <text name="ps_rf_pda_blurb" text="Calitatea de membru al cooperativei, modificatori activi, plăți recurente și oferta pentru tratamentul bolilor." />
+        <text name="ps_rf_pda_btn_buy" text="Cumpără N%d" />
+        <text name="ps_rf_pda_btn_buy_max" text="La MAX" />
+        <text name="ps_rf_pda_btn_flush" text="Pornește tratamentul" />
+        <text name="ps_rf_pda_btn_flush_none" text="Nu e nevoie de tratament" />
+        <text name="ps_rf_pda_col_item" text="Item" />
+        <text name="ps_rf_pda_col_note" text="Note" />
+        <text name="ps_rf_pda_col_status" text="Status" />
+        <text name="ps_rf_pda_col_value" text="Value" />
+        <text name="ps_rf_pda_empty_absent" text="Managerul Pro Staff Co-Op nu a fost găsit. Instalează și activează FS25_ProStaffCoOp." />
+        <text name="ps_rf_pda_empty_disabled" text="Pro Staff este dezactivat în setări. Nimic de pe această pagină nu e activ." />
+        <text name="ps_rf_pda_empty_spectator" text="Vedere de spectator: alătură-te unei ferme pentru a vedea calitatea de membru. De aici nu se cumpără și nu se tratează." />
+        <text name="ps_rf_pda_flush_clear" text="Sănătos" />
+        <text name="ps_rf_pda_flush_fields" text="%d câmp(uri)" />
+        <text name="ps_rf_pda_flush_none" text="Niciun câmp bolnav" />
+        <text name="ps_rf_pda_flush_treat" text="Tratează" />
+        <text name="ps_rf_pda_grp_dairy" text="Lactate" />
+        <text name="ps_rf_pda_grp_soil" text="Sol" />
+        <text name="ps_rf_pda_grp_wc" text="Costurile muncitorilor" />
+        <text name="ps_rf_pda_hint_stale_door" text="Această copie a ușii e mai veche decât butoanele Cumpără și Pornește; actualizează modul care a creat-o. Până atunci, comenzile de consolă proStaffBuy și diseaseFlush fac același lucru." />
+        <text name="ps_rf_pda_hint_own_door" text="Cumpără plătește treapta următoare prin cooperativă (buyLevel). Pornește plătește oferta pentru tratament (requestFarmFlush). Ambele se decontează pe server." />
+        <text name="ps_rf_pda_inactive" text="Inactiv" />
+        <text name="ps_rf_pda_max" text="MAX (N20)" />
+        <text name="ps_rf_pda_msg_bought" text="N%d cumpărat pentru %s." />
+        <text name="ps_rf_pda_msg_disabled" text="Refuzat: Pro Staff este dezactivat în setări." />
+        <text name="ps_rf_pda_msg_error" text="Cumpărarea a eșuat: %s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="Pentru această fermă rulează deja un tratament." />
+        <text name="ps_rf_pda_msg_flush_denied" text="Tratament refuzat (%s)." />
+        <text name="ps_rf_pda_msg_flush_done" text="Tratament efectuat pe %d câmp(uri) pentru %s." />
+        <text name="ps_rf_pda_msg_flush_error" text="Tratamentul a eșuat: %s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="Refuzat: fonduri insuficiente pentru oferta de tratament." />
+        <text name="ps_rf_pda_msg_flush_none" text="Niciun câmp bolnav; nimic de tratat." />
+        <text name="ps_rf_pda_msg_flush_requested" text="Tratament solicitat; serverul îl decontează." />
+        <text name="ps_rf_pda_msg_funds" text="Refuzat: fonduri insuficiente pentru %s." />
+        <text name="ps_rf_pda_msg_inactive" text="Calitate de membru inactivă; nimic de cumpărat." />
+        <text name="ps_rf_pda_msg_inactive_flush" text="Calitate de membru inactivă; fără tratament." />
+        <text name="ps_rf_pda_msg_max" text="Deja la MAX (N20)." />
+        <text name="ps_rf_pda_msg_no_api" text="buyLevel nu este disponibil pe acest manager." />
+        <text name="ps_rf_pda_msg_no_flush_api" text="requestFarmFlush nu este disponibil pe acest manager." />
+        <text name="ps_rf_pda_msg_no_network" text="Refuzat: lipsește NetworkSync pe acest client, deci cererea nu poate ajunge la server." />
+        <text name="ps_rf_pda_msg_requested" text="N%d solicitat; serverul îl decontează." />
+        <text name="ps_rf_pda_not_member" text="Nu e membru" />
+        <text name="ps_rf_pda_note_constant_only" text="Doar constantă; fără plată" />
+        <text name="ps_rf_pda_note_inactive" text="Nimic de pe această pagină nu e activ" />
+        <text name="ps_rf_pda_note_max" text="Scara e completă" />
+        <text name="ps_rf_pda_note_no_payout" text="N20; încă nicio plată în spate" />
+        <text name="ps_rf_pda_note_no_quote" text="Stratul de boli Soil Fertilizer nu a fost găsit" />
+        <text name="ps_rf_pda_note_not_built" text="N14; proiectat, neconstruit" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming activ; scara rămâne activă" />
+        <text name="ps_rf_pda_note_wealth" text="N10+: preț după valoarea netă, nu după numerar" />
+        <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
+        <text name="ps_rf_pda_page_prev" text="&lt; Back" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / lună" />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / lună" />
+        <text name="ps_rf_pda_row_agronomy_fee" text="Abonament la raportul agronomic" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="Achiziții en-gros" />
+        <text name="ps_rf_pda_row_bulk_transport" text="Transport în vrac" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="Logistica lactatelor" />
+        <text name="ps_rf_pda_row_early_warning" text="Avertizare timpurie" />
+        <text name="ps_rf_pda_row_effectiveness" text="Eficacitate" />
+        <text name="ps_rf_pda_row_fatigue" text="Oboseala muncitorilor" />
+        <text name="ps_rf_pda_row_fert" text="Costul îngrășămintelor" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="Rabat pentru flotă" />
+        <text name="ps_rf_pda_row_flush" text="Tratamentul bolilor" />
+        <text name="ps_rf_pda_row_forecast" text="Prognoza meteo" />
+        <text name="ps_rf_pda_row_fung_cost" text="Costul fungicidelor" />
+        <text name="ps_rf_pda_row_fung_effect" text="Efectul fungicidelor" />
+        <text name="ps_rf_pda_row_invested" text="Investit" />
+        <text name="ps_rf_pda_row_level" text="Nivel" />
+        <text name="ps_rf_pda_row_level_on_record" text="Nivel înregistrat" />
+        <text name="ps_rf_pda_row_market_intel" text="Informații de piață" />
+        <text name="ps_rf_pda_row_membership" text="Calitate de membru" />
+        <text name="ps_rf_pda_row_next_level" text="Nivelul următor" />
+        <text name="ps_rf_pda_row_next_unlock" text="Următoarea deblocare" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="Rabat pentru personal" />
+        <text name="ps_rf_pda_row_predictive" text="Control predictiv" />
+        <text name="ps_rf_pda_row_recovery" text="Recuperarea după oboseală" />
+        <text name="ps_rf_pda_row_soil_chem" text="Chimia solului" />
+        <text name="ps_rf_pda_row_soil_kit" text="Trusă de analiză a solului" />
+        <text name="ps_rf_pda_row_spray" text="Costul stropirii" />
+        <text name="ps_rf_pda_row_vet" text="Materiale veterinare" />
+        <text name="ps_rf_pda_row_wages" text="Salarii" />
+        <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;Acest ecran este scara de niveluri Pro Staff a fermei tale: toate cele douăzeci de trepte pe o pagină, patru pe lățime și cinci pe înălțime, în ordinea în care se cumpără.&#10;&#10;Bara verde și cardul luminat marchează treapta ta. Cardurile luminate de dedesubt sunt atinse; cardurile estompate sunt încă înainte. Fiecare card numește treapta și spune ce adaugă cumpărarea ei. Doar nume înseamnă că treapta există, dar nu schimbă nimic activ; neaplicat înseamnă că treapta e deblocată, dar încă nu plătește nimic.&#10;&#10;Rândul de sus arată treapta ta, cât a investit ferma și prețul treptei următoare; de la N10 acest preț urmează valoarea netă, nu numerarul. Fiecare card arată și prețul treptei la valoarea ta netă actuală (Investit este ce ai plătit efectiv). Notele de transparență - prețul după valoarea netă, Precision Farming care scoate chimia solului, blocarea trusei de analiză a solului - sunt enumerate la sfârșitul acestei casete.&#10;&#10;Rândul de jos arată abonamentul la raportul agronomic, rabatul pentru flotă de la N14 și oferta de tratament pentru fiecare câmp bolnav pe care îl deții. Cumpără și Pornește sunt sub scară pe fiecare ușă Realistic Farming, indiferent ce mod a creat-o: Cumpără plătește treapta următoare prin cooperativă, iar Pornește plătește oferta de tratament, ambele decontate pe server." />
+        <text name="ps_rf_pda_st_active" text="Activ" />
+        <text name="ps_rf_pda_st_from_level" text="De la N%d" />
+        <text name="ps_rf_pda_st_gate_off" text="Blocare experimentală oprită" />
+        <text name="ps_rf_pda_st_live" text="În vigoare" />
+        <text name="ps_rf_pda_st_locked" text="Blocat" />
+        <text name="ps_rf_pda_st_member" text="Membru" />
+        <text name="ps_rf_pda_st_no_quote" text="Fără ofertă" />
+        <text name="ps_rf_pda_st_not_applied" text="Neaplicat" />
+        <text name="ps_rf_pda_st_not_live" text="Nu e în vigoare" />
+        <text name="ps_rf_pda_st_off" text="Oprit în setări" />
+        <text name="ps_rf_pda_st_stood_down" text="Scos din funcțiune" />
+        <text name="ps_rf_pda_st_suspended" text="Beneficii suspendate" />
+        <text name="ps_rf_pda_st_unlocked" text="Deblocat" />
+        <text name="ps_rf_pda_unlock_1" text="Acces la birou (doar nume, fără efect activ)" />
+        <text name="ps_rf_pda_unlock_10" text="Trusă de analiză a solului (blocare experimentală), prețul trece la valoarea netă" />
+        <text name="ps_rf_pda_unlock_11" text="Recuperarea după oboseală x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="Îngrășământ x0.94, efectul fungicidelor x1.10, materiale veterinare x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="Costul stropirii x0.92, oboseala muncitorilor x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="Rabat pentru flotă 2500 pe lună (transport în vrac neaplicat)" />
+        <text name="ps_rf_pda_unlock_15" text="Îngrășământ x0.925, achiziții en-gros x1.05, informații de piață" />
+        <text name="ps_rf_pda_unlock_16" text="Administrarea programelor (doar nume, fără efect activ)" />
+        <text name="ps_rf_pda_unlock_17" text="Salarii x0.90 (treaptă)" />
+        <text name="ps_rf_pda_unlock_18" text="Recuperarea după oboseală x1.85, control predictiv" />
+        <text name="ps_rf_pda_unlock_19" text="Eficacitate x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="Îngrășământ x0.985, fungicid x0.95, materiale veterinare x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="Eficacitate x1.15 (avertizare timpurie neaplicată)" />
+        <text name="ps_rf_pda_unlock_3" text="Logistica lactatelor x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="Oboseala muncitorilor x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="Salarii x0.975 (treaptă)" />
+        <text name="ps_rf_pda_unlock_6" text="Automatizarea încărcării (doar nume, fără efect activ)" />
+        <text name="ps_rf_pda_unlock_7" text="Îngrășământ x0.96, prognoza meteo, începe abonamentul la raportul agronomic" />
+        <text name="ps_rf_pda_unlock_8" text="Oboseala muncitorilor x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="Salarii x0.95 (treaptă; rabatul pentru personal nedecontat)" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="Calitate de membru inactivă: beneficii suspendate, nimic de pe această pagină nu e activ" />
+        <text name="ps_rf_pda_hdr_invested" text="Investit %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="Trusă de analiză a solului: blocare experimentală oprită" />
+        <text name="ps_rf_pda_hdr_line2_default" text="Douăzeci de trepte: bara verde marchează treapta ta, cardurile luminate sunt atinse, cele estompate sunt înainte" />
+        <text name="ps_rf_pda_hdr_max" text="MAX (N20): scara e completă" />
+        <text name="ps_rf_pda_hdr_next" text="Următorul N%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="Înregistrat: N%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming activ: chimia solului scoasă, scara rămâne activă" />
+        <text name="ps_rf_pda_hdr_rung" text="Treapta ta: N%d %s" />
+        <text name="ps_rf_pda_card_cost" text="Preț: %s" />
     </texts>
 </l10n>

@@ -7,29 +7,158 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Ofis erişimi" />
+        <text name="ps_level_2" text="Satın alma erişimi" />
+        <text name="ps_level_3" text="Vardiya optimizasyonu" />
+        <text name="ps_level_4" text="İletişim rölesi" />
+        <text name="ps_level_5" text="Çalışan refahı" />
+        <text name="ps_level_6" text="Yükleme otomasyonu" />
+        <text name="ps_level_7" text="Dökme silo yönetimi" />
+        <text name="ps_level_8" text="Bölgesel ağ" />
+        <text name="ps_level_9" text="Personel kayıtları" />
+        <text name="ps_level_10" text="Akademik irtibat" />
+        <text name="ps_level_11" text="İşgücü toparlanması" />
+        <text name="ps_level_12" text="Hassas agronomi" />
+        <text name="ps_level_13" text="Küresel iletişim" />
+        <text name="ps_level_14" text="Filo lojistiği" />
+        <text name="ps_level_15" text="Sendika kurulu" />
+        <text name="ps_level_16" text="Müfredat yönetimi" />
+        <text name="ps_level_17" text="Bordro denetimi" />
+        <text name="ps_level_18" text="Öngörülü kontrol" />
+        <text name="ps_level_19" text="Sistem aşırı sürüşü" />
+        <text name="ps_level_20" text="Egemen yönetim" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+        <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
+        <text name="ps_rf_pda_blurb" text="Kooperatif üyeliği, etkin değiştiriciler, düzenli ödemeler ve hastalık tedavisi teklifi." />
+        <text name="ps_rf_pda_btn_buy" text="S%d satın al" />
+        <text name="ps_rf_pda_btn_buy_max" text="MAKS'ta" />
+        <text name="ps_rf_pda_btn_flush" text="Tedaviyi başlat" />
+        <text name="ps_rf_pda_btn_flush_none" text="Tedavi gerekmiyor" />
+        <text name="ps_rf_pda_col_item" text="Item" />
+        <text name="ps_rf_pda_col_note" text="Note" />
+        <text name="ps_rf_pda_col_status" text="Status" />
+        <text name="ps_rf_pda_col_value" text="Value" />
+        <text name="ps_rf_pda_empty_absent" text="Pro Staff Co-Op yöneticisi bulunamadı. FS25_ProStaffCoOp modunu kurun ve etkinleştirin." />
+        <text name="ps_rf_pda_empty_disabled" text="Pro Staff ayarlarda kapalı. Bu sayfadaki hiçbir şey etkin değil." />
+        <text name="ps_rf_pda_empty_spectator" text="İzleyici görünümü: üyeliği görmek için bir çiftliğe katılın. Buradan satın alma veya tedavi yok." />
+        <text name="ps_rf_pda_flush_clear" text="Sağlıklı" />
+        <text name="ps_rf_pda_flush_fields" text="%d tarla" />
+        <text name="ps_rf_pda_flush_none" text="Hastalıklı tarla yok" />
+        <text name="ps_rf_pda_flush_treat" text="Tedavi et" />
+        <text name="ps_rf_pda_grp_dairy" text="Süt" />
+        <text name="ps_rf_pda_grp_soil" text="Toprak" />
+        <text name="ps_rf_pda_grp_wc" text="İşçi Maliyetleri" />
+        <text name="ps_rf_pda_hint_stale_door" text="Bu kapı kopyası Satın al ve Başlat düğmelerinden eski; onu oluşturan modu güncelleyin. O zamana kadar proStaffBuy ve diseaseFlush konsol komutları aynı işi yapar." />
+        <text name="ps_rf_pda_hint_own_door" text="Satın al, sonraki basamağı kooperatif üzerinden öder (buyLevel). Başlat, tedavi teklifini öder (requestFarmFlush). İkisi de sunucuda hesaplanır." />
+        <text name="ps_rf_pda_inactive" text="Etkin değil" />
+        <text name="ps_rf_pda_max" text="MAKS (S20)" />
+        <text name="ps_rf_pda_msg_bought" text="S%d, %s karşılığında satın alındı." />
+        <text name="ps_rf_pda_msg_disabled" text="Reddedildi: Pro Staff ayarlarda kapalı." />
+        <text name="ps_rf_pda_msg_error" text="Satın alma başarısız: %s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="Bu çiftlik için zaten bir tedavi sürüyor." />
+        <text name="ps_rf_pda_msg_flush_denied" text="Tedavi reddedildi (%s)." />
+        <text name="ps_rf_pda_msg_flush_done" text="Tedavi %d tarlada tamamlandı, tutar %s." />
+        <text name="ps_rf_pda_msg_flush_error" text="Tedavi başarısız: %s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="Reddedildi: tedavi teklifi için yeterli para yok." />
+        <text name="ps_rf_pda_msg_flush_none" text="Hastalıklı tarla yok; tedavi edilecek bir şey yok." />
+        <text name="ps_rf_pda_msg_flush_requested" text="Tedavi istendi; sunucu hesaplar." />
+        <text name="ps_rf_pda_msg_funds" text="Reddedildi: %s için yeterli para yok." />
+        <text name="ps_rf_pda_msg_inactive" text="Üyelik etkin değil; satın alınacak bir şey yok." />
+        <text name="ps_rf_pda_msg_inactive_flush" text="Üyelik etkin değil; tedavi yok." />
+        <text name="ps_rf_pda_msg_max" text="Zaten MAKS'ta (S20)." />
+        <text name="ps_rf_pda_msg_no_api" text="buyLevel bu yöneticide kullanılamıyor." />
+        <text name="ps_rf_pda_msg_no_flush_api" text="requestFarmFlush bu yöneticide kullanılamıyor." />
+        <text name="ps_rf_pda_msg_no_network" text="Reddedildi: bu istemcide NetworkSync yok, bu yüzden istek sunucuya ulaşamaz." />
+        <text name="ps_rf_pda_msg_requested" text="S%d istendi; sunucu hesaplar." />
+        <text name="ps_rf_pda_not_member" text="Üye değil" />
+        <text name="ps_rf_pda_note_constant_only" text="Yalnızca sabit; ödeme yok" />
+        <text name="ps_rf_pda_note_inactive" text="Bu sayfadaki hiçbir şey etkin değil" />
+        <text name="ps_rf_pda_note_max" text="Merdiven tamamlandı" />
+        <text name="ps_rf_pda_note_no_payout" text="S20; arkasında henüz ödeme yok" />
+        <text name="ps_rf_pda_note_no_quote" text="Soil Fertilizer hastalık katmanı bulunamadı" />
+        <text name="ps_rf_pda_note_not_built" text="S14; tasarlandı, yapılmadı" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming etkin; merdiven etkin kalır" />
+        <text name="ps_rf_pda_note_wealth" text="S10+: fiyat nakde değil net servete göre" />
+        <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
+        <text name="ps_rf_pda_page_prev" text="&lt; Back" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / ay" />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / ay" />
+        <text name="ps_rf_pda_row_agronomy_fee" text="Agronomi raporu aboneliği" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="Toplu satın alma" />
+        <text name="ps_rf_pda_row_bulk_transport" text="Dökme taşımacılık" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="Süt lojistiği" />
+        <text name="ps_rf_pda_row_early_warning" text="Erken uyarı" />
+        <text name="ps_rf_pda_row_effectiveness" text="Etkinlik" />
+        <text name="ps_rf_pda_row_fatigue" text="İşçi yorgunluğu" />
+        <text name="ps_rf_pda_row_fert" text="Gübre maliyeti" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="Filo indirimi" />
+        <text name="ps_rf_pda_row_flush" text="Hastalık tedavisi" />
+        <text name="ps_rf_pda_row_forecast" text="Hava tahmini" />
+        <text name="ps_rf_pda_row_fung_cost" text="Fungisit maliyeti" />
+        <text name="ps_rf_pda_row_fung_effect" text="Fungisit etkisi" />
+        <text name="ps_rf_pda_row_invested" text="Yatırılan" />
+        <text name="ps_rf_pda_row_level" text="Seviye" />
+        <text name="ps_rf_pda_row_level_on_record" text="Kayıtlı seviye" />
+        <text name="ps_rf_pda_row_market_intel" text="Piyasa bilgisi" />
+        <text name="ps_rf_pda_row_membership" text="Üyelik" />
+        <text name="ps_rf_pda_row_next_level" text="Sonraki seviye" />
+        <text name="ps_rf_pda_row_next_unlock" text="Sonraki kilit açma" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="Personel indirimi" />
+        <text name="ps_rf_pda_row_predictive" text="Öngörülü kontrol" />
+        <text name="ps_rf_pda_row_recovery" text="Yorgunluktan toparlanma" />
+        <text name="ps_rf_pda_row_soil_chem" text="Toprak kimyası" />
+        <text name="ps_rf_pda_row_soil_kit" text="Toprak test kiti" />
+        <text name="ps_rf_pda_row_spray" text="İlaçlama maliyeti" />
+        <text name="ps_rf_pda_row_vet" text="Veteriner malzemeleri" />
+        <text name="ps_rf_pda_row_wages" text="Ücretler" />
+        <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;Bu ekran çiftliğinizin Pro Staff seviye merdivenidir: yirmi basamağın tamamı tek sayfada, yan yana dört ve alt alta beş, satın alındıkları sırayla.&#10;&#10;Yeşil çubuk ve yanan kart bulunduğunuz basamağı gösterir. Altındaki yanan kartlara ulaşılmıştır; soluk kartlar hâlâ öndedir. Her kart basamağın adını verir ve satın almanın ne eklediğini söyler. Yalnızca ad, basamağın var olduğu ama etkin hiçbir şeyi değiştirmediği anlamına gelir; uygulanmadı, basamağın açıldığı ama henüz hiçbir şey ödemediği anlamına gelir.&#10;&#10;Üst satır basamağınızı, çiftliğin ne kadar yatırdığını ve sonraki basamağın fiyatını gösterir; S10'dan itibaren bu fiyat nakde değil net servete bağlıdır. Her kart ayrıca basamağın şu anki net servetinizdeki fiyatını gösterir (Yatırılan, gerçekte ödediğiniz tutardır). Dürüstlük notları - net servete göre fiyat, toprak kimyasını devre dışı bırakan Precision Farming, toprak test kitinin kilidi - bu kutunun sonunda listelenir.&#10;&#10;Alt satır agronomi raporu aboneliğini, S14 filo indirimini ve sahip olduğunuz her hastalıklı tarla için tedavi teklifini gösterir. Satın al ve Başlat, hangi mod oluşturmuş olursa olsun her Realistic Farming kapısında merdivenin altında durur: Satın al sonraki basamağı kooperatif üzerinden öder, Başlat ise tedavi teklifini öder; ikisi de sunucuda hesaplanır." />
+        <text name="ps_rf_pda_st_active" text="Etkin" />
+        <text name="ps_rf_pda_st_from_level" text="S%d itibarıyla" />
+        <text name="ps_rf_pda_st_gate_off" text="Deneysel kilit kapalı" />
+        <text name="ps_rf_pda_st_live" text="Yürürlükte" />
+        <text name="ps_rf_pda_st_locked" text="Kilitli" />
+        <text name="ps_rf_pda_st_member" text="Üye" />
+        <text name="ps_rf_pda_st_no_quote" text="Teklif yok" />
+        <text name="ps_rf_pda_st_not_applied" text="Uygulanmadı" />
+        <text name="ps_rf_pda_st_not_live" text="Yürürlükte değil" />
+        <text name="ps_rf_pda_st_off" text="Ayarlarda kapalı" />
+        <text name="ps_rf_pda_st_stood_down" text="Devre dışı" />
+        <text name="ps_rf_pda_st_suspended" text="Avantajlar askıda" />
+        <text name="ps_rf_pda_st_unlocked" text="Açıldı" />
+        <text name="ps_rf_pda_unlock_1" text="Ofis erişimi (yalnızca ad, etkisi yok)" />
+        <text name="ps_rf_pda_unlock_10" text="Toprak test kiti (deneysel kilit), fiyat net servete geçer" />
+        <text name="ps_rf_pda_unlock_11" text="Yorgunluktan toparlanma x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="Gübre x0.94, fungisit etkisi x1.10, veteriner malzemeleri x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="İlaçlama maliyeti x0.92, işçi yorgunluğu x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="Ayda 2500 filo indirimi (dökme taşımacılık uygulanmadı)" />
+        <text name="ps_rf_pda_unlock_15" text="Gübre x0.925, toplu satın alma x1.05, piyasa bilgisi" />
+        <text name="ps_rf_pda_unlock_16" text="Müfredat yönetimi (yalnızca ad, etkisi yok)" />
+        <text name="ps_rf_pda_unlock_17" text="Ücretler x0.90 (adım)" />
+        <text name="ps_rf_pda_unlock_18" text="Yorgunluktan toparlanma x1.85, öngörülü kontrol" />
+        <text name="ps_rf_pda_unlock_19" text="Etkinlik x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="Gübre x0.985, fungisit x0.95, veteriner malzemeleri x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="Etkinlik x1.15 (erken uyarı uygulanmadı)" />
+        <text name="ps_rf_pda_unlock_3" text="Süt lojistiği x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="İşçi yorgunluğu x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="Ücretler x0.975 (adım)" />
+        <text name="ps_rf_pda_unlock_6" text="Yükleme otomasyonu (yalnızca ad, etkisi yok)" />
+        <text name="ps_rf_pda_unlock_7" text="Gübre x0.96, hava tahmini, agronomi raporu aboneliği başlar" />
+        <text name="ps_rf_pda_unlock_8" text="İşçi yorgunluğu x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="Ücretler x0.95 (adım; personel indirimi hesaplanmadı)" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="Üyelik etkin değil: avantajlar askıda, bu sayfadaki hiçbir şey etkin değil" />
+        <text name="ps_rf_pda_hdr_invested" text="Yatırılan %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="Toprak test kiti: deneysel kilit kapalı" />
+        <text name="ps_rf_pda_hdr_line2_default" text="Yirmi basamak: yeşil çubuk basamağınızı gösterir, yanan kartlara ulaşıldı, soluklar öndedir" />
+        <text name="ps_rf_pda_hdr_max" text="MAKS (S20): merdiven tamamlandı" />
+        <text name="ps_rf_pda_hdr_next" text="Sonraki S%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="Kayıtlı: S%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming etkin: toprak kimyası devre dışı, merdiven etkin kalır" />
+        <text name="ps_rf_pda_hdr_rung" text="Basamağınız: S%d %s" />
+        <text name="ps_rf_pda_card_cost" text="Maliyet: %s" />
     </texts>
 </l10n>

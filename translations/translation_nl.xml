@@ -7,29 +7,158 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Kantoortoegang" />
+        <text name="ps_level_2" text="Inkooptoegang" />
+        <text name="ps_level_3" text="Roosteroptimalisatie" />
+        <text name="ps_level_4" text="Communicatierelais" />
+        <text name="ps_level_5" text="Arbeidswelzijn" />
+        <text name="ps_level_6" text="Laadautomatisering" />
+        <text name="ps_level_7" text="Bulksilobeheer" />
+        <text name="ps_level_8" text="Regionaal netwerk" />
+        <text name="ps_level_9" text="Personeelsdossiers" />
+        <text name="ps_level_10" text="Academisch contact" />
+        <text name="ps_level_11" text="Arbeidsherstel" />
+        <text name="ps_level_12" text="Precisielandbouw" />
+        <text name="ps_level_13" text="Wereldwijde communicatie" />
+        <text name="ps_level_14" text="Vlootlogistiek" />
+        <text name="ps_level_15" text="Syndicaatsbestuur" />
+        <text name="ps_level_16" text="Leerplanbeheer" />
+        <text name="ps_level_17" text="Salaristoezicht" />
+        <text name="ps_level_18" text="Voorspellende besturing" />
+        <text name="ps_level_19" text="Systeemoverdrive" />
+        <text name="ps_level_20" text="Soeverein beheer" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+        <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
+        <text name="ps_rf_pda_blurb" text="Lidmaatschap van de coöperatie, actieve modificatoren, terugkerende betalingen en de offerte voor ziektebehandeling." />
+        <text name="ps_rf_pda_btn_buy" text="Koop N%d" />
+        <text name="ps_rf_pda_btn_buy_max" text="Op MAX" />
+        <text name="ps_rf_pda_btn_flush" text="Behandeling starten" />
+        <text name="ps_rf_pda_btn_flush_none" text="Geen behandeling nodig" />
+        <text name="ps_rf_pda_col_item" text="Item" />
+        <text name="ps_rf_pda_col_note" text="Note" />
+        <text name="ps_rf_pda_col_status" text="Status" />
+        <text name="ps_rf_pda_col_value" text="Value" />
+        <text name="ps_rf_pda_empty_absent" text="Pro Staff Co-Op-beheerder niet gevonden. Installeer en activeer FS25_ProStaffCoOp." />
+        <text name="ps_rf_pda_empty_disabled" text="Pro Staff is uitgeschakeld in de instellingen. Niets op deze pagina is actief." />
+        <text name="ps_rf_pda_empty_spectator" text="Toeschouwersweergave: sluit je aan bij een boerderij om het lidmaatschap te zien. Van hieruit geen aankoop of behandeling." />
+        <text name="ps_rf_pda_flush_clear" text="Gezond" />
+        <text name="ps_rf_pda_flush_fields" text="%d veld(en)" />
+        <text name="ps_rf_pda_flush_none" text="Geen zieke velden" />
+        <text name="ps_rf_pda_flush_treat" text="Behandelen" />
+        <text name="ps_rf_pda_grp_dairy" text="Zuivel" />
+        <text name="ps_rf_pda_grp_soil" text="Bodem" />
+        <text name="ps_rf_pda_grp_wc" text="Arbeiderskosten" />
+        <text name="ps_rf_pda_hint_stale_door" text="Deze deurkopie is ouder dan de knoppen Koop en Starten; werk de mod bij die hem heeft gebouwd. Tot die tijd doen de consoleopdrachten proStaffBuy en diseaseFlush hetzelfde." />
+        <text name="ps_rf_pda_hint_own_door" text="Koop betaalt de volgende sport via de coöperatie (buyLevel). Starten betaalt de offerte voor de behandeling (requestFarmFlush). Beide worden op de server afgerekend." />
+        <text name="ps_rf_pda_inactive" text="Inactief" />
+        <text name="ps_rf_pda_max" text="MAX (N20)" />
+        <text name="ps_rf_pda_msg_bought" text="N%d gekocht voor %s." />
+        <text name="ps_rf_pda_msg_disabled" text="Geweigerd: Pro Staff is uitgeschakeld in de instellingen." />
+        <text name="ps_rf_pda_msg_error" text="Aankoop mislukt: %s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="Er loopt al een behandeling voor deze boerderij." />
+        <text name="ps_rf_pda_msg_flush_denied" text="Behandeling geweigerd (%s)." />
+        <text name="ps_rf_pda_msg_flush_done" text="Behandeling uitgevoerd op %d veld(en) voor %s." />
+        <text name="ps_rf_pda_msg_flush_error" text="Behandeling mislukt: %s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="Geweigerd: onvoldoende geld voor de offerte van de behandeling." />
+        <text name="ps_rf_pda_msg_flush_none" text="Geen zieke velden; niets te behandelen." />
+        <text name="ps_rf_pda_msg_flush_requested" text="Behandeling aangevraagd; de server rekent die af." />
+        <text name="ps_rf_pda_msg_funds" text="Geweigerd: onvoldoende geld voor %s." />
+        <text name="ps_rf_pda_msg_inactive" text="Lidmaatschap inactief; niets te kopen." />
+        <text name="ps_rf_pda_msg_inactive_flush" text="Lidmaatschap inactief; geen behandeling." />
+        <text name="ps_rf_pda_msg_max" text="Al op MAX (N20)." />
+        <text name="ps_rf_pda_msg_no_api" text="buyLevel is niet beschikbaar bij deze beheerder." />
+        <text name="ps_rf_pda_msg_no_flush_api" text="requestFarmFlush is niet beschikbaar bij deze beheerder." />
+        <text name="ps_rf_pda_msg_no_network" text="Geweigerd: geen NetworkSync op deze client, dus het verzoek kan de server niet bereiken." />
+        <text name="ps_rf_pda_msg_requested" text="N%d aangevraagd; de server rekent het af." />
+        <text name="ps_rf_pda_not_member" text="Geen lid" />
+        <text name="ps_rf_pda_note_constant_only" text="Alleen constante; geen uitbetaling" />
+        <text name="ps_rf_pda_note_inactive" text="Niets op deze pagina is actief" />
+        <text name="ps_rf_pda_note_max" text="Ladder voltooid" />
+        <text name="ps_rf_pda_note_no_payout" text="N20; nog geen uitbetaling erachter" />
+        <text name="ps_rf_pda_note_no_quote" text="Ziektelaag van Soil Fertilizer niet gevonden" />
+        <text name="ps_rf_pda_note_not_built" text="N14; ontworpen, niet gebouwd" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming actief; de ladder blijft actief" />
+        <text name="ps_rf_pda_note_wealth" text="N10+: prijs naar nettovermogen, niet naar contant geld" />
+        <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
+        <text name="ps_rf_pda_page_prev" text="&lt; Back" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / maand" />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / maand" />
+        <text name="ps_rf_pda_row_agronomy_fee" text="Abonnement agronomisch rapport" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="Inkoop in bulk" />
+        <text name="ps_rf_pda_row_bulk_transport" text="Bulktransport" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="Zuivellogistiek" />
+        <text name="ps_rf_pda_row_early_warning" text="Vroege waarschuwing" />
+        <text name="ps_rf_pda_row_effectiveness" text="Effectiviteit" />
+        <text name="ps_rf_pda_row_fatigue" text="Vermoeidheid van arbeiders" />
+        <text name="ps_rf_pda_row_fert" text="Kosten kunstmest" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="Vlootkorting" />
+        <text name="ps_rf_pda_row_flush" text="Ziektebehandeling" />
+        <text name="ps_rf_pda_row_forecast" text="Weersvoorspelling" />
+        <text name="ps_rf_pda_row_fung_cost" text="Kosten fungicide" />
+        <text name="ps_rf_pda_row_fung_effect" text="Werking fungicide" />
+        <text name="ps_rf_pda_row_invested" text="Geïnvesteerd" />
+        <text name="ps_rf_pda_row_level" text="Niveau" />
+        <text name="ps_rf_pda_row_level_on_record" text="Vastgelegd niveau" />
+        <text name="ps_rf_pda_row_market_intel" text="Marktinformatie" />
+        <text name="ps_rf_pda_row_membership" text="Lidmaatschap" />
+        <text name="ps_rf_pda_row_next_level" text="Volgend niveau" />
+        <text name="ps_rf_pda_row_next_unlock" text="Volgende ontgrendeling" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="Personeelskorting" />
+        <text name="ps_rf_pda_row_predictive" text="Voorspellende besturing" />
+        <text name="ps_rf_pda_row_recovery" text="Herstel van vermoeidheid" />
+        <text name="ps_rf_pda_row_soil_chem" text="Bodemchemie" />
+        <text name="ps_rf_pda_row_soil_kit" text="Bodemtestset" />
+        <text name="ps_rf_pda_row_spray" text="Spuitkosten" />
+        <text name="ps_rf_pda_row_vet" text="Veterinaire benodigdheden" />
+        <text name="ps_rf_pda_row_wages" text="Lonen" />
+        <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;Dit scherm is de Pro Staff-niveauladder van je boerderij: alle twintig sporten op één pagina, vier naast elkaar en vijf onder elkaar, in de volgorde waarin ze worden gekocht.&#10;&#10;De groene balk en de verlichte kaart markeren jouw sport. Verlichte kaarten eronder zijn bereikt; gedimde kaarten liggen nog voor je. Elke kaart noemt de sport en zegt wat de aankoop toevoegt. Alleen naam betekent dat de sport bestaat maar niets werkends verandert; niet toegepast betekent dat de sport ontgrendeld is maar nog niets uitbetaalt.&#10;&#10;De bovenste regel toont jouw sport, wat de boerderij heeft geïnvesteerd en de prijs van de volgende sport; vanaf N10 volgt die prijs het nettovermogen, niet het contante geld. Elke kaart toont ook de prijs van de sport bij je huidige nettovermogen (Geïnvesteerd is wat je werkelijk hebt betaald). Eerlijkheidsnotities - prijs naar nettovermogen, Precision Farming dat de bodemchemie uitschakelt, de vergrendeling van de bodemtestset - staan aan het einde van dit vak.&#10;&#10;De onderste regel toont het abonnement op het agronomisch rapport, de vlootkorting van N14 en de offerte voor de behandeling van elk ziek veld dat je bezit. Koop en Starten staan onder de ladder op elke Realistic Farming-deur, welke mod die ook heeft gebouwd: Koop betaalt de volgende sport via de coöperatie en Starten betaalt de offerte voor de behandeling, beide afgerekend op de server." />
+        <text name="ps_rf_pda_st_active" text="Actief" />
+        <text name="ps_rf_pda_st_from_level" text="Vanaf N%d" />
+        <text name="ps_rf_pda_st_gate_off" text="Experimentele vergrendeling uit" />
+        <text name="ps_rf_pda_st_live" text="Van kracht" />
+        <text name="ps_rf_pda_st_locked" text="Vergrendeld" />
+        <text name="ps_rf_pda_st_member" text="Lid" />
+        <text name="ps_rf_pda_st_no_quote" text="Geen offerte" />
+        <text name="ps_rf_pda_st_not_applied" text="Niet toegepast" />
+        <text name="ps_rf_pda_st_not_live" text="Niet van kracht" />
+        <text name="ps_rf_pda_st_off" text="Uit in de instellingen" />
+        <text name="ps_rf_pda_st_stood_down" text="Uitgeschakeld" />
+        <text name="ps_rf_pda_st_suspended" text="Voordelen opgeschort" />
+        <text name="ps_rf_pda_st_unlocked" text="Ontgrendeld" />
+        <text name="ps_rf_pda_unlock_1" text="Kantoortoegang (alleen naam, geen werking)" />
+        <text name="ps_rf_pda_unlock_10" text="Bodemtestset (experimentele vergrendeling), prijs gaat naar nettovermogen" />
+        <text name="ps_rf_pda_unlock_11" text="Herstel van vermoeidheid x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="Kunstmest x0.94, werking fungicide x1.10, veterinaire benodigdheden x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="Spuitkosten x0.92, vermoeidheid van arbeiders x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="Vlootkorting 2500 per maand (bulktransport niet toegepast)" />
+        <text name="ps_rf_pda_unlock_15" text="Kunstmest x0.925, inkoop in bulk x1.05, marktinformatie" />
+        <text name="ps_rf_pda_unlock_16" text="Leerplanbeheer (alleen naam, geen werking)" />
+        <text name="ps_rf_pda_unlock_17" text="Lonen x0.90 (stap)" />
+        <text name="ps_rf_pda_unlock_18" text="Herstel van vermoeidheid x1.85, voorspellende besturing" />
+        <text name="ps_rf_pda_unlock_19" text="Effectiviteit x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="Kunstmest x0.985, fungicide x0.95, veterinaire benodigdheden x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="Effectiviteit x1.15 (vroege waarschuwing niet toegepast)" />
+        <text name="ps_rf_pda_unlock_3" text="Zuivellogistiek x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="Vermoeidheid van arbeiders x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="Lonen x0.975 (stap)" />
+        <text name="ps_rf_pda_unlock_6" text="Laadautomatisering (alleen naam, geen werking)" />
+        <text name="ps_rf_pda_unlock_7" text="Kunstmest x0.96, weersvoorspelling, abonnement agronomisch rapport start" />
+        <text name="ps_rf_pda_unlock_8" text="Vermoeidheid van arbeiders x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="Lonen x0.95 (stap; personeelskorting niet afgerekend)" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="Lidmaatschap inactief: voordelen opgeschort, niets op deze pagina is actief" />
+        <text name="ps_rf_pda_hdr_invested" text="Geïnvesteerd %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="Bodemtestset: experimentele vergrendeling uit" />
+        <text name="ps_rf_pda_hdr_line2_default" text="Twintig sporten: de groene balk markeert jouw sport, verlichte kaarten zijn bereikt, gedimde liggen nog voor je" />
+        <text name="ps_rf_pda_hdr_max" text="MAX (N20): ladder voltooid" />
+        <text name="ps_rf_pda_hdr_next" text="Volgende N%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="Vastgelegd: N%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming actief: bodemchemie uitgeschakeld, de ladder blijft actief" />
+        <text name="ps_rf_pda_hdr_rung" text="Jouw sport: N%d %s" />
+        <text name="ps_rf_pda_card_cost" text="Kosten: %s" />
     </texts>
 </l10n>

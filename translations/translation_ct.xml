@@ -7,29 +7,158 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="辦公室存取" />
+        <text name="ps_level_2" text="採購存取" />
+        <text name="ps_level_3" text="排班最佳化" />
+        <text name="ps_level_4" text="通訊中繼" />
+        <text name="ps_level_5" text="勞工福利" />
+        <text name="ps_level_6" text="裝載自動化" />
+        <text name="ps_level_7" text="散裝筒倉管理" />
+        <text name="ps_level_8" text="區域網路" />
+        <text name="ps_level_9" text="人事檔案" />
+        <text name="ps_level_10" text="學術聯絡" />
+        <text name="ps_level_11" text="勞力恢復" />
+        <text name="ps_level_12" text="精準農藝" />
+        <text name="ps_level_13" text="全球通訊" />
+        <text name="ps_level_14" text="車隊物流" />
+        <text name="ps_level_15" text="聯盟理事會" />
+        <text name="ps_level_16" text="課程管理" />
+        <text name="ps_level_17" text="薪資監督" />
+        <text name="ps_level_18" text="預測控制" />
+        <text name="ps_level_19" text="系統超頻" />
+        <text name="ps_level_20" text="最高管理" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+        <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
+        <text name="ps_rf_pda_blurb" text="合作社會員資格、生效中的修正值、定期收支與病害處理報價。" />
+        <text name="ps_rf_pda_btn_buy" text="購買 L%d" />
+        <text name="ps_rf_pda_btn_buy_max" text="已達最高" />
+        <text name="ps_rf_pda_btn_flush" text="執行病害處理" />
+        <text name="ps_rf_pda_btn_flush_none" text="無需處理" />
+        <text name="ps_rf_pda_col_item" text="Item" />
+        <text name="ps_rf_pda_col_note" text="Note" />
+        <text name="ps_rf_pda_col_status" text="Status" />
+        <text name="ps_rf_pda_col_value" text="Value" />
+        <text name="ps_rf_pda_empty_absent" text="找不到 Pro Staff Co-Op 管理器。請安裝並啟用 FS25_ProStaffCoOp。" />
+        <text name="ps_rf_pda_empty_disabled" text="Pro Staff 已在設定中停用。此頁面上的內容都未生效。" />
+        <text name="ps_rf_pda_empty_spectator" text="旁觀模式：加入農場才能查看會員資格。無法從這裡購買或處理。" />
+        <text name="ps_rf_pda_flush_clear" text="健康" />
+        <text name="ps_rf_pda_flush_fields" text="%d 塊田地" />
+        <text name="ps_rf_pda_flush_none" text="沒有染病的田地" />
+        <text name="ps_rf_pda_flush_treat" text="處理" />
+        <text name="ps_rf_pda_grp_dairy" text="乳業" />
+        <text name="ps_rf_pda_grp_soil" text="土壤" />
+        <text name="ps_rf_pda_grp_wc" text="工人成本" />
+        <text name="ps_rf_pda_hint_stale_door" text="這個門的副本比「購買」和「執行」按鈕更舊；請更新建立它的模組。在那之前，主控台指令 proStaffBuy 和 diseaseFlush 可以做同樣的事。" />
+        <text name="ps_rf_pda_hint_own_door" text="「購買」透過合作社支付下一階的費用（buyLevel）。「執行」支付病害處理報價（requestFarmFlush）。兩者都在伺服器上結算。" />
+        <text name="ps_rf_pda_inactive" text="未啟用" />
+        <text name="ps_rf_pda_max" text="最高 (L20)" />
+        <text name="ps_rf_pda_msg_bought" text="已購買 L%d，費用 %s。" />
+        <text name="ps_rf_pda_msg_disabled" text="已拒絕：Pro Staff 已在設定中停用。" />
+        <text name="ps_rf_pda_msg_error" text="購買失敗：%s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="這個農場已有處理正在進行。" />
+        <text name="ps_rf_pda_msg_flush_denied" text="處理遭拒（%s）。" />
+        <text name="ps_rf_pda_msg_flush_done" text="已處理 %d 塊田地，費用 %s。" />
+        <text name="ps_rf_pda_msg_flush_error" text="處理失敗：%s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="已拒絕：資金不足以支付處理報價。" />
+        <text name="ps_rf_pda_msg_flush_none" text="沒有染病的田地；無需處理。" />
+        <text name="ps_rf_pda_msg_flush_requested" text="已申請處理；由伺服器結算。" />
+        <text name="ps_rf_pda_msg_funds" text="已拒絕：資金不足以支付 %s。" />
+        <text name="ps_rf_pda_msg_inactive" text="會員資格未啟用；沒有可購買的項目。" />
+        <text name="ps_rf_pda_msg_inactive_flush" text="會員資格未啟用；不進行處理。" />
+        <text name="ps_rf_pda_msg_max" text="已達最高（L20）。" />
+        <text name="ps_rf_pda_msg_no_api" text="此管理器沒有提供 buyLevel。" />
+        <text name="ps_rf_pda_msg_no_flush_api" text="此管理器沒有提供 requestFarmFlush。" />
+        <text name="ps_rf_pda_msg_no_network" text="已拒絕：此用戶端沒有 NetworkSync，因此請求無法送達伺服器。" />
+        <text name="ps_rf_pda_msg_requested" text="已申請 L%d；由伺服器結算。" />
+        <text name="ps_rf_pda_not_member" text="非會員" />
+        <text name="ps_rf_pda_note_constant_only" text="僅為常數；無支付" />
+        <text name="ps_rf_pda_note_inactive" text="此頁面上的內容都未生效" />
+        <text name="ps_rf_pda_note_max" text="階梯已完成" />
+        <text name="ps_rf_pda_note_no_payout" text="L20；目前尚無支付" />
+        <text name="ps_rf_pda_note_no_quote" text="找不到 Soil Fertilizer 的病害圖層" />
+        <text name="ps_rf_pda_note_not_built" text="L14；已設計，尚未實作" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming 啟用中；階梯仍然生效" />
+        <text name="ps_rf_pda_note_wealth" text="L10 以上：價格依淨資產計算，而非現金" />
+        <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
+        <text name="ps_rf_pda_page_prev" text="&lt; Back" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / 月" />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / 月" />
+        <text name="ps_rf_pda_row_agronomy_fee" text="農藝報告訂閱" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="大宗採購" />
+        <text name="ps_rf_pda_row_bulk_transport" text="散裝運輸" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="乳業物流" />
+        <text name="ps_rf_pda_row_early_warning" text="早期預警" />
+        <text name="ps_rf_pda_row_effectiveness" text="效率" />
+        <text name="ps_rf_pda_row_fatigue" text="工人疲勞" />
+        <text name="ps_rf_pda_row_fert" text="肥料成本" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="車隊回饋" />
+        <text name="ps_rf_pda_row_flush" text="病害處理" />
+        <text name="ps_rf_pda_row_forecast" text="天氣預報" />
+        <text name="ps_rf_pda_row_fung_cost" text="殺菌劑成本" />
+        <text name="ps_rf_pda_row_fung_effect" text="殺菌劑效果" />
+        <text name="ps_rf_pda_row_invested" text="已投資" />
+        <text name="ps_rf_pda_row_level" text="等級" />
+        <text name="ps_rf_pda_row_level_on_record" text="登記等級" />
+        <text name="ps_rf_pda_row_market_intel" text="市場情報" />
+        <text name="ps_rf_pda_row_membership" text="會員資格" />
+        <text name="ps_rf_pda_row_next_level" text="下一等級" />
+        <text name="ps_rf_pda_row_next_unlock" text="下一個解鎖" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="人事回饋" />
+        <text name="ps_rf_pda_row_predictive" text="預測控制" />
+        <text name="ps_rf_pda_row_recovery" text="疲勞恢復" />
+        <text name="ps_rf_pda_row_soil_chem" text="土壤化學" />
+        <text name="ps_rf_pda_row_soil_kit" text="土壤檢測套件" />
+        <text name="ps_rf_pda_row_spray" text="噴灑成本" />
+        <text name="ps_rf_pda_row_vet" text="獸醫用品" />
+        <text name="ps_rf_pda_row_wages" text="工資" />
+        <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;這個畫面是你農場的 Pro Staff 等級階梯：二十階全部在同一頁，橫向四個、縱向五排，依購買順序排列。&#10;&#10;綠色橫條和亮起的卡片標示你所在的階。下方亮起的卡片已達成；暗淡的卡片還在前方。每張卡片都寫出該階的名稱，以及購買後會增加什麼。「僅名稱」表示該階存在，但不改變任何生效中的內容；「未套用」表示該階已解鎖，但目前尚未支付任何東西。&#10;&#10;上方一行顯示你所在的階、農場已投資的金額，以及下一階的價格；從 L10 起，這個價格依淨資產而非現金計算。每張卡片也會顯示該階在你目前淨資產下的價格（已投資是你實際支付的金額）。誠實說明 - 依淨資產定價、Precision Farming 停用土壤化學、土壤檢測套件的鎖定 - 列在此框的最後。&#10;&#10;下方一行顯示農藝報告訂閱、L14 的車隊回饋，以及你擁有的每塊染病田地的病害處理報價。「購買」和「執行」位於每一扇 Realistic Farming 門的階梯下方，無論是哪個模組建立的：「購買」透過合作社支付下一階，「執行」支付病害處理報價，兩者都在伺服器上結算。" />
+        <text name="ps_rf_pda_st_active" text="啟用" />
+        <text name="ps_rf_pda_st_from_level" text="自 L%d 起" />
+        <text name="ps_rf_pda_st_gate_off" text="實驗鎖定已關閉" />
+        <text name="ps_rf_pda_st_live" text="生效中" />
+        <text name="ps_rf_pda_st_locked" text="已鎖定" />
+        <text name="ps_rf_pda_st_member" text="會員" />
+        <text name="ps_rf_pda_st_no_quote" text="無報價" />
+        <text name="ps_rf_pda_st_not_applied" text="未套用" />
+        <text name="ps_rf_pda_st_not_live" text="未生效" />
+        <text name="ps_rf_pda_st_off" text="已在設定中關閉" />
+        <text name="ps_rf_pda_st_stood_down" text="已停用" />
+        <text name="ps_rf_pda_st_suspended" text="權益已暫停" />
+        <text name="ps_rf_pda_st_unlocked" text="已解鎖" />
+        <text name="ps_rf_pda_unlock_1" text="辦公室存取（僅名稱，無效果）" />
+        <text name="ps_rf_pda_unlock_10" text="土壤檢測套件（實驗鎖定），價格改依淨資產計算" />
+        <text name="ps_rf_pda_unlock_11" text="疲勞恢復 x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="肥料 x0.94、殺菌劑效果 x1.10、獸醫用品 x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="噴灑成本 x0.92、工人疲勞 x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="車隊回饋每月 2500（散裝運輸未套用）" />
+        <text name="ps_rf_pda_unlock_15" text="肥料 x0.925、大宗採購 x1.05、市場情報" />
+        <text name="ps_rf_pda_unlock_16" text="課程管理（僅名稱，無效果）" />
+        <text name="ps_rf_pda_unlock_17" text="工資 x0.90（階段）" />
+        <text name="ps_rf_pda_unlock_18" text="疲勞恢復 x1.85、預測控制" />
+        <text name="ps_rf_pda_unlock_19" text="效率 x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="肥料 x0.985、殺菌劑 x0.95、獸醫用品 x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="效率 x1.15（早期預警未套用）" />
+        <text name="ps_rf_pda_unlock_3" text="乳業物流 x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="工人疲勞 x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="工資 x0.975（階段）" />
+        <text name="ps_rf_pda_unlock_6" text="裝載自動化（僅名稱，無效果）" />
+        <text name="ps_rf_pda_unlock_7" text="肥料 x0.96、天氣預報、開始農藝報告訂閱" />
+        <text name="ps_rf_pda_unlock_8" text="工人疲勞 x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="工資 x0.95（階段；人事回饋未結算）" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="會員資格未啟用：權益已暫停，此頁面上的內容都未生效" />
+        <text name="ps_rf_pda_hdr_invested" text="已投資 %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="土壤檢測套件：實驗鎖定已關閉" />
+        <text name="ps_rf_pda_hdr_line2_default" text="二十階：綠色橫條標示你所在的階，亮起的卡片已達成，暗淡的在前方" />
+        <text name="ps_rf_pda_hdr_max" text="最高 (L20)：階梯已完成" />
+        <text name="ps_rf_pda_hdr_next" text="下一階 L%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="登記：L%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming 啟用中：土壤化學已停用，階梯仍然生效" />
+        <text name="ps_rf_pda_hdr_rung" text="你所在的階：L%d %s" />
+        <text name="ps_rf_pda_card_cost" text="費用：%s" />
     </texts>
 </l10n>

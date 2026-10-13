@@ -55,7 +55,8 @@ function ProStaffManager:requestFarmFlush(farmId)
     end
     local ns = self:_getNetworkSync()
     if ns ~= nil and ns.requestAction ~= nil then
-        ns:requestAction(ProStaffConstants.ACTION_FLUSH, { farmId = farmId })
+        -- A positional array, as the transport carries it (see buyLevel).
+        ns:requestAction(ProStaffConstants.ACTION_FLUSH, { farmId })
         return true, "requested"
     end
     PSLogger.warning("requestFarmFlush: no server authority and NetworkSync absent - cannot flush on a pure client")
@@ -74,7 +75,7 @@ function ProStaffManager:requestAdminClear(farmId)
     end
     local ns = self:_getNetworkSync()
     if ns ~= nil and ns.requestAction ~= nil then
-        ns:requestAction(ProStaffConstants.ACTION_CLEAR, { farmId = farmId })
+        ns:requestAction(ProStaffConstants.ACTION_CLEAR, { farmId })
         return true, "requested"
     end
     PSLogger.warning("requestAdminClear: no server authority and NetworkSync absent")
@@ -340,7 +341,7 @@ function ProStaffManager:_farmDiseaseReport(farmId)
     return out
 end
 
---- The farmland ids a farm owns (base-game, verified at FarmlandManager.lua:494).
+--- The farmland ids a farm owns (base-game, verified at FarmlandManager.lua:332-340).
 ---@param farmId number
 ---@return table list of farmland ids
 function ProStaffManager:_farmFieldIds(farmId)
@@ -373,6 +374,12 @@ end
 --- The grounded TREAT: scout (the Co-Op report reveals the infection, a designed
 --- ProStaff reveal path) then applyNamedFungicide with charge=false so SF never
 --- bills its own per-hectare chem price. Server-only wrapper.
+--- The scout names the acting farm: SoilFertilizer's scoutField(fieldId, actingFarmId)
+--- (RSF-F231, SoilFertilitySystem.lua:2564 at #998) refuses a caller with no standing
+--- and returns the gated report, so without it the paid flush revealed nothing and
+--- fell back to the broad-spectrum chemical. Every flushed field is one the farm owns
+--- (getOwnedFarmlandIdsByFarmId above), so the farm has standing; an older
+--- SoilFertilizer's scoutField(fieldId) drops the extra argument.
 ---@param fieldId number
 ---@param farmId number
 ---@return boolean ok
@@ -380,7 +387,7 @@ function ProStaffManager:_sfTreat(fieldId, farmId)
     local soil = self:_sfSystem()
     if soil == nil or type(soil.applyNamedFungicide) ~= "function" then return false end
     if type(soil.scoutField) == "function" then
-        pcall(soil.scoutField, soil, fieldId)
+        pcall(soil.scoutField, soil, fieldId, farmId)
     end
     local chemId = self:_chemFor(fieldId, soil)
     local ok, applyOk = pcall(soil.applyNamedFungicide, soil, fieldId, chemId, {
@@ -453,25 +460,29 @@ function ProStaffManager:bindDiseaseFlush()
     ns:registerAction(ProStaffConstants.ACTION_FLUSH, {
         adminOnly = false,
         onAction = function(userId, args)
-            if type(args) ~= "table" or args.farmId == nil then return end
+            -- args[1] is the farm, a positive number (see ACTION_BUY: farm 0 is a
+            -- spectator's, which getFarmByUserId answers with).
+            local farmId = type(args) == "table" and args[1] or nil
+            if type(farmId) ~= "number" or farmId <= 0 then return end
             -- Ownership: a client may only flush a farm it belongs to (same rule
             -- as ACTION_BUY). Without it a client could send another farm's id
             -- and spend that farm's money.
             local farm = g_farmManager ~= nil and g_farmManager:getFarmByUserId(userId) or nil
-            if farm == nil or farm.farmId ~= args.farmId then
+            if farm == nil or farm.farmId ~= farmId then
                 PSLogger.warning("ACTION_FLUSH rejected: userId %s is not a member of farm %s",
-                    tostring(userId), tostring(args.farmId))
+                    tostring(userId), tostring(farmId))
                 return
             end
-            self:_doFarmFlush(args.farmId)
+            self:_doFarmFlush(farmId)
         end,
     })
 
     ns:registerAction(ProStaffConstants.ACTION_CLEAR, {
         adminOnly = true,
         onAction = function(_userId, args)
-            if type(args) ~= "table" or args.farmId == nil then return end
-            self:_doAdminClear(args.farmId)
+            local farmId = type(args) == "table" and args[1] or nil
+            if type(farmId) ~= "number" or farmId <= 0 then return end
+            self:_doAdminClear(farmId)
         end,
     })
 

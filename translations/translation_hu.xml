@@ -7,29 +7,158 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Irodai hozzáférés" />
+        <text name="ps_level_2" text="Beszerzési hozzáférés" />
+        <text name="ps_level_3" text="Beosztásoptimalizálás" />
+        <text name="ps_level_4" text="Kommunikációs relé" />
+        <text name="ps_level_5" text="Munkavállalói jólét" />
+        <text name="ps_level_6" text="Rakodásautomatizálás" />
+        <text name="ps_level_7" text="Ömlesztett silók kezelése" />
+        <text name="ps_level_8" text="Regionális hálózat" />
+        <text name="ps_level_9" text="Személyzeti nyilvántartás" />
+        <text name="ps_level_10" text="Egyetemi kapcsolat" />
+        <text name="ps_level_11" text="Munkaerő-regeneráció" />
+        <text name="ps_level_12" text="Precíziós agronómia" />
+        <text name="ps_level_13" text="Globális kommunikáció" />
+        <text name="ps_level_14" text="Flottalogisztika" />
+        <text name="ps_level_15" text="Szindikátusi testület" />
+        <text name="ps_level_16" text="Tantervi adminisztráció" />
+        <text name="ps_level_17" text="Bérfelügyelet" />
+        <text name="ps_level_18" text="Prediktív vezérlés" />
+        <text name="ps_level_19" text="Rendszertúlhajtás" />
+        <text name="ps_level_20" text="Szuverén adminisztráció" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+        <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
+        <text name="ps_rf_pda_blurb" text="Szövetkezeti tagság, élő módosítók, rendszeres pénzmozgások és a betegségkezelés árajánlata." />
+        <text name="ps_rf_pda_btn_buy" text="Vásárlás: %d. szint" />
+        <text name="ps_rf_pda_btn_buy_max" text="MAX szinten" />
+        <text name="ps_rf_pda_btn_flush" text="Kezelés indítása" />
+        <text name="ps_rf_pda_btn_flush_none" text="Nincs szükség kezelésre" />
+        <text name="ps_rf_pda_col_item" text="Item" />
+        <text name="ps_rf_pda_col_note" text="Note" />
+        <text name="ps_rf_pda_col_status" text="Status" />
+        <text name="ps_rf_pda_col_value" text="Value" />
+        <text name="ps_rf_pda_empty_absent" text="A Pro Staff Co-Op kezelő nem található. Telepítsd és engedélyezd az FS25_ProStaffCoOp modot." />
+        <text name="ps_rf_pda_empty_disabled" text="A Pro Staff ki van kapcsolva a beállításokban. Semmi sem él ezen az oldalon." />
+        <text name="ps_rf_pda_empty_spectator" text="Nézői mód: csatlakozz egy gazdasághoz a tagság megtekintéséhez. Innen nincs vásárlás és kezelés." />
+        <text name="ps_rf_pda_flush_clear" text="Egészséges" />
+        <text name="ps_rf_pda_flush_fields" text="%d tábla" />
+        <text name="ps_rf_pda_flush_none" text="Nincs beteg tábla" />
+        <text name="ps_rf_pda_flush_treat" text="Kezelés" />
+        <text name="ps_rf_pda_grp_dairy" text="Tejgazdaság" />
+        <text name="ps_rf_pda_grp_soil" text="Talaj" />
+        <text name="ps_rf_pda_grp_wc" text="Munkásköltségek" />
+        <text name="ps_rf_pda_hint_stale_door" text="Ez az ajtómásolat régebbi a Vásárlás és az Indítás gomboknál; frissítsd a modot, amely létrehozta. Addig a proStaffBuy és a diseaseFlush konzolparancs ugyanezt teszi." />
+        <text name="ps_rf_pda_hint_own_door" text="A Vásárlás a szövetkezeten keresztül fizeti a következő fokot (buyLevel). Az Indítás a kezelés árajánlatát fizeti (requestFarmFlush). Mindkettő a szerveren számolódik el." />
+        <text name="ps_rf_pda_inactive" text="Inaktív" />
+        <text name="ps_rf_pda_max" text="MAX (20. szint)" />
+        <text name="ps_rf_pda_msg_bought" text="%d. szint megvásárolva: %s." />
+        <text name="ps_rf_pda_msg_disabled" text="Elutasítva: a Pro Staff ki van kapcsolva a beállításokban." />
+        <text name="ps_rf_pda_msg_error" text="A vásárlás sikertelen: %s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="Ennél a gazdaságnál már folyik egy kezelés." />
+        <text name="ps_rf_pda_msg_flush_denied" text="Kezelés elutasítva (%s)." />
+        <text name="ps_rf_pda_msg_flush_done" text="Kezelés kész %d táblán, ára: %s." />
+        <text name="ps_rf_pda_msg_flush_error" text="A kezelés sikertelen: %s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="Elutasítva: nincs elég pénz a kezelés árajánlatára." />
+        <text name="ps_rf_pda_msg_flush_none" text="Nincs beteg tábla; nincs mit kezelni." />
+        <text name="ps_rf_pda_msg_flush_requested" text="Kezelés kérve; a szerver számolja el." />
+        <text name="ps_rf_pda_msg_funds" text="Elutasítva: nincs elég pénz erre: %s." />
+        <text name="ps_rf_pda_msg_inactive" text="A tagság inaktív; nincs mit venni." />
+        <text name="ps_rf_pda_msg_inactive_flush" text="A tagság inaktív; nincs kezelés." />
+        <text name="ps_rf_pda_msg_max" text="Már MAX szinten (20. szint)." />
+        <text name="ps_rf_pda_msg_no_api" text="A buyLevel nem érhető el ennél a kezelőnél." />
+        <text name="ps_rf_pda_msg_no_flush_api" text="A requestFarmFlush nem érhető el ennél a kezelőnél." />
+        <text name="ps_rf_pda_msg_no_network" text="Elutasítva: ezen a kliensen nincs NetworkSync, így a kérés nem jut el a szerverre." />
+        <text name="ps_rf_pda_msg_requested" text="%d. szint kérve; a szerver számolja el." />
+        <text name="ps_rf_pda_not_member" text="Nem tag" />
+        <text name="ps_rf_pda_note_constant_only" text="Csak állandó; nincs kifizetés" />
+        <text name="ps_rf_pda_note_inactive" text="Semmi sem él ezen az oldalon" />
+        <text name="ps_rf_pda_note_max" text="A létra teljes" />
+        <text name="ps_rf_pda_note_no_payout" text="20. szint; még nincs mögötte kifizetés" />
+        <text name="ps_rf_pda_note_no_quote" text="A Soil Fertilizer betegségrétege nem található" />
+        <text name="ps_rf_pda_note_not_built" text="14. szint; megtervezve, nincs megépítve" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming aktív; a létra él tovább" />
+        <text name="ps_rf_pda_note_wealth" text="10. szinttől: az ár a nettó vagyonhoz igazodik, nem a készpénzhez" />
+        <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
+        <text name="ps_rf_pda_page_prev" text="&lt; Back" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / hó" />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / hó" />
+        <text name="ps_rf_pda_row_agronomy_fee" text="Agronómiai jelentés előfizetés" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="Nagybani beszerzés" />
+        <text name="ps_rf_pda_row_bulk_transport" text="Ömlesztett szállítás" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="Tejlogisztika" />
+        <text name="ps_rf_pda_row_early_warning" text="Korai figyelmeztetés" />
+        <text name="ps_rf_pda_row_effectiveness" text="Hatékonyság" />
+        <text name="ps_rf_pda_row_fatigue" text="Dolgozói fáradtság" />
+        <text name="ps_rf_pda_row_fert" text="Műtrágya költsége" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="Flottakedvezmény" />
+        <text name="ps_rf_pda_row_flush" text="Betegségkezelés" />
+        <text name="ps_rf_pda_row_forecast" text="Időjárás-előrejelzés" />
+        <text name="ps_rf_pda_row_fung_cost" text="Gombaölő szer költsége" />
+        <text name="ps_rf_pda_row_fung_effect" text="Gombaölő szer hatása" />
+        <text name="ps_rf_pda_row_invested" text="Befektetve" />
+        <text name="ps_rf_pda_row_level" text="Szint" />
+        <text name="ps_rf_pda_row_level_on_record" text="Nyilvántartott szint" />
+        <text name="ps_rf_pda_row_market_intel" text="Piaci információk" />
+        <text name="ps_rf_pda_row_membership" text="Tagság" />
+        <text name="ps_rf_pda_row_next_level" text="Következő szint" />
+        <text name="ps_rf_pda_row_next_unlock" text="Következő feloldás" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="Személyzeti kedvezmény" />
+        <text name="ps_rf_pda_row_predictive" text="Előrejelző vezérlés" />
+        <text name="ps_rf_pda_row_recovery" text="Fáradtságból való felépülés" />
+        <text name="ps_rf_pda_row_soil_chem" text="Talajkémia" />
+        <text name="ps_rf_pda_row_soil_kit" text="Talajvizsgáló készlet" />
+        <text name="ps_rf_pda_row_spray" text="Permetezés költsége" />
+        <text name="ps_rf_pda_row_vet" text="Állatorvosi kellékek" />
+        <text name="ps_rf_pda_row_wages" text="Bérek" />
+        <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;Ez a képernyő a gazdaságod Pro Staff szintlétrája: mind a húsz fok egy oldalon, négy egymás mellett és öt egymás alatt, a vásárlás sorrendjében.&#10;&#10;A zöld sáv és a kivilágított kártya jelöli a fokodat. Az alatta lévő kivilágított kártyák már elérve; a halvány kártyák még előtted állnak. Minden kártya megnevezi a fokot, és megmondja, mit ad a megvásárlása. A csak név azt jelenti, hogy a fok létezik, de semmi élőt nem változtat; a nincs alkalmazva azt jelenti, hogy a fok feloldva, de még nem fizet semmit.&#10;&#10;A felső sor a fokodat mutatja, azt, mennyit fektetett be a gazdaság, és a következő fok árát; a 10. szinttől ez az ár a nettó vagyont követi, nem a készpénzt. Minden kártya a fok árát is mutatja a jelenlegi nettó vagyonod mellett (a Befektetve az, amit ténylegesen kifizettél). Az őszinteségi megjegyzések - nettó vagyon szerinti ár, a talajkémiát leállító Precision Farming, a talajvizsgáló készlet zárja - a mező végén szerepelnek.&#10;&#10;Az alsó sor az agronómiai jelentés előfizetését, a 14. szint flottakedvezményét és a kezelés árajánlatát mutatja minden beteg tábládra. A Vásárlás és az Indítás a létra alatt van minden Realistic Farming ajtón, bármelyik mod hozta is létre: a Vásárlás a szövetkezeten keresztül fizeti a következő fokot, az Indítás pedig a kezelés árajánlatát, mindkettőt a szerveren számolva el." />
+        <text name="ps_rf_pda_st_active" text="Aktív" />
+        <text name="ps_rf_pda_st_from_level" text="%d. szinttől" />
+        <text name="ps_rf_pda_st_gate_off" text="Kísérleti zár kikapcsolva" />
+        <text name="ps_rf_pda_st_live" text="Érvényben" />
+        <text name="ps_rf_pda_st_locked" text="Zárolva" />
+        <text name="ps_rf_pda_st_member" text="Tag" />
+        <text name="ps_rf_pda_st_no_quote" text="Nincs árajánlat" />
+        <text name="ps_rf_pda_st_not_applied" text="Nincs alkalmazva" />
+        <text name="ps_rf_pda_st_not_live" text="Nincs érvényben" />
+        <text name="ps_rf_pda_st_off" text="Kikapcsolva a beállításokban" />
+        <text name="ps_rf_pda_st_stood_down" text="Leállítva" />
+        <text name="ps_rf_pda_st_suspended" text="Előnyök felfüggesztve" />
+        <text name="ps_rf_pda_st_unlocked" text="Feloldva" />
+        <text name="ps_rf_pda_unlock_1" text="Irodai hozzáférés (csak név, nincs hatása)" />
+        <text name="ps_rf_pda_unlock_10" text="Talajvizsgáló készlet (kísérleti zár), az ár a nettó vagyonhoz igazodik" />
+        <text name="ps_rf_pda_unlock_11" text="Fáradtságból való felépülés x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="Műtrágya x0.94, gombaölő hatása x1.10, állatorvosi kellékek x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="Permetezés költsége x0.92, dolgozói fáradtság x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="Flottakedvezmény havi 2500 (ömlesztett szállítás nincs alkalmazva)" />
+        <text name="ps_rf_pda_unlock_15" text="Műtrágya x0.925, nagybani beszerzés x1.05, piaci információk" />
+        <text name="ps_rf_pda_unlock_16" text="Tantervi adminisztráció (csak név, nincs hatása)" />
+        <text name="ps_rf_pda_unlock_17" text="Bérek x0.90 (lépés)" />
+        <text name="ps_rf_pda_unlock_18" text="Fáradtságból való felépülés x1.85, előrejelző vezérlés" />
+        <text name="ps_rf_pda_unlock_19" text="Hatékonyság x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="Műtrágya x0.985, gombaölő x0.95, állatorvosi kellékek x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="Hatékonyság x1.15 (korai figyelmeztetés nincs alkalmazva)" />
+        <text name="ps_rf_pda_unlock_3" text="Tejlogisztika x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="Dolgozói fáradtság x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="Bérek x0.975 (lépés)" />
+        <text name="ps_rf_pda_unlock_6" text="Rakodásautomatizálás (csak név, nincs hatása)" />
+        <text name="ps_rf_pda_unlock_7" text="Műtrágya x0.96, időjárás-előrejelzés, indul az agronómiai jelentés előfizetése" />
+        <text name="ps_rf_pda_unlock_8" text="Dolgozói fáradtság x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="Bérek x0.95 (lépés; személyzeti kedvezmény nincs elszámolva)" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="A tagság inaktív: előnyök felfüggesztve, semmi sem él ezen az oldalon" />
+        <text name="ps_rf_pda_hdr_invested" text="Befektetve: %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="Talajvizsgáló készlet: kísérleti zár kikapcsolva" />
+        <text name="ps_rf_pda_hdr_line2_default" text="Húsz fok: a zöld sáv jelöli a fokodat, a kivilágított kártyák elérve, a halványak előtted állnak" />
+        <text name="ps_rf_pda_hdr_max" text="MAX (20. szint): a létra teljes" />
+        <text name="ps_rf_pda_hdr_next" text="Következő: %d. szint %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="Nyilvántartva: %d. szint %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming aktív: talajkémia leállítva, a létra él tovább" />
+        <text name="ps_rf_pda_hdr_rung" text="A fokod: %d. szint %s" />
+        <text name="ps_rf_pda_card_cost" text="Ár: %s" />
     </texts>
 </l10n>

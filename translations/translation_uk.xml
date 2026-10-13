@@ -7,29 +7,158 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Доступ до офісу" />
+        <text name="ps_level_2" text="Доступ до закупівель" />
+        <text name="ps_level_3" text="Оптимізація графіків" />
+        <text name="ps_level_4" text="Ретранслятор зв'язку" />
+        <text name="ps_level_5" text="Добробут працівників" />
+        <text name="ps_level_6" text="Автоматизація навантаження" />
+        <text name="ps_level_7" text="Керування силосами" />
+        <text name="ps_level_8" text="Регіональна мережа" />
+        <text name="ps_level_9" text="Кадровий облік" />
+        <text name="ps_level_10" text="Зв'язок з академією" />
+        <text name="ps_level_11" text="Відновлення працівників" />
+        <text name="ps_level_12" text="Точна агрономія" />
+        <text name="ps_level_13" text="Глобальний зв'язок" />
+        <text name="ps_level_14" text="Логістика автопарку" />
+        <text name="ps_level_15" text="Рада синдикату" />
+        <text name="ps_level_16" text="Керування навчальними програмами" />
+        <text name="ps_level_17" text="Контроль зарплат" />
+        <text name="ps_level_18" text="Прогнозне керування" />
+        <text name="ps_level_19" text="Форсаж системи" />
+        <text name="ps_level_20" text="Верховне керування" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+        <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
+        <text name="ps_rf_pda_blurb" text="Членство в кооперативі, чинні модифікатори, регулярні платежі та кошторис на лікування хвороб." />
+        <text name="ps_rf_pda_btn_buy" text="Купити Р%d" />
+        <text name="ps_rf_pda_btn_buy_max" text="На МАКС" />
+        <text name="ps_rf_pda_btn_flush" text="Почати лікування" />
+        <text name="ps_rf_pda_btn_flush_none" text="Лікування не потрібне" />
+        <text name="ps_rf_pda_col_item" text="Item" />
+        <text name="ps_rf_pda_col_note" text="Note" />
+        <text name="ps_rf_pda_col_status" text="Status" />
+        <text name="ps_rf_pda_col_value" text="Value" />
+        <text name="ps_rf_pda_empty_absent" text="Менеджер Pro Staff Co-Op не знайдено. Установіть і ввімкніть FS25_ProStaffCoOp." />
+        <text name="ps_rf_pda_empty_disabled" text="Pro Staff вимкнено в налаштуваннях. Ніщо на цій сторінці не діє." />
+        <text name="ps_rf_pda_empty_spectator" text="Режим глядача: приєднайтеся до господарства, щоб побачити членство. Звідси не можна ні купити, ні лікувати." />
+        <text name="ps_rf_pda_flush_clear" text="Здорове" />
+        <text name="ps_rf_pda_flush_fields" text="Полів: %d" />
+        <text name="ps_rf_pda_flush_none" text="Немає хворих полів" />
+        <text name="ps_rf_pda_flush_treat" text="Лікувати" />
+        <text name="ps_rf_pda_grp_dairy" text="Молочне" />
+        <text name="ps_rf_pda_grp_soil" text="Ґрунт" />
+        <text name="ps_rf_pda_grp_wc" text="Витрати на працівників" />
+        <text name="ps_rf_pda_hint_stale_door" text="Ця копія дверей старша за кнопки Купити та Почати; оновіть мод, який її створив. Доти те саме роблять консольні команди proStaffBuy і diseaseFlush." />
+        <text name="ps_rf_pda_hint_own_door" text="Купити оплачує наступний щабель через кооператив (buyLevel). Почати оплачує кошторис на лікування (requestFarmFlush). Обидва розрахунки проходять на сервері." />
+        <text name="ps_rf_pda_inactive" text="Неактивне" />
+        <text name="ps_rf_pda_max" text="МАКС (Р20)" />
+        <text name="ps_rf_pda_msg_bought" text="Куплено Р%d за %s." />
+        <text name="ps_rf_pda_msg_disabled" text="Відмовлено: Pro Staff вимкнено в налаштуваннях." />
+        <text name="ps_rf_pda_msg_error" text="Купівля не вдалася: %s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="Для цього господарства лікування вже триває." />
+        <text name="ps_rf_pda_msg_flush_denied" text="Лікування відхилено (%s)." />
+        <text name="ps_rf_pda_msg_flush_done" text="Лікування виконано, полів: %d, за %s." />
+        <text name="ps_rf_pda_msg_flush_error" text="Лікування не вдалося: %s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="Відмовлено: недостатньо коштів для кошторису на лікування." />
+        <text name="ps_rf_pda_msg_flush_none" text="Немає хворих полів; лікувати нічого." />
+        <text name="ps_rf_pda_msg_flush_requested" text="Лікування запитано; сервер проведе розрахунок." />
+        <text name="ps_rf_pda_msg_funds" text="Відмовлено: недостатньо коштів для %s." />
+        <text name="ps_rf_pda_msg_inactive" text="Членство неактивне; купувати нічого." />
+        <text name="ps_rf_pda_msg_inactive_flush" text="Членство неактивне; лікування немає." />
+        <text name="ps_rf_pda_msg_max" text="Уже на МАКС (Р20)." />
+        <text name="ps_rf_pda_msg_no_api" text="buyLevel недоступний у цього менеджера." />
+        <text name="ps_rf_pda_msg_no_flush_api" text="requestFarmFlush недоступний у цього менеджера." />
+        <text name="ps_rf_pda_msg_no_network" text="Відмовлено: на цьому клієнті немає NetworkSync, тому запит не дійде до сервера." />
+        <text name="ps_rf_pda_msg_requested" text="Запитано Р%d; сервер проведе розрахунок." />
+        <text name="ps_rf_pda_not_member" text="Не член" />
+        <text name="ps_rf_pda_note_constant_only" text="Лише константа; без виплат" />
+        <text name="ps_rf_pda_note_inactive" text="Ніщо на цій сторінці не діє" />
+        <text name="ps_rf_pda_note_max" text="Драбину пройдено" />
+        <text name="ps_rf_pda_note_no_payout" text="Р20; виплат за ним поки немає" />
+        <text name="ps_rf_pda_note_no_quote" text="Шар хвороб Soil Fertilizer не знайдено" />
+        <text name="ps_rf_pda_note_not_built" text="Р14; спроєктовано, не збудовано" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming активний; драбина й далі діє" />
+        <text name="ps_rf_pda_note_wealth" text="Від Р10: ціна за чистими активами, а не за готівкою" />
+        <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
+        <text name="ps_rf_pda_page_prev" text="&lt; Back" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / міс." />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / міс." />
+        <text name="ps_rf_pda_row_agronomy_fee" text="Передплата агрономічного звіту" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="Гуртові закупівлі" />
+        <text name="ps_rf_pda_row_bulk_transport" text="Перевезення навалом" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="Молочна логістика" />
+        <text name="ps_rf_pda_row_early_warning" text="Раннє попередження" />
+        <text name="ps_rf_pda_row_effectiveness" text="Ефективність" />
+        <text name="ps_rf_pda_row_fatigue" text="Втома працівників" />
+        <text name="ps_rf_pda_row_fert" text="Вартість добрив" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="Знижка на автопарк" />
+        <text name="ps_rf_pda_row_flush" text="Лікування хвороб" />
+        <text name="ps_rf_pda_row_forecast" text="Прогноз погоди" />
+        <text name="ps_rf_pda_row_fung_cost" text="Вартість фунгіцидів" />
+        <text name="ps_rf_pda_row_fung_effect" text="Дія фунгіцидів" />
+        <text name="ps_rf_pda_row_invested" text="Вкладено" />
+        <text name="ps_rf_pda_row_level" text="Рівень" />
+        <text name="ps_rf_pda_row_level_on_record" text="Записаний рівень" />
+        <text name="ps_rf_pda_row_market_intel" text="Відомості про ринок" />
+        <text name="ps_rf_pda_row_membership" text="Членство" />
+        <text name="ps_rf_pda_row_next_level" text="Наступний рівень" />
+        <text name="ps_rf_pda_row_next_unlock" text="Наступне відкриття" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="Знижка на персонал" />
+        <text name="ps_rf_pda_row_predictive" text="Прогнозне керування" />
+        <text name="ps_rf_pda_row_recovery" text="Відновлення від утоми" />
+        <text name="ps_rf_pda_row_soil_chem" text="Хімія ґрунту" />
+        <text name="ps_rf_pda_row_soil_kit" text="Набір для аналізу ґрунту" />
+        <text name="ps_rf_pda_row_spray" text="Вартість обприскування" />
+        <text name="ps_rf_pda_row_vet" text="Ветеринарні товари" />
+        <text name="ps_rf_pda_row_wages" text="Зарплати" />
+        <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;Цей екран - драбина рівнів Pro Staff вашого господарства: усі двадцять щаблів на одній сторінці, чотири в ширину і п'ять у висоту, у порядку купівлі.&#10;&#10;Зелена смуга і підсвічена картка позначають ваш щабель. Підсвічені картки нижче вже досягнуто; тьмяні картки ще попереду. Кожна картка називає щабель і каже, що дає його купівля. Лише назва означає, що щабель є, але нічого чинного не змінює; не застосовано означає, що щабель відкрито, але він поки нічого не виплачує.&#10;&#10;Верхній рядок показує ваш щабель, скільки вклало господарство і ціну наступного щабля; від Р10 ця ціна залежить від чистих активів, а не від готівки. Кожна картка також показує ціну щабля за ваших поточних чистих активів (Вкладено - те, що ви справді заплатили). Примітки для чесності - ціна за чистими активами, Precision Farming, що вимикає хімію ґрунту, блокування набору для аналізу ґрунту - наведено в кінці цього поля.&#10;&#10;Нижній рядок показує передплату агрономічного звіту, знижку на автопарк від Р14 і кошторис на лікування кожного вашого хворого поля. Купити та Почати розташовані під драбиною на кожних дверях Realistic Farming, хоч би який мод їх створив: Купити оплачує наступний щабель через кооператив, а Почати оплачує кошторис на лікування, обидва розрахунки проходять на сервері." />
+        <text name="ps_rf_pda_st_active" text="Активне" />
+        <text name="ps_rf_pda_st_from_level" text="Від Р%d" />
+        <text name="ps_rf_pda_st_gate_off" text="Експериментальне блокування вимкнено" />
+        <text name="ps_rf_pda_st_live" text="Діє" />
+        <text name="ps_rf_pda_st_locked" text="Закрито" />
+        <text name="ps_rf_pda_st_member" text="Член" />
+        <text name="ps_rf_pda_st_no_quote" text="Немає кошторису" />
+        <text name="ps_rf_pda_st_not_applied" text="Не застосовано" />
+        <text name="ps_rf_pda_st_not_live" text="Не діє" />
+        <text name="ps_rf_pda_st_off" text="Вимкнено в налаштуваннях" />
+        <text name="ps_rf_pda_st_stood_down" text="Вимкнено" />
+        <text name="ps_rf_pda_st_suspended" text="Пільги призупинено" />
+        <text name="ps_rf_pda_st_unlocked" text="Відкрито" />
+        <text name="ps_rf_pda_unlock_1" text="Доступ до офісу (лише назва, без ефекту)" />
+        <text name="ps_rf_pda_unlock_10" text="Набір для аналізу ґрунту (експериментальне блокування), ціна переходить на чисті активи" />
+        <text name="ps_rf_pda_unlock_11" text="Відновлення від утоми x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="Добрива x0.94, дія фунгіцидів x1.10, ветеринарні товари x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="Вартість обприскування x0.92, втома працівників x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="Знижка на автопарк 2500 на місяць (перевезення навалом не застосовано)" />
+        <text name="ps_rf_pda_unlock_15" text="Добрива x0.925, гуртові закупівлі x1.05, відомості про ринок" />
+        <text name="ps_rf_pda_unlock_16" text="Керування навчальними програмами (лише назва, без ефекту)" />
+        <text name="ps_rf_pda_unlock_17" text="Зарплати x0.90 (крок)" />
+        <text name="ps_rf_pda_unlock_18" text="Відновлення від утоми x1.85, прогнозне керування" />
+        <text name="ps_rf_pda_unlock_19" text="Ефективність x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="Добрива x0.985, фунгіцид x0.95, ветеринарні товари x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="Ефективність x1.15 (раннє попередження не застосовано)" />
+        <text name="ps_rf_pda_unlock_3" text="Молочна логістика x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="Втома працівників x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="Зарплати x0.975 (крок)" />
+        <text name="ps_rf_pda_unlock_6" text="Автоматизація навантаження (лише назва, без ефекту)" />
+        <text name="ps_rf_pda_unlock_7" text="Добрива x0.96, прогноз погоди, починається передплата агрономічного звіту" />
+        <text name="ps_rf_pda_unlock_8" text="Втома працівників x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="Зарплати x0.95 (крок; знижку на персонал не розраховано)" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="Членство неактивне: пільги призупинено, ніщо на цій сторінці не діє" />
+        <text name="ps_rf_pda_hdr_invested" text="Вкладено %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="Набір для аналізу ґрунту: експериментальне блокування вимкнено" />
+        <text name="ps_rf_pda_hdr_line2_default" text="Двадцять щаблів: зелена смуга позначає ваш щабель, підсвічені картки досягнуто, тьмяні попереду" />
+        <text name="ps_rf_pda_hdr_max" text="МАКС (Р20): драбину пройдено" />
+        <text name="ps_rf_pda_hdr_next" text="Наступний Р%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="Записано: Р%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming активний: хімію ґрунту вимкнено, драбина й далі діє" />
+        <text name="ps_rf_pda_hdr_rung" text="Ваш щабель: Р%d %s" />
+        <text name="ps_rf_pda_card_cost" text="Ціна: %s" />
     </texts>
 </l10n>

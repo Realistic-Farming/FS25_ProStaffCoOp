@@ -7,29 +7,158 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Přístup do kanceláře" />
+        <text name="ps_level_2" text="Přístup k nákupu" />
+        <text name="ps_level_3" text="Optimalizace rozpisů" />
+        <text name="ps_level_4" text="Komunikační relé" />
+        <text name="ps_level_5" text="Péče o pracovníky" />
+        <text name="ps_level_6" text="Automatizace nakládky" />
+        <text name="ps_level_7" text="Správa sil pro sypké materiály" />
+        <text name="ps_level_8" text="Regionální síť" />
+        <text name="ps_level_9" text="Personální záznamy" />
+        <text name="ps_level_10" text="Akademický styk" />
+        <text name="ps_level_11" text="Regenerace pracovníků" />
+        <text name="ps_level_12" text="Precizní agronomie" />
+        <text name="ps_level_13" text="Globální komunikace" />
+        <text name="ps_level_14" text="Logistika vozového parku" />
+        <text name="ps_level_15" text="Rada syndikátu" />
+        <text name="ps_level_16" text="Správa osnov" />
+        <text name="ps_level_17" text="Dohled nad mzdami" />
+        <text name="ps_level_18" text="Prediktivní řízení" />
+        <text name="ps_level_19" text="Přetížení systému" />
+        <text name="ps_level_20" text="Svrchovaná správa" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+        <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
+        <text name="ps_rf_pda_blurb" text="Členství v družstvu, aktivní modifikátory, pravidelné platby a nabídka ošetření chorob." />
+        <text name="ps_rf_pda_btn_buy" text="Koupit Ú%d" />
+        <text name="ps_rf_pda_btn_buy_max" text="Na MAX" />
+        <text name="ps_rf_pda_btn_flush" text="Spustit ošetření" />
+        <text name="ps_rf_pda_btn_flush_none" text="Ošetření není potřeba" />
+        <text name="ps_rf_pda_col_item" text="Item" />
+        <text name="ps_rf_pda_col_note" text="Note" />
+        <text name="ps_rf_pda_col_status" text="Status" />
+        <text name="ps_rf_pda_col_value" text="Value" />
+        <text name="ps_rf_pda_empty_absent" text="Správce Pro Staff Co-Op nenalezen. Nainstalujte a povolte FS25_ProStaffCoOp." />
+        <text name="ps_rf_pda_empty_disabled" text="Pro Staff je v nastavení vypnutý. Nic na této stránce neplatí." />
+        <text name="ps_rf_pda_empty_spectator" text="Pohled diváka: připojte se k farmě, abyste viděli členství. Odtud žádný nákup ani ošetření." />
+        <text name="ps_rf_pda_flush_clear" text="Zdravé" />
+        <text name="ps_rf_pda_flush_fields" text="Polí: %d" />
+        <text name="ps_rf_pda_flush_none" text="Žádná nemocná pole" />
+        <text name="ps_rf_pda_flush_treat" text="Ošetřit" />
+        <text name="ps_rf_pda_grp_dairy" text="Mléko" />
+        <text name="ps_rf_pda_grp_soil" text="Půda" />
+        <text name="ps_rf_pda_grp_wc" text="Náklady na pracovníky" />
+        <text name="ps_rf_pda_hint_stale_door" text="Tato kopie dveří je starší než tlačítka Koupit a Spustit; aktualizujte mód, který ji vytvořil. Do té doby totéž dělají příkazy konzole proStaffBuy a diseaseFlush." />
+        <text name="ps_rf_pda_hint_own_door" text="Koupit zaplatí další stupeň přes družstvo (buyLevel). Spustit zaplatí nabídku ošetření (requestFarmFlush). Obojí se vyúčtuje na serveru." />
+        <text name="ps_rf_pda_inactive" text="Neaktivní" />
+        <text name="ps_rf_pda_max" text="MAX (Ú20)" />
+        <text name="ps_rf_pda_msg_bought" text="Úroveň Ú%d koupena za %s." />
+        <text name="ps_rf_pda_msg_disabled" text="Zamítnuto: Pro Staff je v nastavení vypnutý." />
+        <text name="ps_rf_pda_msg_error" text="Nákup selhal: %s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="Pro tuto farmu už ošetření probíhá." />
+        <text name="ps_rf_pda_msg_flush_denied" text="Ošetření zamítnuto (%s)." />
+        <text name="ps_rf_pda_msg_flush_done" text="Ošetření hotovo, polí: %d, za %s." />
+        <text name="ps_rf_pda_msg_flush_error" text="Ošetření selhalo: %s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="Zamítnuto: nedostatek peněz na nabídku ošetření." />
+        <text name="ps_rf_pda_msg_flush_none" text="Žádná nemocná pole; není co ošetřit." />
+        <text name="ps_rf_pda_msg_flush_requested" text="Ošetření vyžádáno; server ho vyúčtuje." />
+        <text name="ps_rf_pda_msg_funds" text="Zamítnuto: nedostatek peněz na %s." />
+        <text name="ps_rf_pda_msg_inactive" text="Členství neaktivní; není co koupit." />
+        <text name="ps_rf_pda_msg_inactive_flush" text="Členství neaktivní; žádné ošetření." />
+        <text name="ps_rf_pda_msg_max" text="Už na MAX (Ú20)." />
+        <text name="ps_rf_pda_msg_no_api" text="buyLevel není u tohoto správce dostupné." />
+        <text name="ps_rf_pda_msg_no_flush_api" text="requestFarmFlush není u tohoto správce dostupné." />
+        <text name="ps_rf_pda_msg_no_network" text="Zamítnuto: na tomto klientovi chybí NetworkSync, takže požadavek se na server nedostane." />
+        <text name="ps_rf_pda_msg_requested" text="Úroveň Ú%d vyžádána; server ji vyúčtuje." />
+        <text name="ps_rf_pda_not_member" text="Nečlen" />
+        <text name="ps_rf_pda_note_constant_only" text="Jen konstanta; žádná výplata" />
+        <text name="ps_rf_pda_note_inactive" text="Nic na této stránce neplatí" />
+        <text name="ps_rf_pda_note_max" text="Žebříček dokončen" />
+        <text name="ps_rf_pda_note_no_payout" text="Ú20; zatím bez výplaty" />
+        <text name="ps_rf_pda_note_no_quote" text="Vrstva chorob Soil Fertilizer nenalezena" />
+        <text name="ps_rf_pda_note_not_built" text="Ú14; navrženo, nepostaveno" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming aktivní; žebříček platí dál" />
+        <text name="ps_rf_pda_note_wealth" text="Od Ú10: cena podle čistého jmění, ne podle hotovosti" />
+        <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
+        <text name="ps_rf_pda_page_prev" text="&lt; Back" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / měsíc" />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / měsíc" />
+        <text name="ps_rf_pda_row_agronomy_fee" text="Předplatné agronomické zprávy" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="Hromadný nákup" />
+        <text name="ps_rf_pda_row_bulk_transport" text="Hromadná doprava" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="Mléčná logistika" />
+        <text name="ps_rf_pda_row_early_warning" text="Včasné varování" />
+        <text name="ps_rf_pda_row_effectiveness" text="Účinnost" />
+        <text name="ps_rf_pda_row_fatigue" text="Únava pracovníků" />
+        <text name="ps_rf_pda_row_fert" text="Náklady na hnojiva" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="Sleva na vozový park" />
+        <text name="ps_rf_pda_row_flush" text="Ošetření chorob" />
+        <text name="ps_rf_pda_row_forecast" text="Předpověď počasí" />
+        <text name="ps_rf_pda_row_fung_cost" text="Náklady na fungicidy" />
+        <text name="ps_rf_pda_row_fung_effect" text="Účinek fungicidů" />
+        <text name="ps_rf_pda_row_invested" text="Investováno" />
+        <text name="ps_rf_pda_row_level" text="Úroveň" />
+        <text name="ps_rf_pda_row_level_on_record" text="Zapsaná úroveň" />
+        <text name="ps_rf_pda_row_market_intel" text="Informace o trhu" />
+        <text name="ps_rf_pda_row_membership" text="Členství" />
+        <text name="ps_rf_pda_row_next_level" text="Další úroveň" />
+        <text name="ps_rf_pda_row_next_unlock" text="Další odemčení" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="Sleva na personál" />
+        <text name="ps_rf_pda_row_predictive" text="Prediktivní řízení" />
+        <text name="ps_rf_pda_row_recovery" text="Zotavení z únavy" />
+        <text name="ps_rf_pda_row_soil_chem" text="Chemie půdy" />
+        <text name="ps_rf_pda_row_soil_kit" text="Sada pro test půdy" />
+        <text name="ps_rf_pda_row_spray" text="Náklady na postřik" />
+        <text name="ps_rf_pda_row_vet" text="Veterinární potřeby" />
+        <text name="ps_rf_pda_row_wages" text="Mzdy" />
+        <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;Tato obrazovka je žebříček úrovní Pro Staff vaší farmy: všech dvacet stupňů na jedné stránce, čtyři vedle sebe a pět pod sebou, v pořadí, v jakém se kupují.&#10;&#10;Zelený pruh a rozsvícená karta označují váš stupeň. Rozsvícené karty pod ním jsou dosažené; ztlumené karty jsou teprve před vámi. Každá karta jmenuje stupeň a říká, co jeho koupě přidá. Jen název znamená, že stupeň existuje, ale nic účinného nemění; nepoužito znamená, že stupeň je odemčený, ale zatím nic nevyplácí.&#10;&#10;Horní řádek ukazuje váš stupeň, kolik farma investovala, a cenu dalšího stupně; od Ú10 se tato cena řídí čistým jměním, ne hotovostí. Každá karta ukazuje i cenu stupně při vašem současném čistém jmění (Investováno je to, co jste skutečně zaplatili). Poznámky pro úplnost - cena podle čistého jmění, Precision Farming vypínající chemii půdy, zámek sady pro test půdy - jsou uvedeny na konci tohoto pole.&#10;&#10;Dolní řádek ukazuje předplatné agronomické zprávy, slevu na vozový park od Ú14 a nabídku ošetření pro každé nemocné pole, které vlastníte. Koupit a Spustit jsou pod žebříčkem na všech dveřích Realistic Farming, bez ohledu na to, který mód je vytvořil: Koupit zaplatí další stupeň přes družstvo a Spustit zaplatí nabídku ošetření, obojí vyúčtované na serveru." />
+        <text name="ps_rf_pda_st_active" text="Aktivní" />
+        <text name="ps_rf_pda_st_from_level" text="Od Ú%d" />
+        <text name="ps_rf_pda_st_gate_off" text="Experimentální zámek vypnutý" />
+        <text name="ps_rf_pda_st_live" text="Platí" />
+        <text name="ps_rf_pda_st_locked" text="Zamčeno" />
+        <text name="ps_rf_pda_st_member" text="Člen" />
+        <text name="ps_rf_pda_st_no_quote" text="Bez nabídky" />
+        <text name="ps_rf_pda_st_not_applied" text="Nepoužito" />
+        <text name="ps_rf_pda_st_not_live" text="Neplatí" />
+        <text name="ps_rf_pda_st_off" text="Vypnuto v nastavení" />
+        <text name="ps_rf_pda_st_stood_down" text="Odstaveno" />
+        <text name="ps_rf_pda_st_suspended" text="Výhody pozastaveny" />
+        <text name="ps_rf_pda_st_unlocked" text="Odemčeno" />
+        <text name="ps_rf_pda_unlock_1" text="Přístup do kanceláře (jen název, bez účinku)" />
+        <text name="ps_rf_pda_unlock_10" text="Sada pro test půdy (experimentální zámek), cena přechází na čisté jmění" />
+        <text name="ps_rf_pda_unlock_11" text="Zotavení z únavy x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="Hnojivo x0.94, účinek fungicidů x1.10, veterinární potřeby x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="Náklady na postřik x0.92, únava pracovníků x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="Sleva na vozový park 2500 měsíčně (hromadná doprava nepoužita)" />
+        <text name="ps_rf_pda_unlock_15" text="Hnojivo x0.925, hromadný nákup x1.05, informace o trhu" />
+        <text name="ps_rf_pda_unlock_16" text="Správa osnov (jen název, bez účinku)" />
+        <text name="ps_rf_pda_unlock_17" text="Mzdy x0.90 (krok)" />
+        <text name="ps_rf_pda_unlock_18" text="Zotavení z únavy x1.85, prediktivní řízení" />
+        <text name="ps_rf_pda_unlock_19" text="Účinnost x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="Hnojivo x0.985, fungicid x0.95, veterinární potřeby x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="Účinnost x1.15 (včasné varování nepoužito)" />
+        <text name="ps_rf_pda_unlock_3" text="Mléčná logistika x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="Únava pracovníků x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="Mzdy x0.975 (krok)" />
+        <text name="ps_rf_pda_unlock_6" text="Automatizace nakládky (jen název, bez účinku)" />
+        <text name="ps_rf_pda_unlock_7" text="Hnojivo x0.96, předpověď počasí, začíná předplatné agronomické zprávy" />
+        <text name="ps_rf_pda_unlock_8" text="Únava pracovníků x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="Mzdy x0.95 (krok; sleva na personál nevyúčtována)" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="Členství neaktivní: výhody pozastaveny, nic na této stránce neplatí" />
+        <text name="ps_rf_pda_hdr_invested" text="Investováno %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="Sada pro test půdy: experimentální zámek vypnutý" />
+        <text name="ps_rf_pda_hdr_line2_default" text="Dvacet stupňů: zelený pruh označuje váš stupeň, rozsvícené karty jsou dosažené, ztlumené jsou před vámi" />
+        <text name="ps_rf_pda_hdr_max" text="MAX (Ú20): žebříček dokončen" />
+        <text name="ps_rf_pda_hdr_next" text="Další Ú%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="Zapsáno: Ú%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming aktivní: chemie půdy odstavena, žebříček platí dál" />
+        <text name="ps_rf_pda_hdr_rung" text="Váš stupeň: Ú%d %s" />
+        <text name="ps_rf_pda_card_cost" text="Cena: %s" />
     </texts>
 </l10n>

@@ -7,29 +7,158 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Quyền vào văn phòng" />
+        <text name="ps_level_2" text="Quyền mua sắm" />
+        <text name="ps_level_3" text="Tối ưu lịch làm việc" />
+        <text name="ps_level_4" text="Trạm chuyển tiếp liên lạc" />
+        <text name="ps_level_5" text="Phúc lợi lao động" />
+        <text name="ps_level_6" text="Tự động hóa bốc xếp" />
+        <text name="ps_level_7" text="Quản trị silo hàng rời" />
+        <text name="ps_level_8" text="Mạng lưới khu vực" />
+        <text name="ps_level_9" text="Hồ sơ nhân sự" />
+        <text name="ps_level_10" text="Liên kết học thuật" />
+        <text name="ps_level_11" text="Phục hồi lao động" />
+        <text name="ps_level_12" text="Nông học chính xác" />
+        <text name="ps_level_13" text="Liên lạc toàn cầu" />
+        <text name="ps_level_14" text="Hậu cần đội xe" />
+        <text name="ps_level_15" text="Hội đồng liên minh" />
+        <text name="ps_level_16" text="Quản trị chương trình học" />
+        <text name="ps_level_17" text="Giám sát bảng lương" />
+        <text name="ps_level_18" text="Điều khiển dự báo" />
+        <text name="ps_level_19" text="Hệ thống tăng tốc tối đa" />
+        <text name="ps_level_20" text="Quản trị tối cao" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+        <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
+        <text name="ps_rf_pda_blurb" text="Tư cách thành viên hợp tác xã, các hệ số đang áp dụng, khoản thu chi định kỳ và báo giá xử lý dịch bệnh." />
+        <text name="ps_rf_pda_btn_buy" text="Mua C%d" />
+        <text name="ps_rf_pda_btn_buy_max" text="Đã TỐI ĐA" />
+        <text name="ps_rf_pda_btn_flush" text="Bắt đầu xử lý" />
+        <text name="ps_rf_pda_btn_flush_none" text="Không cần xử lý" />
+        <text name="ps_rf_pda_col_item" text="Item" />
+        <text name="ps_rf_pda_col_note" text="Note" />
+        <text name="ps_rf_pda_col_status" text="Status" />
+        <text name="ps_rf_pda_col_value" text="Value" />
+        <text name="ps_rf_pda_empty_absent" text="Không tìm thấy trình quản lý Pro Staff Co-Op. Hãy cài đặt và bật FS25_ProStaffCoOp." />
+        <text name="ps_rf_pda_empty_disabled" text="Pro Staff đang tắt trong cài đặt. Không có gì trên trang này đang áp dụng." />
+        <text name="ps_rf_pda_empty_spectator" text="Chế độ khán giả: hãy tham gia một nông trại để xem tư cách thành viên. Không thể mua hay xử lý từ đây." />
+        <text name="ps_rf_pda_flush_clear" text="Khỏe" />
+        <text name="ps_rf_pda_flush_fields" text="%d cánh đồng" />
+        <text name="ps_rf_pda_flush_none" text="Không có cánh đồng bị bệnh" />
+        <text name="ps_rf_pda_flush_treat" text="Xử lý" />
+        <text name="ps_rf_pda_grp_dairy" text="Sữa" />
+        <text name="ps_rf_pda_grp_soil" text="Đất" />
+        <text name="ps_rf_pda_grp_wc" text="Chi phí nhân công" />
+        <text name="ps_rf_pda_hint_stale_door" text="Bản sao cửa này cũ hơn các nút Mua và Bắt đầu; hãy cập nhật mod đã tạo ra nó. Trong lúc chờ, các lệnh console proStaffBuy và diseaseFlush làm được việc tương tự." />
+        <text name="ps_rf_pda_hint_own_door" text="Mua trả tiền bậc tiếp theo qua hợp tác xã (buyLevel). Bắt đầu trả báo giá xử lý (requestFarmFlush). Cả hai được quyết toán trên máy chủ." />
+        <text name="ps_rf_pda_inactive" text="Không hoạt động" />
+        <text name="ps_rf_pda_max" text="TỐI ĐA (C20)" />
+        <text name="ps_rf_pda_msg_bought" text="Đã mua C%d với giá %s." />
+        <text name="ps_rf_pda_msg_disabled" text="Bị từ chối: Pro Staff đang tắt trong cài đặt." />
+        <text name="ps_rf_pda_msg_error" text="Mua thất bại: %s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="Nông trại này đang có một đợt xử lý." />
+        <text name="ps_rf_pda_msg_flush_denied" text="Xử lý bị từ chối (%s)." />
+        <text name="ps_rf_pda_msg_flush_done" text="Đã xử lý %d cánh đồng với giá %s." />
+        <text name="ps_rf_pda_msg_flush_error" text="Xử lý thất bại: %s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="Bị từ chối: không đủ tiền cho báo giá xử lý." />
+        <text name="ps_rf_pda_msg_flush_none" text="Không có cánh đồng bị bệnh; không có gì để xử lý." />
+        <text name="ps_rf_pda_msg_flush_requested" text="Đã yêu cầu xử lý; máy chủ sẽ quyết toán." />
+        <text name="ps_rf_pda_msg_funds" text="Bị từ chối: không đủ tiền cho %s." />
+        <text name="ps_rf_pda_msg_inactive" text="Tư cách thành viên không hoạt động; không có gì để mua." />
+        <text name="ps_rf_pda_msg_inactive_flush" text="Tư cách thành viên không hoạt động; không xử lý." />
+        <text name="ps_rf_pda_msg_max" text="Đã ở mức TỐI ĐA (C20)." />
+        <text name="ps_rf_pda_msg_no_api" text="buyLevel không có trên trình quản lý này." />
+        <text name="ps_rf_pda_msg_no_flush_api" text="requestFarmFlush không có trên trình quản lý này." />
+        <text name="ps_rf_pda_msg_no_network" text="Bị từ chối: máy khách này không có NetworkSync nên yêu cầu không thể tới máy chủ." />
+        <text name="ps_rf_pda_msg_requested" text="Đã yêu cầu C%d; máy chủ sẽ quyết toán." />
+        <text name="ps_rf_pda_not_member" text="Không phải thành viên" />
+        <text name="ps_rf_pda_note_constant_only" text="Chỉ là hằng số; không chi trả" />
+        <text name="ps_rf_pda_note_inactive" text="Không có gì trên trang này đang áp dụng" />
+        <text name="ps_rf_pda_note_max" text="Đã hoàn thành thang" />
+        <text name="ps_rf_pda_note_no_payout" text="C20; chưa có khoản chi trả nào phía sau" />
+        <text name="ps_rf_pda_note_no_quote" text="Không tìm thấy lớp dịch bệnh của Soil Fertilizer" />
+        <text name="ps_rf_pda_note_not_built" text="C14; đã thiết kế, chưa xây dựng" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming đang bật; thang vẫn áp dụng" />
+        <text name="ps_rf_pda_note_wealth" text="C10+: giá theo giá trị tài sản ròng, không theo tiền mặt" />
+        <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
+        <text name="ps_rf_pda_page_prev" text="&lt; Back" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / tháng" />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / tháng" />
+        <text name="ps_rf_pda_row_agronomy_fee" text="Gói báo cáo nông học" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="Mua sỉ" />
+        <text name="ps_rf_pda_row_bulk_transport" text="Vận chuyển hàng rời" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="Hậu cần sữa" />
+        <text name="ps_rf_pda_row_early_warning" text="Cảnh báo sớm" />
+        <text name="ps_rf_pda_row_effectiveness" text="Hiệu quả" />
+        <text name="ps_rf_pda_row_fatigue" text="Mệt mỏi của công nhân" />
+        <text name="ps_rf_pda_row_fert" text="Chi phí phân bón" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="Hoàn tiền đội xe" />
+        <text name="ps_rf_pda_row_flush" text="Xử lý dịch bệnh" />
+        <text name="ps_rf_pda_row_forecast" text="Dự báo thời tiết" />
+        <text name="ps_rf_pda_row_fung_cost" text="Chi phí thuốc diệt nấm" />
+        <text name="ps_rf_pda_row_fung_effect" text="Hiệu lực thuốc diệt nấm" />
+        <text name="ps_rf_pda_row_invested" text="Đã đầu tư" />
+        <text name="ps_rf_pda_row_level" text="Cấp" />
+        <text name="ps_rf_pda_row_level_on_record" text="Cấp đã ghi nhận" />
+        <text name="ps_rf_pda_row_market_intel" text="Thông tin thị trường" />
+        <text name="ps_rf_pda_row_membership" text="Tư cách thành viên" />
+        <text name="ps_rf_pda_row_next_level" text="Cấp tiếp theo" />
+        <text name="ps_rf_pda_row_next_unlock" text="Mở khóa tiếp theo" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="Hoàn tiền nhân sự" />
+        <text name="ps_rf_pda_row_predictive" text="Điều khiển dự đoán" />
+        <text name="ps_rf_pda_row_recovery" text="Phục hồi mệt mỏi" />
+        <text name="ps_rf_pda_row_soil_chem" text="Hóa học đất" />
+        <text name="ps_rf_pda_row_soil_kit" text="Bộ kiểm tra đất" />
+        <text name="ps_rf_pda_row_spray" text="Chi phí phun thuốc" />
+        <text name="ps_rf_pda_row_vet" text="Vật tư thú y" />
+        <text name="ps_rf_pda_row_wages" text="Tiền lương" />
+        <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;Màn hình này là thang cấp Pro Staff của nông trại bạn: cả hai mươi bậc trên một trang, bốn theo chiều ngang và năm theo chiều dọc, theo thứ tự mua.&#10;&#10;Thanh màu xanh và thẻ sáng đánh dấu bậc của bạn. Các thẻ sáng bên dưới đã đạt được; các thẻ mờ vẫn còn ở phía trước. Mỗi thẻ ghi tên bậc và cho biết mua nó sẽ thêm gì. Chỉ có tên nghĩa là bậc đó tồn tại nhưng không thay đổi gì đang áp dụng; chưa áp dụng nghĩa là bậc đó đã mở khóa nhưng chưa chi trả gì.&#10;&#10;Dòng trên cùng cho biết bậc của bạn, số tiền nông trại đã đầu tư và giá của bậc tiếp theo; từ C10, giá đó theo giá trị tài sản ròng, không theo tiền mặt. Mỗi thẻ cũng hiển thị giá của bậc theo giá trị tài sản ròng hiện tại của bạn (Đã đầu tư là số tiền bạn thực sự đã trả). Các ghi chú minh bạch - giá theo tài sản ròng, Precision Farming tạm dừng hóa học đất, khóa bộ kiểm tra đất - được liệt kê ở cuối ô này.&#10;&#10;Dòng dưới cùng hiển thị gói báo cáo nông học, khoản hoàn tiền đội xe ở C14 và báo giá xử lý cho từng cánh đồng bị bệnh bạn sở hữu. Mua và Bắt đầu nằm dưới thang trên mọi cửa Realistic Farming, bất kể mod nào tạo ra nó: Mua trả tiền bậc tiếp theo qua hợp tác xã, còn Bắt đầu trả báo giá xử lý, cả hai được quyết toán trên máy chủ." />
+        <text name="ps_rf_pda_st_active" text="Hoạt động" />
+        <text name="ps_rf_pda_st_from_level" text="Từ C%d" />
+        <text name="ps_rf_pda_st_gate_off" text="Khóa thử nghiệm đang tắt" />
+        <text name="ps_rf_pda_st_live" text="Đang áp dụng" />
+        <text name="ps_rf_pda_st_locked" text="Đã khóa" />
+        <text name="ps_rf_pda_st_member" text="Thành viên" />
+        <text name="ps_rf_pda_st_no_quote" text="Không có báo giá" />
+        <text name="ps_rf_pda_st_not_applied" text="Chưa áp dụng" />
+        <text name="ps_rf_pda_st_not_live" text="Không áp dụng" />
+        <text name="ps_rf_pda_st_off" text="Tắt trong cài đặt" />
+        <text name="ps_rf_pda_st_stood_down" text="Tạm dừng" />
+        <text name="ps_rf_pda_st_suspended" text="Quyền lợi bị tạm ngưng" />
+        <text name="ps_rf_pda_st_unlocked" text="Đã mở khóa" />
+        <text name="ps_rf_pda_unlock_1" text="Quyền vào văn phòng (chỉ có tên, không có tác dụng)" />
+        <text name="ps_rf_pda_unlock_10" text="Bộ kiểm tra đất (khóa thử nghiệm), giá chuyển sang tài sản ròng" />
+        <text name="ps_rf_pda_unlock_11" text="Phục hồi mệt mỏi x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="Phân bón x0.94, hiệu lực thuốc diệt nấm x1.10, vật tư thú y x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="Chi phí phun thuốc x0.92, mệt mỏi của công nhân x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="Hoàn tiền đội xe 2500 mỗi tháng (vận chuyển hàng rời chưa áp dụng)" />
+        <text name="ps_rf_pda_unlock_15" text="Phân bón x0.925, mua sỉ x1.05, thông tin thị trường" />
+        <text name="ps_rf_pda_unlock_16" text="Quản trị chương trình học (chỉ có tên, không có tác dụng)" />
+        <text name="ps_rf_pda_unlock_17" text="Tiền lương x0.90 (bước)" />
+        <text name="ps_rf_pda_unlock_18" text="Phục hồi mệt mỏi x1.85, điều khiển dự đoán" />
+        <text name="ps_rf_pda_unlock_19" text="Hiệu quả x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="Phân bón x0.985, thuốc diệt nấm x0.95, vật tư thú y x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="Hiệu quả x1.15 (cảnh báo sớm chưa áp dụng)" />
+        <text name="ps_rf_pda_unlock_3" text="Hậu cần sữa x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="Mệt mỏi của công nhân x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="Tiền lương x0.975 (bước)" />
+        <text name="ps_rf_pda_unlock_6" text="Tự động hóa bốc xếp (chỉ có tên, không có tác dụng)" />
+        <text name="ps_rf_pda_unlock_7" text="Phân bón x0.96, dự báo thời tiết, bắt đầu gói báo cáo nông học" />
+        <text name="ps_rf_pda_unlock_8" text="Mệt mỏi của công nhân x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="Tiền lương x0.95 (bước; hoàn tiền nhân sự chưa quyết toán)" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="Tư cách thành viên không hoạt động: quyền lợi bị tạm ngưng, không có gì trên trang này đang áp dụng" />
+        <text name="ps_rf_pda_hdr_invested" text="Đã đầu tư %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="Bộ kiểm tra đất: khóa thử nghiệm đang tắt" />
+        <text name="ps_rf_pda_hdr_line2_default" text="Hai mươi bậc: thanh xanh đánh dấu bậc của bạn, thẻ sáng đã đạt, thẻ mờ còn ở phía trước" />
+        <text name="ps_rf_pda_hdr_max" text="TỐI ĐA (C20): đã hoàn thành thang" />
+        <text name="ps_rf_pda_hdr_next" text="Tiếp theo C%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="Đã ghi nhận: C%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming đang bật: tạm dừng hóa học đất, thang vẫn áp dụng" />
+        <text name="ps_rf_pda_hdr_rung" text="Bậc của bạn: C%d %s" />
+        <text name="ps_rf_pda_card_cost" text="Chi phí: %s" />
     </texts>
 </l10n>

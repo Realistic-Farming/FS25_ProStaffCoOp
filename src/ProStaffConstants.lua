@@ -8,7 +8,7 @@
 -- brief: L5 x L9 x L17 = 0.833). All numbers ride the balance pass.
 -- =========================================================
 
-ProStaffConstants = {}
+ProStaffConstants = ProStaffConstants or {}
 
 ProStaffConstants.MAX_LEVEL = 20
 ProStaffConstants.COST_EXPONENT = 2.2
@@ -87,6 +87,7 @@ ProStaffConstants.FLAGS = {
     hasPredictiveControl = 18,
     hasEarlyWarning     = 20,
     hasSoilTestKit      = 10,   -- [SF-40] Read the Dirt member 4: exact numbers at the kneel
+    hasHerdAdvisory     = 12,   -- [RSF-F166] DC-19 rung: DairyCore names the barns wanting attention
 }
 
 -- Level names for display.

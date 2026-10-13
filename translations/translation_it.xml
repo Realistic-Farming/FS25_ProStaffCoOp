@@ -7,29 +7,158 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Accesso all'ufficio" />
+        <text name="ps_level_2" text="Accesso agli acquisti" />
+        <text name="ps_level_3" text="Ottimizzazione dei turni" />
+        <text name="ps_level_4" text="Ponte comunicazioni" />
+        <text name="ps_level_5" text="Benessere dei lavoratori" />
+        <text name="ps_level_6" text="Automazione del carico" />
+        <text name="ps_level_7" text="Gestione silos sfusi" />
+        <text name="ps_level_8" text="Rete regionale" />
+        <text name="ps_level_9" text="Archivio del personale" />
+        <text name="ps_level_10" text="Collegamento accademico" />
+        <text name="ps_level_11" text="Recupero dei lavoratori" />
+        <text name="ps_level_12" text="Agronomia di precisione" />
+        <text name="ps_level_13" text="Comunicazioni globali" />
+        <text name="ps_level_14" text="Logistica della flotta" />
+        <text name="ps_level_15" text="Consiglio del consorzio" />
+        <text name="ps_level_16" text="Amministrazione dei programmi" />
+        <text name="ps_level_17" text="Supervisione delle paghe" />
+        <text name="ps_level_18" text="Controllo predittivo" />
+        <text name="ps_level_19" text="Sovraccarico di sistema" />
+        <text name="ps_level_20" text="Amministrazione sovrana" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+        <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
+        <text name="ps_rf_pda_blurb" text="Iscrizione alla cooperativa, modificatori attivi, pagamenti ricorrenti e preventivo del trattamento delle malattie." />
+        <text name="ps_rf_pda_btn_buy" text="Acquista L%d" />
+        <text name="ps_rf_pda_btn_buy_max" text="Al MAX" />
+        <text name="ps_rf_pda_btn_flush" text="Avvia trattamento" />
+        <text name="ps_rf_pda_btn_flush_none" text="Nessun trattamento necessario" />
+        <text name="ps_rf_pda_col_item" text="Item" />
+        <text name="ps_rf_pda_col_note" text="Note" />
+        <text name="ps_rf_pda_col_status" text="Status" />
+        <text name="ps_rf_pda_col_value" text="Value" />
+        <text name="ps_rf_pda_empty_absent" text="Gestore Pro Staff Co-Op non trovato. Installa e attiva FS25_ProStaffCoOp." />
+        <text name="ps_rf_pda_empty_disabled" text="Pro Staff è disattivato nelle impostazioni. Niente in questa pagina è attivo." />
+        <text name="ps_rf_pda_empty_spectator" text="Vista spettatore: unisciti a una fattoria per vedere l'iscrizione. Da qui nessun acquisto né trattamento." />
+        <text name="ps_rf_pda_flush_clear" text="Sano" />
+        <text name="ps_rf_pda_flush_fields" text="%d campo/i" />
+        <text name="ps_rf_pda_flush_none" text="Nessun campo malato" />
+        <text name="ps_rf_pda_flush_treat" text="Tratta" />
+        <text name="ps_rf_pda_grp_dairy" text="Latte" />
+        <text name="ps_rf_pda_grp_soil" text="Suolo" />
+        <text name="ps_rf_pda_grp_wc" text="Costi dei lavoratori" />
+        <text name="ps_rf_pda_hint_stale_door" text="Questa copia della porta è precedente ai pulsanti Acquista e Avvia; aggiorna la mod che l'ha creata. Nel frattempo i comandi da console proStaffBuy e diseaseFlush fanno la stessa cosa." />
+        <text name="ps_rf_pda_hint_own_door" text="Acquista paga il gradino successivo tramite la cooperativa (buyLevel). Avvia paga il preventivo del trattamento (requestFarmFlush). Entrambi vengono regolati sul server." />
+        <text name="ps_rf_pda_inactive" text="Inattivo" />
+        <text name="ps_rf_pda_max" text="MAX (L20)" />
+        <text name="ps_rf_pda_msg_bought" text="L%d acquistato per %s." />
+        <text name="ps_rf_pda_msg_disabled" text="Negato: Pro Staff è disattivato nelle impostazioni." />
+        <text name="ps_rf_pda_msg_error" text="Acquisto non riuscito: %s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="Per questa fattoria è già in corso un trattamento." />
+        <text name="ps_rf_pda_msg_flush_denied" text="Trattamento negato (%s)." />
+        <text name="ps_rf_pda_msg_flush_done" text="Trattamento eseguito su %d campo/i per %s." />
+        <text name="ps_rf_pda_msg_flush_error" text="Trattamento non riuscito: %s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="Negato: fondi insufficienti per il preventivo del trattamento." />
+        <text name="ps_rf_pda_msg_flush_none" text="Nessun campo malato; niente da trattare." />
+        <text name="ps_rf_pda_msg_flush_requested" text="Trattamento richiesto; lo regola il server." />
+        <text name="ps_rf_pda_msg_funds" text="Negato: fondi insufficienti per %s." />
+        <text name="ps_rf_pda_msg_inactive" text="Iscrizione inattiva; niente da acquistare." />
+        <text name="ps_rf_pda_msg_inactive_flush" text="Iscrizione inattiva; nessun trattamento." />
+        <text name="ps_rf_pda_msg_max" text="Già al MAX (L20)." />
+        <text name="ps_rf_pda_msg_no_api" text="buyLevel non è disponibile su questo gestore." />
+        <text name="ps_rf_pda_msg_no_flush_api" text="requestFarmFlush non è disponibile su questo gestore." />
+        <text name="ps_rf_pda_msg_no_network" text="Negato: nessun NetworkSync su questo client, quindi la richiesta non può raggiungere il server." />
+        <text name="ps_rf_pda_msg_requested" text="L%d richiesto; lo regola il server." />
+        <text name="ps_rf_pda_not_member" text="Non iscritto" />
+        <text name="ps_rf_pda_note_constant_only" text="Solo costante; nessun pagamento" />
+        <text name="ps_rf_pda_note_inactive" text="Niente in questa pagina è attivo" />
+        <text name="ps_rf_pda_note_max" text="Scala completata" />
+        <text name="ps_rf_pda_note_no_payout" text="L20; ancora nessun pagamento dietro" />
+        <text name="ps_rf_pda_note_no_quote" text="Livello malattie di Soil Fertilizer non trovato" />
+        <text name="ps_rf_pda_note_not_built" text="L14; progettato, non costruito" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming attivo; la scala resta attiva" />
+        <text name="ps_rf_pda_note_wealth" text="L10+: prezzo in base al patrimonio netto, non al contante" />
+        <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
+        <text name="ps_rf_pda_page_prev" text="&lt; Back" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / mese" />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / mese" />
+        <text name="ps_rf_pda_row_agronomy_fee" text="Abbonamento al rapporto agronomico" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="Acquisti all'ingrosso" />
+        <text name="ps_rf_pda_row_bulk_transport" text="Trasporto alla rinfusa" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="Logistica del latte" />
+        <text name="ps_rf_pda_row_early_warning" text="Allerta precoce" />
+        <text name="ps_rf_pda_row_effectiveness" text="Efficacia" />
+        <text name="ps_rf_pda_row_fatigue" text="Fatica dei lavoratori" />
+        <text name="ps_rf_pda_row_fert" text="Costo del fertilizzante" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="Rimborso flotta" />
+        <text name="ps_rf_pda_row_flush" text="Trattamento malattie" />
+        <text name="ps_rf_pda_row_forecast" text="Previsioni meteo" />
+        <text name="ps_rf_pda_row_fung_cost" text="Costo del fungicida" />
+        <text name="ps_rf_pda_row_fung_effect" text="Effetto del fungicida" />
+        <text name="ps_rf_pda_row_invested" text="Investito" />
+        <text name="ps_rf_pda_row_level" text="Livello" />
+        <text name="ps_rf_pda_row_level_on_record" text="Livello registrato" />
+        <text name="ps_rf_pda_row_market_intel" text="Informazioni di mercato" />
+        <text name="ps_rf_pda_row_membership" text="Iscrizione" />
+        <text name="ps_rf_pda_row_next_level" text="Livello successivo" />
+        <text name="ps_rf_pda_row_next_unlock" text="Prossimo sblocco" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="Rimborso personale" />
+        <text name="ps_rf_pda_row_predictive" text="Controllo predittivo" />
+        <text name="ps_rf_pda_row_recovery" text="Recupero dalla fatica" />
+        <text name="ps_rf_pda_row_soil_chem" text="Chimica del suolo" />
+        <text name="ps_rf_pda_row_soil_kit" text="Kit di analisi del suolo" />
+        <text name="ps_rf_pda_row_spray" text="Costo di irrorazione" />
+        <text name="ps_rf_pda_row_vet" text="Forniture veterinarie" />
+        <text name="ps_rf_pda_row_wages" text="Salari" />
+        <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;Questa schermata è la scala dei livelli Pro Staff della tua fattoria: tutti i venti gradini in una pagina, quattro in larghezza e cinque in altezza, nell'ordine in cui si acquistano.&#10;&#10;La barra verde e la scheda illuminata indicano il tuo gradino. Le schede illuminate sotto sono raggiunte; quelle scure sono ancora davanti. Ogni scheda nomina il gradino e dice cosa aggiunge acquistarlo. Solo nome significa che il gradino esiste ma non cambia nulla di attivo; non applicato significa che il gradino è sbloccato ma non paga ancora nulla.&#10;&#10;La riga in alto mostra il tuo gradino, quanto la fattoria ha investito e il prezzo del gradino successivo; da L10 quel prezzo segue il patrimonio netto, non il contante. Ogni scheda mostra anche il prezzo del gradino con il tuo patrimonio netto attuale (Investito è quanto hai effettivamente pagato). Le note di trasparenza - prezzo in base al patrimonio netto, Precision Farming che mette da parte la chimica del suolo, il blocco del kit di analisi del suolo - sono elencate alla fine di questo riquadro.&#10;&#10;La riga in basso mostra l'abbonamento al rapporto agronomico, il rimborso flotta di L14 e il preventivo del trattamento per ogni campo malato che possiedi. Acquista e Avvia sono sotto la scala su ogni porta Realistic Farming, qualunque mod l'abbia creata: Acquista paga il gradino successivo tramite la cooperativa e Avvia paga il preventivo del trattamento, entrambi regolati sul server." />
+        <text name="ps_rf_pda_st_active" text="Attivo" />
+        <text name="ps_rf_pda_st_from_level" text="Da L%d" />
+        <text name="ps_rf_pda_st_gate_off" text="Blocco sperimentale disattivato" />
+        <text name="ps_rf_pda_st_live" text="In vigore" />
+        <text name="ps_rf_pda_st_locked" text="Bloccato" />
+        <text name="ps_rf_pda_st_member" text="Iscritto" />
+        <text name="ps_rf_pda_st_no_quote" text="Nessun preventivo" />
+        <text name="ps_rf_pda_st_not_applied" text="Non applicato" />
+        <text name="ps_rf_pda_st_not_live" text="Non in vigore" />
+        <text name="ps_rf_pda_st_off" text="Disattivato nelle impostazioni" />
+        <text name="ps_rf_pda_st_stood_down" text="Messo da parte" />
+        <text name="ps_rf_pda_st_suspended" text="Benefici sospesi" />
+        <text name="ps_rf_pda_st_unlocked" text="Sbloccato" />
+        <text name="ps_rf_pda_unlock_1" text="Accesso all'ufficio (solo nome, nessun effetto attivo)" />
+        <text name="ps_rf_pda_unlock_10" text="Kit di analisi del suolo (blocco sperimentale), il prezzo passa al patrimonio netto" />
+        <text name="ps_rf_pda_unlock_11" text="Recupero dalla fatica x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="Fertilizzante x0.94, effetto del fungicida x1.10, forniture veterinarie x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="Costo di irrorazione x0.92, fatica dei lavoratori x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="Rimborso flotta 2500 al mese (trasporto alla rinfusa non applicato)" />
+        <text name="ps_rf_pda_unlock_15" text="Fertilizzante x0.925, acquisti all'ingrosso x1.05, informazioni di mercato" />
+        <text name="ps_rf_pda_unlock_16" text="Amministrazione dei programmi (solo nome, nessun effetto attivo)" />
+        <text name="ps_rf_pda_unlock_17" text="Salari x0.90 (gradino)" />
+        <text name="ps_rf_pda_unlock_18" text="Recupero dalla fatica x1.85, controllo predittivo" />
+        <text name="ps_rf_pda_unlock_19" text="Efficacia x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="Fertilizzante x0.985, fungicida x0.95, forniture veterinarie x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="Efficacia x1.15 (allerta precoce non applicata)" />
+        <text name="ps_rf_pda_unlock_3" text="Logistica del latte x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="Fatica dei lavoratori x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="Salari x0.975 (gradino)" />
+        <text name="ps_rf_pda_unlock_6" text="Automazione del carico (solo nome, nessun effetto attivo)" />
+        <text name="ps_rf_pda_unlock_7" text="Fertilizzante x0.96, previsioni meteo, inizia l'abbonamento al rapporto agronomico" />
+        <text name="ps_rf_pda_unlock_8" text="Fatica dei lavoratori x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="Salari x0.95 (gradino; rimborso personale non regolato)" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="Iscrizione inattiva: benefici sospesi, niente in questa pagina è attivo" />
+        <text name="ps_rf_pda_hdr_invested" text="Investito %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="Kit di analisi del suolo: blocco sperimentale disattivato" />
+        <text name="ps_rf_pda_hdr_line2_default" text="Venti gradini: la barra verde indica il tuo gradino, le schede illuminate sono raggiunte, quelle scure sono davanti" />
+        <text name="ps_rf_pda_hdr_max" text="MAX (L20): scala completata" />
+        <text name="ps_rf_pda_hdr_next" text="Successivo L%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="Registrato: L%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming attivo: chimica del suolo messa da parte, la scala resta attiva" />
+        <text name="ps_rf_pda_hdr_rung" text="Il tuo gradino: L%d %s" />
+        <text name="ps_rf_pda_card_cost" text="Costo: %s" />
     </texts>
 </l10n>

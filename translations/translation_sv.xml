@@ -7,29 +7,158 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Kontorsåtkomst" />
+        <text name="ps_level_2" text="Inköpsåtkomst" />
+        <text name="ps_level_3" text="Schemaoptimering" />
+        <text name="ps_level_4" text="Kommunikationsrelä" />
+        <text name="ps_level_5" text="Arbetsvälmående" />
+        <text name="ps_level_6" text="Lastningsautomation" />
+        <text name="ps_level_7" text="Bulksiloadministration" />
+        <text name="ps_level_8" text="Regionalt nät" />
+        <text name="ps_level_9" text="Personalregister" />
+        <text name="ps_level_10" text="Akademisk kontakt" />
+        <text name="ps_level_11" text="Arbetsåterhämtning" />
+        <text name="ps_level_12" text="Precisionsodling" />
+        <text name="ps_level_13" text="Global kommunikation" />
+        <text name="ps_level_14" text="Flottlogistik" />
+        <text name="ps_level_15" text="Syndikatsstyrelse" />
+        <text name="ps_level_16" text="Kursadministration" />
+        <text name="ps_level_17" text="Lönetillsyn" />
+        <text name="ps_level_18" text="Prediktiv styrning" />
+        <text name="ps_level_19" text="Systemöverdrift" />
+        <text name="ps_level_20" text="Suverän administration" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+        <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
+        <text name="ps_rf_pda_blurb" text="Medlemskap i kooperativet, aktiva modifierare, återkommande betalningar och offerten för sjukdomsbehandling." />
+        <text name="ps_rf_pda_btn_buy" text="Köp N%d" />
+        <text name="ps_rf_pda_btn_buy_max" text="På MAX" />
+        <text name="ps_rf_pda_btn_flush" text="Starta behandling" />
+        <text name="ps_rf_pda_btn_flush_none" text="Ingen behandling behövs" />
+        <text name="ps_rf_pda_col_item" text="Item" />
+        <text name="ps_rf_pda_col_note" text="Note" />
+        <text name="ps_rf_pda_col_status" text="Status" />
+        <text name="ps_rf_pda_col_value" text="Value" />
+        <text name="ps_rf_pda_empty_absent" text="Pro Staff Co-Op-hanteraren hittades inte. Installera och aktivera FS25_ProStaffCoOp." />
+        <text name="ps_rf_pda_empty_disabled" text="Pro Staff är avstängt i inställningarna. Inget på den här sidan är aktivt." />
+        <text name="ps_rf_pda_empty_spectator" text="Åskådarvy: gå med i en gård för att se medlemskapet. Härifrån går det inte att köpa eller behandla." />
+        <text name="ps_rf_pda_flush_clear" text="Frisk" />
+        <text name="ps_rf_pda_flush_fields" text="%d fält" />
+        <text name="ps_rf_pda_flush_none" text="Inga sjuka fält" />
+        <text name="ps_rf_pda_flush_treat" text="Behandla" />
+        <text name="ps_rf_pda_grp_dairy" text="Mejeri" />
+        <text name="ps_rf_pda_grp_soil" text="Jord" />
+        <text name="ps_rf_pda_grp_wc" text="Arbetarkostnader" />
+        <text name="ps_rf_pda_hint_stale_door" text="Den här dörrkopian är äldre än knapparna Köp och Starta; uppdatera moden som byggde den. Tills dess gör konsolkommandona proStaffBuy och diseaseFlush samma sak." />
+        <text name="ps_rf_pda_hint_own_door" text="Köp betalar nästa steg via kooperativet (buyLevel). Starta betalar offerten för behandlingen (requestFarmFlush). Båda avräknas på servern." />
+        <text name="ps_rf_pda_inactive" text="Inaktiv" />
+        <text name="ps_rf_pda_max" text="MAX (N20)" />
+        <text name="ps_rf_pda_msg_bought" text="Köpte N%d för %s." />
+        <text name="ps_rf_pda_msg_disabled" text="Nekad: Pro Staff är avstängt i inställningarna." />
+        <text name="ps_rf_pda_msg_error" text="Köpet misslyckades: %s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="En behandling pågår redan för den här gården." />
+        <text name="ps_rf_pda_msg_flush_denied" text="Behandling nekad (%s)." />
+        <text name="ps_rf_pda_msg_flush_done" text="Behandling klar på %d fält för %s." />
+        <text name="ps_rf_pda_msg_flush_error" text="Behandlingen misslyckades: %s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="Nekad: otillräckliga medel för offerten." />
+        <text name="ps_rf_pda_msg_flush_none" text="Inga sjuka fält; inget att behandla." />
+        <text name="ps_rf_pda_msg_flush_requested" text="Behandling begärd; servern avräknar den." />
+        <text name="ps_rf_pda_msg_funds" text="Nekad: otillräckliga medel för %s." />
+        <text name="ps_rf_pda_msg_inactive" text="Medlemskapet är inaktivt; inget att köpa." />
+        <text name="ps_rf_pda_msg_inactive_flush" text="Medlemskapet är inaktivt; ingen behandling." />
+        <text name="ps_rf_pda_msg_max" text="Redan på MAX (N20)." />
+        <text name="ps_rf_pda_msg_no_api" text="buyLevel är inte tillgängligt i den här hanteraren." />
+        <text name="ps_rf_pda_msg_no_flush_api" text="requestFarmFlush är inte tillgängligt i den här hanteraren." />
+        <text name="ps_rf_pda_msg_no_network" text="Nekad: ingen NetworkSync på den här klienten, så begäran når inte servern." />
+        <text name="ps_rf_pda_msg_requested" text="Begärde N%d; servern avräknar det." />
+        <text name="ps_rf_pda_not_member" text="Inte medlem" />
+        <text name="ps_rf_pda_note_constant_only" text="Bara konstant; ingen utbetalning" />
+        <text name="ps_rf_pda_note_inactive" text="Inget på den här sidan är aktivt" />
+        <text name="ps_rf_pda_note_max" text="Stegen är klar" />
+        <text name="ps_rf_pda_note_no_payout" text="N20; ingen utbetalning bakom ännu" />
+        <text name="ps_rf_pda_note_no_quote" text="Sjukdomslagret i Soil Fertilizer hittades inte" />
+        <text name="ps_rf_pda_note_not_built" text="N14; utformad, inte byggd" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming aktivt; stegen förblir aktiv" />
+        <text name="ps_rf_pda_note_wealth" text="N10+: pris efter nettoförmögenhet, inte kontanter" />
+        <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
+        <text name="ps_rf_pda_page_prev" text="&lt; Back" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / månad" />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / månad" />
+        <text name="ps_rf_pda_row_agronomy_fee" text="Prenumeration på agronomirapport" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="Storinköp" />
+        <text name="ps_rf_pda_row_bulk_transport" text="Bulktransport" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="Mejerilogistik" />
+        <text name="ps_rf_pda_row_early_warning" text="Tidig varning" />
+        <text name="ps_rf_pda_row_effectiveness" text="Effektivitet" />
+        <text name="ps_rf_pda_row_fatigue" text="Arbetartrötthet" />
+        <text name="ps_rf_pda_row_fert" text="Gödselkostnad" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="Flottrabatt" />
+        <text name="ps_rf_pda_row_flush" text="Sjukdomsbehandling" />
+        <text name="ps_rf_pda_row_forecast" text="Väderprognos" />
+        <text name="ps_rf_pda_row_fung_cost" text="Fungicidkostnad" />
+        <text name="ps_rf_pda_row_fung_effect" text="Fungicideffekt" />
+        <text name="ps_rf_pda_row_invested" text="Investerat" />
+        <text name="ps_rf_pda_row_level" text="Nivå" />
+        <text name="ps_rf_pda_row_level_on_record" text="Registrerad nivå" />
+        <text name="ps_rf_pda_row_market_intel" text="Marknadsinformation" />
+        <text name="ps_rf_pda_row_membership" text="Medlemskap" />
+        <text name="ps_rf_pda_row_next_level" text="Nästa nivå" />
+        <text name="ps_rf_pda_row_next_unlock" text="Nästa upplåsning" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="Personalrabatt" />
+        <text name="ps_rf_pda_row_predictive" text="Prediktiv styrning" />
+        <text name="ps_rf_pda_row_recovery" text="Återhämtning från trötthet" />
+        <text name="ps_rf_pda_row_soil_chem" text="Jordkemi" />
+        <text name="ps_rf_pda_row_soil_kit" text="Jordtestsats" />
+        <text name="ps_rf_pda_row_spray" text="Sprutkostnad" />
+        <text name="ps_rf_pda_row_vet" text="Veterinärförnödenheter" />
+        <text name="ps_rf_pda_row_wages" text="Löner" />
+        <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;Den här skärmen är gårdens Pro Staff-nivåstege: alla tjugo stegen på en sida, fyra i bredd och fem på höjden, i den ordning de köps.&#10;&#10;Den gröna stapeln och det tända kortet markerar ditt steg. Tända kort under det är uppnådda; nedtonade kort ligger fortfarande framför dig. Varje kort namnger steget och säger vad köpet lägger till. Bara namn betyder att steget finns men inte ändrar något aktivt; inte tillämpat betyder att steget är upplåst men ännu inte betalar ut något.&#10;&#10;Den översta raden visar ditt steg, vad gården har investerat och priset på nästa steg; från N10 följer det priset nettoförmögenheten, inte kontanterna. Varje kort visar också stegets pris vid din nuvarande nettoförmögenhet (Investerat är vad du faktiskt har betalat). Ärlighetsnoteringar - pris efter nettoförmögenhet, Precision Farming som stänger av jordkemin, spärren för jordtestsatsen - listas i slutet av den här rutan.&#10;&#10;Den nedersta raden visar prenumerationen på agronomirapporten, flottrabatten från N14 och behandlingsofferten för varje sjukt fält du äger. Köp och Starta finns under stegen på varje Realistic Farming-dörr, oavsett vilken mod som byggde den: Köp betalar nästa steg via kooperativet och Starta betalar behandlingsofferten, båda avräknade på servern." />
+        <text name="ps_rf_pda_st_active" text="Aktiv" />
+        <text name="ps_rf_pda_st_from_level" text="Från N%d" />
+        <text name="ps_rf_pda_st_gate_off" text="Experimentspärr av" />
+        <text name="ps_rf_pda_st_live" text="Gäller" />
+        <text name="ps_rf_pda_st_locked" text="Låst" />
+        <text name="ps_rf_pda_st_member" text="Medlem" />
+        <text name="ps_rf_pda_st_no_quote" text="Ingen offert" />
+        <text name="ps_rf_pda_st_not_applied" text="Inte tillämpat" />
+        <text name="ps_rf_pda_st_not_live" text="Gäller inte" />
+        <text name="ps_rf_pda_st_off" text="Av i inställningarna" />
+        <text name="ps_rf_pda_st_stood_down" text="Avstängd" />
+        <text name="ps_rf_pda_st_suspended" text="Förmåner pausade" />
+        <text name="ps_rf_pda_st_unlocked" text="Upplåst" />
+        <text name="ps_rf_pda_unlock_1" text="Kontorsåtkomst (bara namn, ingen effekt)" />
+        <text name="ps_rf_pda_unlock_10" text="Jordtestsats (experimentspärr), priset går över till nettoförmögenhet" />
+        <text name="ps_rf_pda_unlock_11" text="Återhämtning från trötthet x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="Gödsel x0.94, fungicideffekt x1.10, veterinärförnödenheter x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="Sprutkostnad x0.92, arbetartrötthet x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="Flottrabatt 2500 per månad (bulktransport inte tillämpad)" />
+        <text name="ps_rf_pda_unlock_15" text="Gödsel x0.925, storinköp x1.05, marknadsinformation" />
+        <text name="ps_rf_pda_unlock_16" text="Kursadministration (bara namn, ingen effekt)" />
+        <text name="ps_rf_pda_unlock_17" text="Löner x0.90 (steg)" />
+        <text name="ps_rf_pda_unlock_18" text="Återhämtning från trötthet x1.85, prediktiv styrning" />
+        <text name="ps_rf_pda_unlock_19" text="Effektivitet x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="Gödsel x0.985, fungicid x0.95, veterinärförnödenheter x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="Effektivitet x1.15 (tidig varning inte tillämpad)" />
+        <text name="ps_rf_pda_unlock_3" text="Mejerilogistik x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="Arbetartrötthet x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="Löner x0.975 (steg)" />
+        <text name="ps_rf_pda_unlock_6" text="Lastningsautomation (bara namn, ingen effekt)" />
+        <text name="ps_rf_pda_unlock_7" text="Gödsel x0.96, väderprognos, prenumerationen på agronomirapport börjar" />
+        <text name="ps_rf_pda_unlock_8" text="Arbetartrötthet x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="Löner x0.95 (steg; personalrabatt inte avräknad)" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="Medlemskapet är inaktivt: förmåner pausade, inget på den här sidan är aktivt" />
+        <text name="ps_rf_pda_hdr_invested" text="Investerat %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="Jordtestsats: experimentspärr av" />
+        <text name="ps_rf_pda_hdr_line2_default" text="Tjugo steg: den gröna stapeln markerar ditt steg, tända kort är uppnådda, nedtonade ligger framför dig" />
+        <text name="ps_rf_pda_hdr_max" text="MAX (N20): stegen är klar" />
+        <text name="ps_rf_pda_hdr_next" text="Nästa N%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="Registrerat: N%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming aktivt: jordkemin avstängd, stegen förblir aktiv" />
+        <text name="ps_rf_pda_hdr_rung" text="Ditt steg: N%d %s" />
+        <text name="ps_rf_pda_card_cost" text="Kostnad: %s" />
     </texts>
 </l10n>

@@ -7,29 +7,158 @@
         <text name="ps_setting_subscriptionFee" text="Agronomy Report Sub Fee" />
         <text name="ps_setting_agronomyFee" text="Agronomy Fee (per month)" />
         <text name="ps_tab_title" text="Pro Staff" />
-        <text name="ps_level_1" text="Office Access" />
-        <text name="ps_level_2" text="Procurement Access" />
-        <text name="ps_level_3" text="Scheduling Optimization" />
-        <text name="ps_level_4" text="Comms Relay" />
-        <text name="ps_level_5" text="Labor Welfare" />
-        <text name="ps_level_6" text="Loading Automation" />
-        <text name="ps_level_7" text="Bulk Silo Admin" />
-        <text name="ps_level_8" text="Regional Mesh" />
-        <text name="ps_level_9" text="Personnel Records" />
-        <text name="ps_level_10" text="Academic Liaison" />
-        <text name="ps_level_11" text="Labor Recovery" />
-        <text name="ps_level_12" text="Precision Agronomy" />
-        <text name="ps_level_13" text="Global Comms" />
-        <text name="ps_level_14" text="Fleet Logistics" />
-        <text name="ps_level_15" text="Syndicate Board" />
-        <text name="ps_level_16" text="Curriculum Admin" />
-        <text name="ps_level_17" text="Payroll Oversight" />
-        <text name="ps_level_18" text="Predictive Control" />
-        <text name="ps_level_19" text="System Overdrive" />
-        <text name="ps_level_20" text="Sovereign Admin" />
+        <text name="ps_level_1" text="Akses kantor" />
+        <text name="ps_level_2" text="Akses pengadaan" />
+        <text name="ps_level_3" text="Optimasi jadwal" />
+        <text name="ps_level_4" text="Relai komunikasi" />
+        <text name="ps_level_5" text="Kesejahteraan kerja" />
+        <text name="ps_level_6" text="Otomasi pemuatan" />
+        <text name="ps_level_7" text="Administrasi silo curah" />
+        <text name="ps_level_8" text="Jaringan regional" />
+        <text name="ps_level_9" text="Catatan personalia" />
+        <text name="ps_level_10" text="Penghubung akademik" />
+        <text name="ps_level_11" text="Pemulihan tenaga kerja" />
+        <text name="ps_level_12" text="Agronomi presisi" />
+        <text name="ps_level_13" text="Komunikasi global" />
+        <text name="ps_level_14" text="Logistik armada" />
+        <text name="ps_level_15" text="Dewan sindikat" />
+        <text name="ps_level_16" text="Administrasi kurikulum" />
+        <text name="ps_level_17" text="Pengawasan penggajian" />
+        <text name="ps_level_18" text="Kendali prediktif" />
+        <text name="ps_level_19" text="Sistem kinerja maksimal" />
+        <text name="ps_level_20" text="Administrasi berdaulat" />
         <text name="ps_label_investment" text="Co-Op Membership Investment" />
         <text name="ps_label_agronomyFee" text="Co-Op Agronomy Report Sub" />
         <text name="ps_label_herdsmanRebate" text="Co-Op Personnel Rebate" />
         <text name="ps_label_fleetRebate" text="Co-Op Fleet Rebate" />
+        <!-- Esc RF PDA Pro Staff module (BUILD 00:46); EN text, localize when available -->
+        <text name="ps_rf_pda_blurb" text="Keanggotaan koperasi, pengubah yang berlaku, pembayaran rutin, dan penawaran perawatan penyakit." />
+        <text name="ps_rf_pda_btn_buy" text="Beli L%d" />
+        <text name="ps_rf_pda_btn_buy_max" text="Sudah MAKS" />
+        <text name="ps_rf_pda_btn_flush" text="Mulai perawatan" />
+        <text name="ps_rf_pda_btn_flush_none" text="Tidak perlu perawatan" />
+        <text name="ps_rf_pda_col_item" text="Item" />
+        <text name="ps_rf_pda_col_note" text="Note" />
+        <text name="ps_rf_pda_col_status" text="Status" />
+        <text name="ps_rf_pda_col_value" text="Value" />
+        <text name="ps_rf_pda_empty_absent" text="Pengelola Pro Staff Co-Op tidak ditemukan. Pasang dan aktifkan FS25_ProStaffCoOp." />
+        <text name="ps_rf_pda_empty_disabled" text="Pro Staff dinonaktifkan di pengaturan. Tidak ada yang berlaku di halaman ini." />
+        <text name="ps_rf_pda_empty_spectator" text="Tampilan penonton: bergabunglah dengan pertanian untuk melihat keanggotaan. Dari sini tidak ada pembelian atau perawatan." />
+        <text name="ps_rf_pda_flush_clear" text="Sehat" />
+        <text name="ps_rf_pda_flush_fields" text="%d ladang" />
+        <text name="ps_rf_pda_flush_none" text="Tidak ada ladang sakit" />
+        <text name="ps_rf_pda_flush_treat" text="Rawat" />
+        <text name="ps_rf_pda_grp_dairy" text="Susu" />
+        <text name="ps_rf_pda_grp_soil" text="Tanah" />
+        <text name="ps_rf_pda_grp_wc" text="Biaya Pekerja" />
+        <text name="ps_rf_pda_hint_stale_door" text="Salinan pintu ini lebih lama dari tombol Beli dan Mulai; perbarui mod yang membuatnya. Sampai saat itu, perintah konsol proStaffBuy dan diseaseFlush melakukan hal yang sama." />
+        <text name="ps_rf_pda_hint_own_door" text="Beli membayar anak tangga berikutnya melalui koperasi (buyLevel). Mulai membayar penawaran perawatan (requestFarmFlush). Keduanya diselesaikan di server." />
+        <text name="ps_rf_pda_inactive" text="Tidak aktif" />
+        <text name="ps_rf_pda_max" text="MAKS (L20)" />
+        <text name="ps_rf_pda_msg_bought" text="L%d dibeli seharga %s." />
+        <text name="ps_rf_pda_msg_disabled" text="Ditolak: Pro Staff dinonaktifkan di pengaturan." />
+        <text name="ps_rf_pda_msg_error" text="Pembelian gagal: %s" />
+        <text name="ps_rf_pda_msg_flush_busy" text="Perawatan untuk pertanian ini sudah berjalan." />
+        <text name="ps_rf_pda_msg_flush_denied" text="Perawatan ditolak (%s)." />
+        <text name="ps_rf_pda_msg_flush_done" text="Perawatan selesai di %d ladang seharga %s." />
+        <text name="ps_rf_pda_msg_flush_error" text="Perawatan gagal: %s" />
+        <text name="ps_rf_pda_msg_flush_funds" text="Ditolak: dana tidak cukup untuk penawaran perawatan." />
+        <text name="ps_rf_pda_msg_flush_none" text="Tidak ada ladang sakit; tidak ada yang perlu dirawat." />
+        <text name="ps_rf_pda_msg_flush_requested" text="Perawatan diminta; server yang menyelesaikannya." />
+        <text name="ps_rf_pda_msg_funds" text="Ditolak: dana tidak cukup untuk %s." />
+        <text name="ps_rf_pda_msg_inactive" text="Keanggotaan tidak aktif; tidak ada yang bisa dibeli." />
+        <text name="ps_rf_pda_msg_inactive_flush" text="Keanggotaan tidak aktif; tidak ada perawatan." />
+        <text name="ps_rf_pda_msg_max" text="Sudah MAKS (L20)." />
+        <text name="ps_rf_pda_msg_no_api" text="buyLevel tidak tersedia pada pengelola ini." />
+        <text name="ps_rf_pda_msg_no_flush_api" text="requestFarmFlush tidak tersedia pada pengelola ini." />
+        <text name="ps_rf_pda_msg_no_network" text="Ditolak: tidak ada NetworkSync di klien ini, jadi permintaan tidak bisa mencapai server." />
+        <text name="ps_rf_pda_msg_requested" text="L%d diminta; server yang menyelesaikannya." />
+        <text name="ps_rf_pda_not_member" text="Bukan anggota" />
+        <text name="ps_rf_pda_note_constant_only" text="Hanya konstanta; tanpa pembayaran" />
+        <text name="ps_rf_pda_note_inactive" text="Tidak ada yang berlaku di halaman ini" />
+        <text name="ps_rf_pda_note_max" text="Tangga selesai" />
+        <text name="ps_rf_pda_note_no_payout" text="L20; belum ada pembayaran di baliknya" />
+        <text name="ps_rf_pda_note_no_quote" text="Lapisan penyakit Soil Fertilizer tidak ditemukan" />
+        <text name="ps_rf_pda_note_not_built" text="L14; dirancang, belum dibangun" />
+        <text name="ps_rf_pda_note_pf" text="Precision Farming aktif; tangga tetap berlaku" />
+        <text name="ps_rf_pda_note_wealth" text="L10+: harga berdasarkan kekayaan bersih, bukan uang tunai" />
+        <text name="ps_rf_pda_page_next" text="More (%d/%d) &gt;" />
+        <text name="ps_rf_pda_page_prev" text="&lt; Back" />
+        <text name="ps_rf_pda_per_month_minus" text="-%s / bulan" />
+        <text name="ps_rf_pda_per_month_plus" text="+%s / bulan" />
+        <text name="ps_rf_pda_row_agronomy_fee" text="Langganan laporan agronomi" />
+        <text name="ps_rf_pda_row_bulk_procurement" text="Pengadaan grosir" />
+        <text name="ps_rf_pda_row_bulk_transport" text="Angkutan curah" />
+        <text name="ps_rf_pda_row_dairy_logistics" text="Logistik susu" />
+        <text name="ps_rf_pda_row_early_warning" text="Peringatan dini" />
+        <text name="ps_rf_pda_row_effectiveness" text="Efektivitas" />
+        <text name="ps_rf_pda_row_fatigue" text="Kelelahan pekerja" />
+        <text name="ps_rf_pda_row_fert" text="Biaya pupuk" />
+        <text name="ps_rf_pda_row_fleet_rebate" text="Potongan armada" />
+        <text name="ps_rf_pda_row_flush" text="Perawatan penyakit" />
+        <text name="ps_rf_pda_row_forecast" text="Prakiraan cuaca" />
+        <text name="ps_rf_pda_row_fung_cost" text="Biaya fungisida" />
+        <text name="ps_rf_pda_row_fung_effect" text="Efek fungisida" />
+        <text name="ps_rf_pda_row_invested" text="Diinvestasikan" />
+        <text name="ps_rf_pda_row_level" text="Tingkat" />
+        <text name="ps_rf_pda_row_level_on_record" text="Tingkat tercatat" />
+        <text name="ps_rf_pda_row_market_intel" text="Informasi pasar" />
+        <text name="ps_rf_pda_row_membership" text="Keanggotaan" />
+        <text name="ps_rf_pda_row_next_level" text="Tingkat berikutnya" />
+        <text name="ps_rf_pda_row_next_unlock" text="Buka kunci berikutnya" />
+        <text name="ps_rf_pda_row_personnel_rebate" text="Potongan personel" />
+        <text name="ps_rf_pda_row_predictive" text="Kendali prediktif" />
+        <text name="ps_rf_pda_row_recovery" text="Pemulihan kelelahan" />
+        <text name="ps_rf_pda_row_soil_chem" text="Kimia tanah" />
+        <text name="ps_rf_pda_row_soil_kit" text="Kit uji tanah" />
+        <text name="ps_rf_pda_row_spray" text="Biaya penyemprotan" />
+        <text name="ps_rf_pda_row_vet" text="Perlengkapan dokter hewan" />
+        <text name="ps_rf_pda_row_wages" text="Upah" />
+        <text name="ps_rf_pda_showing_range" text="Page %d/%d - showing %d-%d of %d" />
+        <text name="ps_rf_pda_side_info" text="Pro Staff Co-Op&#10;&#10;Layar ini adalah tangga level Pro Staff pertanian Anda: kedua puluh anak tangga dalam satu halaman, empat ke samping dan lima ke bawah, sesuai urutan pembeliannya.&#10;&#10;Bilah hijau dan kartu yang menyala menandai anak tangga Anda. Kartu menyala di bawahnya sudah tercapai; kartu redup masih di depan. Setiap kartu menyebut anak tangganya dan apa yang ditambahkan jika dibeli. Hanya nama berarti anak tangga itu ada tetapi tidak mengubah apa pun yang berlaku; tidak diterapkan berarti anak tangga sudah terbuka tetapi belum membayar apa pun.&#10;&#10;Baris atas menunjukkan anak tangga Anda, berapa yang sudah diinvestasikan pertanian, dan harga anak tangga berikutnya; mulai L10 harga itu mengikuti kekayaan bersih, bukan uang tunai. Setiap kartu juga menunjukkan harga anak tangga pada kekayaan bersih Anda saat ini (Diinvestasikan adalah yang benar-benar Anda bayar). Catatan kejujuran - harga berdasarkan kekayaan bersih, Precision Farming yang menonaktifkan kimia tanah, kunci kit uji tanah - tercantum di akhir kotak ini.&#10;&#10;Baris bawah menunjukkan langganan laporan agronomi, potongan armada L14, dan penawaran perawatan untuk setiap ladang sakit milik Anda. Beli dan Mulai ada di bawah tangga pada setiap pintu Realistic Farming, mod mana pun yang membuatnya: Beli membayar anak tangga berikutnya melalui koperasi dan Mulai membayar penawaran perawatan, keduanya diselesaikan di server." />
+        <text name="ps_rf_pda_st_active" text="Aktif" />
+        <text name="ps_rf_pda_st_from_level" text="Mulai L%d" />
+        <text name="ps_rf_pda_st_gate_off" text="Kunci eksperimental mati" />
+        <text name="ps_rf_pda_st_live" text="Berlaku" />
+        <text name="ps_rf_pda_st_locked" text="Terkunci" />
+        <text name="ps_rf_pda_st_member" text="Anggota" />
+        <text name="ps_rf_pda_st_no_quote" text="Tanpa penawaran" />
+        <text name="ps_rf_pda_st_not_applied" text="Tidak diterapkan" />
+        <text name="ps_rf_pda_st_not_live" text="Tidak berlaku" />
+        <text name="ps_rf_pda_st_off" text="Mati di pengaturan" />
+        <text name="ps_rf_pda_st_stood_down" text="Dinonaktifkan" />
+        <text name="ps_rf_pda_st_suspended" text="Manfaat ditangguhkan" />
+        <text name="ps_rf_pda_st_unlocked" text="Terbuka" />
+        <text name="ps_rf_pda_unlock_1" text="Akses kantor (hanya nama, tanpa efek)" />
+        <text name="ps_rf_pda_unlock_10" text="Kit uji tanah (kunci eksperimental), harga beralih ke kekayaan bersih" />
+        <text name="ps_rf_pda_unlock_11" text="Pemulihan kelelahan x1.75" />
+        <text name="ps_rf_pda_unlock_12" text="Pupuk x0.94, efek fungisida x1.10, perlengkapan dokter hewan x0.90" />
+        <text name="ps_rf_pda_unlock_13" text="Biaya penyemprotan x0.92, kelelahan pekerja x0.65" />
+        <text name="ps_rf_pda_unlock_14" text="Potongan armada 2500 per bulan (angkutan curah tidak diterapkan)" />
+        <text name="ps_rf_pda_unlock_15" text="Pupuk x0.925, pengadaan grosir x1.05, informasi pasar" />
+        <text name="ps_rf_pda_unlock_16" text="Administrasi kurikulum (hanya nama, tanpa efek)" />
+        <text name="ps_rf_pda_unlock_17" text="Upah x0.90 (langkah)" />
+        <text name="ps_rf_pda_unlock_18" text="Pemulihan kelelahan x1.85, kendali prediktif" />
+        <text name="ps_rf_pda_unlock_19" text="Efektivitas x1.05" />
+        <text name="ps_rf_pda_unlock_2" text="Pupuk x0.985, fungisida x0.95, perlengkapan dokter hewan x0.95" />
+        <text name="ps_rf_pda_unlock_20" text="Efektivitas x1.15 (peringatan dini tidak diterapkan)" />
+        <text name="ps_rf_pda_unlock_3" text="Logistik susu x1.05" />
+        <text name="ps_rf_pda_unlock_4" text="Kelelahan pekerja x0.90" />
+        <text name="ps_rf_pda_unlock_5" text="Upah x0.975 (langkah)" />
+        <text name="ps_rf_pda_unlock_6" text="Otomasi pemuatan (hanya nama, tanpa efek)" />
+        <text name="ps_rf_pda_unlock_7" text="Pupuk x0.96, prakiraan cuaca, langganan laporan agronomi dimulai" />
+        <text name="ps_rf_pda_unlock_8" text="Kelelahan pekerja x0.80" />
+        <text name="ps_rf_pda_unlock_9" text="Upah x0.95 (langkah; potongan personel belum diselesaikan)" />
+        <!-- Esc RF PDA Pro Staff level ladder (BUILD 09:37); EN text, localize when available -->
+        <text name="ps_rf_pda_hdr_inactive" text="Keanggotaan tidak aktif: manfaat ditangguhkan, tidak ada yang berlaku di halaman ini" />
+        <text name="ps_rf_pda_hdr_invested" text="Diinvestasikan %s" />
+        <text name="ps_rf_pda_hdr_kit_gate" text="Kit uji tanah: kunci eksperimental mati" />
+        <text name="ps_rf_pda_hdr_line2_default" text="Dua puluh anak tangga: bilah hijau menandai anak tangga Anda, kartu menyala sudah tercapai, yang redup masih di depan" />
+        <text name="ps_rf_pda_hdr_max" text="MAKS (L20): tangga selesai" />
+        <text name="ps_rf_pda_hdr_next" text="Berikutnya L%d %s %s" />
+        <text name="ps_rf_pda_hdr_on_record" text="Tercatat: L%d %s" />
+        <text name="ps_rf_pda_hdr_pf" text="Precision Farming aktif: kimia tanah dinonaktifkan, tangga tetap berlaku" />
+        <text name="ps_rf_pda_hdr_rung" text="Anak tangga Anda: L%d %s" />
+        <text name="ps_rf_pda_card_cost" text="Biaya: %s" />
     </texts>
 </l10n>

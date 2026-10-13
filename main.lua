@@ -13,7 +13,14 @@
 -- getters, so ProStaffManager is sourced BEFORE ProStaffAPI.
 -- =========================================================
 
-local modDirectory = g_currentModDirectory
+-- Hot-reload latch (FuelCosts reference): g_currentModDirectory and
+-- g_currentModName are nil on a live re-source, so they are latched into
+-- module globals on first load, with a g_modsDirectory loose-folder fallback.
+ProStaffCoOpModDirectory = ProStaffCoOpModDirectory
+    or g_currentModDirectory
+    or (g_modsDirectory ~= nil and (g_modsDirectory .. "FS25_ProStaffCoOp/") or nil)
+ProStaffCoOpModName = ProStaffCoOpModName or g_currentModName or "FS25_ProStaffCoOp"
+local modDirectory = ProStaffCoOpModDirectory
 
 source(modDirectory .. "src/Logger.lua")
 source(modDirectory .. "src/ReleaseGate.lua")
@@ -24,6 +31,16 @@ source(modDirectory .. "src/ProStaffAPI.lua")
 source(modDirectory .. "src/OptionScalingResolver.lua")
 -- The Co-Op disease flush (C2): extends ProStaffManager, so it is sourced last.
 source(modDirectory .. "src/ProStaffDiseaseFlush.lua")
+
+-- Esc RF PDA door (BUILD 00:46): the shared chrome (registry, page class, equal
+-- bootstrap) vendored the way the other joiners carry it, then the Pro Staff
+-- guest that paints the "prostaff" module. Lua only here; the page XML and the
+-- profiles are loaded by RfEscBootstrap.ensureDoor at mission start, not sourced.
+source(modDirectory .. "src/ui/RfEscModules.lua")
+source(modDirectory .. "src/ui/RfPdaMenuPage.lua")
+source(modDirectory .. "src/ui/RfEscBootstrap.lua")
+source(modDirectory .. "src/ui/PsGuideDialog.lua")
+source(modDirectory .. "src/ui/ProStaffRfPdaGuest.lua")
 
 local proStaff = ProStaffManager.new()
 getfenv(0)["g_proStaffCoOp"] = proStaff
@@ -69,6 +86,32 @@ else
 end
 
 FSBaseMission.delete = Utils.prependedFunction(FSBaseMission.delete, onMissionDelete)
+
+local function _rfEscTryRegister()
+    if ProStaffRfPdaGuest ~= nil and type(ProStaffRfPdaGuest.tryRegister) == "function" then
+        pcall(ProStaffRfPdaGuest.tryRegister)
+    end
+end
+
+-- Esc RF PDA: register the Pro Staff module after mission/door ready (retry-safe).
+if Mission00 ~= nil then
+    Mission00.loadMission00Finished = Utils.appendedFunction(Mission00.loadMission00Finished, function()
+        _rfEscTryRegister()
+    end)
+end
+if FSBaseMission ~= nil then
+    FSBaseMission.onStartMission = Utils.appendedFunction(FSBaseMission.onStartMission, function()
+        _rfEscTryRegister()
+    end)
+end
+
+if FSBaseMission ~= nil then
+    FSBaseMission.delete = Utils.appendedFunction(FSBaseMission.delete, function()
+        if ProStaffRfPdaGuest ~= nil and type(ProStaffRfPdaGuest.reset) == "function" then
+            ProStaffRfPdaGuest.reset()
+        end
+    end)
+end
 
 if addConsoleCommand ~= nil then
     addConsoleCommand("proStaffStatus", "Show ProStaff per-farm level + next cost",
